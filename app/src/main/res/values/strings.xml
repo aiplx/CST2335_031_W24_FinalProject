@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CST2335 031 W24 Final Project</string>
+    <string name="search_Button">Search</string>
+    <string name="savedTerms_Button">Saved terms</string>
+    <string name="saveIcon_title">Save</string>
+    <string name="author_info">About the author</string>
+    <string name="app_info">About the application</string>
+    <string name="author_info_detail">Version 0.1, created by Ping Liang</string>
+    <string name="app_info_detail">This app is easy to use:\n1.Enter the word you want to search and click the \"Search\" button\n2.Add the searched term to your saved list by clicking the menu at the top\n3.Navigate your saved words by clicking the \"Saved terms\" button\n4.You can delete the saved words from your list by click the specific words and comfirm deletion\nThat\'s all you need to know, enjoy!</string>
+    <string name="app_info_title">About this APP:</string>
 </resources>
