@@ -24,10 +24,10 @@
         android:minHeight="48dp"
         android:importantForAutofill="yes"
         android:textColor="@color/black"
-    android:textColorHint="@color/darker_gray"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/textViewLatitudeLabel" />
+        android:textColorHint="@color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLatitudeLabel" />
 
     <TextView
         android:id="@+id/textViewLongitudeLabel"
@@ -48,10 +48,10 @@
         android:minHeight="48dp"
         android:importantForAutofill="yes"
         android:textColor="@color/darker_gray"
-    android:textColorHint="@color/darker_gray"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/textViewLongitudeLabel" />
+        android:textColorHint="@color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLongitudeLabel" />
 
     <Button
         android:id="@+id/buttonLookup"
@@ -73,8 +73,8 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:visibility="invisible"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/buttonLookup" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonLookup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
