@@ -21,6 +21,9 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+        buildFeatures {
+            viewBinding = true
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -33,6 +36,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("com.google.code.gson:gson:2.10.1")
 
     // plan B : Retrofit for network requests
 //    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
@@ -40,7 +44,7 @@ dependencies {
 
     // Room for local database
     implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.activity:activity:1.8.0")
+    implementation("androidx.activity:activity:1.8.2")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
 
     // RecyclerView
