@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final Project</string>
+    <string name="open_sunrise_and_sunset_lookup">Oeffen Sie den Sonnenauf und Untergang App</string>
+    <string name="latitude">Breite</string>
+    <string name="enter_latitude">Breite eingeben</string>
+    <string name="longitude">Laenge</string>
+    <string name="enter_longitude">Lange Eingeben</string>
+    <string name="lookup">Suchen</string>
+    <string name="result">Resultat</string>
+    <string name="details_label">Details</string>
+    <string name="sunrise_time">Aufgang Zeit:</string>
+    <string name="sunset_time">Untergang Zeit:</string>
+    <string name="favorites_label">Favoriten</string>
+</resources>
