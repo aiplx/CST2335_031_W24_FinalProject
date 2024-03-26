@@ -10,11 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/latitude"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextLatitude"
@@ -22,20 +21,23 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_latitude"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewLatitudeLabel" />
+        android:minHeight="48dp"
+        android:importantForAutofill="yes"
+        android:textColor="@color/black"
+    android:textColorHint="@color/darker_gray"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textViewLatitudeLabel" />
 
     <TextView
         android:id="@+id/textViewLongitudeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/longitude"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextLatitude"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@id/editTextLatitude" />
 
     <EditText
         android:id="@+id/editTextLongitude"
@@ -43,26 +45,36 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_longitude"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewLongitudeLabel" />
+        android:minHeight="48dp"
+        android:importantForAutofill="yes"
+        android:textColor="@color/darker_gray"
+    android:textColorHint="@color/darker_gray"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textViewLongitudeLabel" />
 
     <Button
         android:id="@+id/buttonLookup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="96dp"
+        android:minHeight="48dp"
         android:text="@string/lookup"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextLongitude"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/editTextLongitude" />
 
     <TextView
         android:id="@+id/textViewResult"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/result"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonLookup"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="invisible"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/buttonLookup" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
