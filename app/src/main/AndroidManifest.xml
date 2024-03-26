@@ -12,6 +12,18 @@
         android:theme="@style/Theme.PingsAndroidLabs"
         tools:targetApi="31">
         <activity
+            android:name=".Sun_DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Sun_FavoritesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Sun_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SunriseSunsetActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
