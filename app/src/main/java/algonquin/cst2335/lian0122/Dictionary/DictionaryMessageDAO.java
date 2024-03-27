@@ -1,6 +1,5 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Dictionary;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -22,5 +21,8 @@ public interface DictionaryMessageDAO {
 
     @Insert
     void insertAllMessages(List<DictionaryMessage> m);
+
+    @Query("SELECT * FROM dictionary_messages WHERE search_term = :searchTerm LIMIT 1")
+    DictionaryMessage findDefinitionsBySearchTerm(String searchTerm);
 
 }

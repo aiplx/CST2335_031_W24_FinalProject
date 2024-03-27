@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Dictionary;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -30,6 +30,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import algonquin.cst2335.lian0122.R;
 import algonquin.cst2335.lian0122.databinding.ActivityDictionaryRoomBinding;
 
 public class DictionaryRoom extends AppCompatActivity {
@@ -58,8 +59,8 @@ public class DictionaryRoom extends AppCompatActivity {
         }
 
         // Load last search term
-        SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE);
-        String lastSearchTerm = sharedPreferences.getString("LastSearchTerm", "");
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.sharedPreferences_AppPreferences), MODE_PRIVATE);
+        String lastSearchTerm = sharedPreferences.getString(getString(R.string.sharedPreferences_LastSearchTerm), "");
         binding.searchField.setText(lastSearchTerm);
 
         binding.searchButton.setOnClickListener(cl -> {
@@ -102,7 +103,7 @@ public class DictionaryRoom extends AppCompatActivity {
 
     // fetchDefinitions
     public void fetchDefinitions(String searchTerm, Consumer<List<DictionaryMessage>> onDefinitionsFetched) {
-        String url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
+        String url = getString(R.string.api_url) + searchTerm;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 response -> {
@@ -115,14 +116,14 @@ public class DictionaryRoom extends AppCompatActivity {
                         // Parsing response and adding to definitions list
                         for (int i = 0; i < response.length(); i++) {
                             JSONObject wordObj = response.getJSONObject(i);
-                            JSONArray meanings = wordObj.getJSONArray("meanings");
+                            JSONArray meanings = wordObj.getJSONArray(getString(R.string.meaningsArray));
                             // Extract and display definitions
                             for (int j = 0; j < meanings.length(); j++) {
                                 JSONObject meaningObj = meanings.getJSONObject(j);
-                                JSONArray definitionsArray = meaningObj.getJSONArray("definitions");
+                                JSONArray definitionsArray = meaningObj.getJSONArray(getString(R.string.definitionsArray));
                                 for (int k = 0; k < definitionsArray.length(); k++) {
                                     JSONObject definitionObj = definitionsArray.getJSONObject(k);
-                                    String definitionText = definitionObj.getString("definition");
+                                    String definitionText = definitionObj.getString(getString(R.string.definitionObj));
                                     definitionsConcatenated.append(definitionText).append("\n\n");
                                 }
                             }
@@ -148,9 +149,9 @@ public class DictionaryRoom extends AppCompatActivity {
     }// end of fetchDefinitions method
 
     public void saveLastSearchTerm(String searchTerm) {
-        SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.sharedPreferences_AppPreferences), MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("LastSearchTerm", searchTerm);
+        editor.putString(getString(R.string.sharedPreferences_LastSearchTerm), searchTerm);
         editor.apply();
     }// end of saveLastSearchTerm method
 
@@ -172,7 +173,22 @@ public class DictionaryRoom extends AppCompatActivity {
         } else if (item.getItemId() == R.id.item_3) {
             showToastAboutAuthor();
             return true;
-        } else {
+
+            // BACK TO THIS, need to do
+//        } else if (item.getItemId() == R.id.item_sun) {
+//            Intent sunPage = new Intent(DictionaryRoom.this, SunActivity.class);
+//            startActivity(sunPage);
+//            return true;
+//        }else if (item.getItemId() == R.id.item_music) {
+//            Intent musicPage = new Intent(DictionaryRoom.this, MusicActivity.class);
+//            startActivity(musicPage);
+//            return true;
+//        }else if (item.getItemId() == R.id.item_recipe) {
+//            Intent recipePage = new Intent(DictionaryRoom.this, RecipeActivity.class);
+//            startActivity(recipePage);
+//            return true;
+        }
+        else {
             return super.onOptionsItemSelected(item);
         }
     } // end of the onOptionsItemSelected method
@@ -190,8 +206,16 @@ public class DictionaryRoom extends AppCompatActivity {
             DictionaryMessageDAO dao = MessageDatabase.getInstance(getApplicationContext()).dmDAO();
 
             new Thread(() -> {
-                dao.insert(newEntry);
-                runOnUiThread(() -> Toast.makeText(this, "Search saved", Toast.LENGTH_SHORT).show());
+                // Check if the entry already exists in the database
+                DictionaryMessage existingEntry = dao.findDefinitionsBySearchTerm(searchTerm);
+                if (existingEntry == null) {
+                    // If it doesn't exist, insert the new entry
+                    dao.insert(newEntry);
+                    runOnUiThread(() -> Toast.makeText(this, R.string.save_success, Toast.LENGTH_SHORT).show());
+                } else {
+                    // If it exists, show a toast message
+                    runOnUiThread(() -> Toast.makeText(this, R.string.save_again_message, Toast.LENGTH_SHORT).show());
+                }
             }).start();
         });
     }// end of showSaveMessagesDialog method

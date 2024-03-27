@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Dictionary;
 
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,7 +9,6 @@ public class DefinitionViewHolder extends RecyclerView.ViewHolder {
     public DefinitionViewHolder(ActivityDefinitionBinding binding) {
         super(binding.getRoot());
         messageText = binding.definitionMessageText;
-//        itemView.setOnClickListener(v -> promptForDelete(getAbsoluteAdapterPosition(),messageText));
     }
     void bind(DictionaryMessage message) {
         messageText.setText(message.getDefinitions());

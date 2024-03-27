@@ -1,14 +1,9 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Dictionary;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -17,10 +12,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
+import algonquin.cst2335.lian0122.R;
 import algonquin.cst2335.lian0122.databinding.ActivitySavedTermsBinding;
 
 public class ActivitySavedTerms extends AppCompatActivity {
@@ -49,7 +43,7 @@ public class ActivitySavedTerms extends AppCompatActivity {
                 .setTitle(message.getSearchTerm())
                 .setMessage(formattedDefinitions)
                 .setPositiveButton(android.R.string.ok, null)
-                .setNegativeButton("Delete", (dialogInterface, i) -> deleteDefinition(message))
+                .setNegativeButton(R.string.delete_alertDialog, (dialogInterface, i) -> deleteDefinition(message))
                 .show();
     }
 
@@ -69,20 +63,21 @@ public class ActivitySavedTerms extends AppCompatActivity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                // Extract the searchTerm and definitions
-//                String searchTerm = jsonObject.getString("searchTerm");
+                // Extract the definitions
                 String definitions = jsonObject.getString("definitions");
 
                 // Append the formatted definition to the StringBuilder
                 formattedText
-                        .append("\n\nDefinitions:\n")
+                        .append("\n")
+                        .append(getString(R.string.definitions))
+                        .append("\n\n")
                         .append(definitions);
             }
 
             return formattedText.toString();
         } catch (JSONException e) {
             e.printStackTrace();
-            return "Error formatting definitions.";
+            return getString(R.string.error_format_definitions);
         }
     }
 
@@ -92,15 +87,12 @@ public class ActivitySavedTerms extends AppCompatActivity {
         new Thread(() -> {
             dao.delete(message);
 
-            // Temporarily store the deleted item for undo action
-            DictionaryMessage deletedMessage = message;
-
             // Remove the item from the current list to immediately reflect the change in UI
             // Assuming savedTerms is accessible; otherwise, retrieve it again or adjust logic
             runOnUiThread(() -> {
                 // Show a SnackBar with Undo option
-                Snackbar.make(binding.getRoot(), "Definition deleted for word: " + message.getSearchTerm(), Snackbar.LENGTH_LONG)
-                        .setAction("UNDO", view -> undoDelete(deletedMessage, dao))
+                Snackbar.make(binding.getRoot(), getString(R.string.definition_deletion_message) + message.getSearchTerm(), Snackbar.LENGTH_LONG)
+                        .setAction(R.string.undo_message, view -> undoDelete(message, dao))
                         .show();
                 loadSavedTerms(); // Reload to reflect deletion, consider optimizing to avoid full reload
             });

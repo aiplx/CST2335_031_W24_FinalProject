@@ -1,7 +1,6 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Dictionary;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import algonquin.cst2335.lian0122.databinding.ActivitySavedTermsBinding;
-import algonquin.cst2335.lian0122.databinding.ItemSavedTermsBinding;
+import algonquin.cst2335.lian0122.R;
 
 public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.SavedTermsViewHolder> {
     private List<DictionaryMessage> savedTerms;
@@ -47,13 +45,7 @@ public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.Sa
     public void onBindViewHolder(@NonNull SavedTermsViewHolder holder, int position) {
         DictionaryMessage term = savedTerms.get(position);
         holder.bind(term);
-        holder.itemView.setOnClickListener(v -> listener.onItemClick(term)
-//        {
-//            Intent intent = new Intent(context, DictionaryRoom.class); // Intent should be directed to an appropriate activity to show definitions
-//            intent.putExtra("definitions", term.getDefinitions());
-//            context.startActivity(intent);
-//        }
-        );
+        holder.itemView.setOnClickListener(v -> listener.onItemClick(term));
     }
 
     @Override

@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Dictionary;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -19,7 +19,7 @@ public class DictionaryMessage {
     public String definitions; // Stored as a serialized JSON String
 
     @ColumnInfo(name = "MessageType")
-    protected int buttonType; // Use this to store message type (sent or received)
+    protected int buttonType; // Use this to store message type (search or save)
 
     // Constructor and getters
     public DictionaryMessage(String searchTerm, String definitions, int buttonType) {

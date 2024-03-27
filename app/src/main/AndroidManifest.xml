@@ -14,13 +14,13 @@
         android:theme="@style/Theme.PingsAndroidLabs"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Dictionary.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivitySavedTerms"
+            android:name=".Dictionary.ActivitySavedTerms"
             android:exported="false" />
         <activity
-            android:name=".DictionaryRoom"
+            android:name=".Dictionary.DictionaryRoom"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
