@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122;// Import statements for necessary Android and Java classes
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -13,22 +13,21 @@ import algonquin.cst2335.lian0122.databinding.ActivitySunMainBinding;
 
 public class Sun_MainActivity extends AppCompatActivity {
 
-    // View Binding
+    // View Binding for the activity, allows easier access to UI elements
     private ActivitySunMainBinding binding;
 
-    // URL for sunrise and sunset API
-    private final String API_URL = "https://api.sunrisesunset.io/json?lat=%s&lng=%s&date=today&timezone=UTC";
-
+    // URL for the sunrise and sunset API, formatted for latitude and longitude insertion
+    private final String API_URL = "https://api.sunriseACsunset.io/json?lat=%s&lng=%s&date=today&timezone=UTC";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Inflating the view using View Binding / Setting it as the content view
+        // Inflating the view using View Binding and setting it as the content view
         binding = ActivitySunMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Setting OnClickListener on the 'lookup' button
+        // Setting an OnClickListener on the 'lookup' button to perform an action when clicked
         binding.buttonLookup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,13 +36,13 @@ public class Sun_MainActivity extends AppCompatActivity {
         });
     }
 
-    // Method for lookup action
+    // Method to handle the lookup action
     private void performSunriseSunsetLookup() {
         // Getting latitude and longitude inputs from EditTexts
         String latitude = binding.editTextLatitude.getText().toString();
         String longitude = binding.editTextLongitude.getText().toString();
 
-        // Checking input fields are not empty
+        // Check if the input fields are not empty
         if (latitude.isEmpty() || longitude.isEmpty()) {
             Toast.makeText(this, "Please enter both latitude and longitude", Toast.LENGTH_SHORT).show();
             return;
@@ -52,18 +51,18 @@ public class Sun_MainActivity extends AppCompatActivity {
         // Formatting the URL with the entered latitude and longitude
         String url = String.format(API_URL, latitude, longitude);
 
-        // Creating StringRequest for Volley to perform network request
+        // Creating a StringRequest for Volley to perform a network request
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        // Handling response from server
+                        // Handle the response from the server
                         parseAndDisplayResult(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // Handling errors during the network request
+                // Handle any errors that occur during the network request
                 Toast.makeText(Sun_MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show();
             }
         });
@@ -72,7 +71,7 @@ public class Sun_MainActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
-    // Method to parse the JSON response / update the UI
+    // Method to parse the JSON response and update the UI
     private void parseAndDisplayResult(String response) {
         try {
             // Parsing the JSON response

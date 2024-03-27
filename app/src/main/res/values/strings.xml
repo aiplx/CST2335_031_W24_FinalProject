@@ -11,4 +11,5 @@
     <string name="sunrise_time">Sunrise Time: </string>
     <string name="sunset_time">Sunset Time: </string>
     <string name="favorites_label">Favorites</string>
+    <string name="favorites" />
 </resources>
