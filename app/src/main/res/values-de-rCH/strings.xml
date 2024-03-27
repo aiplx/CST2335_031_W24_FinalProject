@@ -13,4 +13,12 @@
     <string name="sunset_time">Untergang Zeit:</string>
     <string name="favorites_label">Favoriten</string>
     <string name="favorites">Favoriten</string>
+    <string name="toolbar">SunSearch Menue</string>
+    <string name="about">Ueber</string>
+    <string name="return_main">Zurueck zu Homepage</string>
+    <string name="help_dialog_title">Erklaerung</string>
+    <string name="help_dialog_message">Anleitung:\\n     - - Geben Sie die Breiten- und Längengrade ein und klicken Sie auf \\\'Suchen\\\', um die Sonnenauf- und -untergangszeiten zu finden.\\n     - - Klicken Sie auf \\\'Zu Favoriten hinzufügen\\\', um einen Standort zu speichern\\n     - - Greifen Sie über das Favoritenmenü auf Ihre gespeicherten Standorte zu.\\n</string>
+    <string name="help">Hilfe</string>
+    <string name="lookup_search">Suchen</string>
+    <string name="save_to_favorites">Speichern</string>
 </resources>

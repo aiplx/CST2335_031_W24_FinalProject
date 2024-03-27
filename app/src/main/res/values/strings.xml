@@ -11,5 +11,19 @@
     <string name="sunrise_time">Sunrise Time: </string>
     <string name="sunset_time">Sunset Time: </string>
     <string name="favorites_label">Favorites</string>
-    <string name="favorites" >Favorites</string>
+    <string name="favorites">Favorites</string>
+    <string name="toolbar">SunSearch Menu Bar</string>
+    <string name="about">About</string>
+    <string name="return_main">Go Back to Home</string>
+    <string name="help_dialog_title">How to Use</string>
+    <string name="help_dialog_message">
+    Instructions:\n
+    - Enter the latitude and longitude and click \'Lookup\' to find sunrise and sunset times.\n
+    - Click \'Save to Favorites\' to store a location.\n
+    - Access your favorite locations from the Favorites menu.\n
+</string>
+    <string name="help">Help</string>
+    <string name="lookup_search">Lookup</string>
+    <string name="save_to_favorites">Save to Favorites</string>
+
 </resources>

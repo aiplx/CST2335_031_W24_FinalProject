@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <!-- Result TextView -->
-
-    <!-- Save to Favorites Button -->
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/mainToolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:layout_marginTop="60dp"
-        android:background="@color/navy_blue"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:background="@color/Pink"
+        android:contentDescription="@string/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Sunrise and Sunset Lookup" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textViewResult"
@@ -41,13 +37,12 @@
         android:id="@+id/btnSaveToFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save to Favorites"
+        android:text="@string/save_to_favorites"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
 
-    <!-- Latitude Label and EditText -->
 
     <TextView
         android:id="@+id/textViewLatitudeLabel"
@@ -58,10 +53,6 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextLatitude"
         app:layout_constraintStart_toStartOf="@+id/editTextLatitude" />
-
-    <!-- Longitude Label and EditText -->
-
-    <!-- Lookup Button -->
 
     <EditText
         android:id="@+id/editTextLatitude"
@@ -107,7 +98,7 @@
         android:id="@+id/buttonLookup"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:text="Lookup"
+        android:text="@string/lookup_search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

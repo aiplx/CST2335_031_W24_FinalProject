@@ -1,8 +1,14 @@
 package algonquin.cst2335.lian0122;// Import statements for necessary Android and Java classes
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -16,7 +22,7 @@ import algonquin.cst2335.lian0122.databinding.ActivitySunMainBinding;
 
 public class Sun_MainActivity extends AppCompatActivity {
 
-    // View Binding for the activity, allows easier access to UI elements
+    // View Binding
     private ActivitySunMainBinding binding;
 
     // URL for the sunrise and sunset API, formatted for latitude and longitude insertion
@@ -30,6 +36,8 @@ public class Sun_MainActivity extends AppCompatActivity {
         // Inflating the view using View Binding and setting it as the content view
         binding = ActivitySunMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Toolbar toolbar = findViewById(R.id.mainToolbar);
+        setSupportActionBar(toolbar);
 
         binding.btnSaveToFavorites.setOnClickListener(v -> {
             try {
@@ -41,7 +49,7 @@ public class Sun_MainActivity extends AppCompatActivity {
             }
         });
 
-        // Setting an OnClickListener on the 'lookup' button to perform an action when clicked
+        // Setting an OnClickListener on 'lookup'
         binding.buttonLookup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +57,49 @@ public class Sun_MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_favorites) {
+            Intent favoritesIntent = new Intent(this, Sun_FavoritesActivity.class);
+            startActivity(favoritesIntent);
+            return true;
+        } else if (id == R.id.action_about) {
+            Toast.makeText(this, "Created By Oliver Kadvany - 041096826", Toast.LENGTH_LONG).show();
+            return true;
+        } else if (id == R.id.action_help) {
+            showHelpDialog();
+            return true;
+        } else if (id == R.id.action_return) {
+            Intent mainIntent = new Intent(this, MainActivity.class);
+            startActivity(mainIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void showHelpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.help_dialog_title);
+        builder.setMessage(R.string.help_dialog_message);
+
+        builder.setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
 
     // Method to handle the lookup action
     private void performSunriseSunsetLookup() {
