@@ -1,8 +1,11 @@
 package algonquin.cst2335.lian0122;// Import statements for necessary Android and Java classes
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -17,7 +20,8 @@ public class Sun_MainActivity extends AppCompatActivity {
     private ActivitySunMainBinding binding;
 
     // URL for the sunrise and sunset API, formatted for latitude and longitude insertion
-    private final String API_URL = "https://api.sunriseACsunset.io/json?lat=%s&lng=%s&date=today&timezone=UTC";
+    private final String API_URL = "https://api.sunrise-sunset.org/json?lat=%s&lng=%s&date=today&timezone=UTC";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,16 @@ public class Sun_MainActivity extends AppCompatActivity {
         // Inflating the view using View Binding and setting it as the content view
         binding = ActivitySunMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.btnSaveToFavorites.setOnClickListener(v -> {
+            try {
+                double lat = Double.parseDouble(binding.editTextLatitude.getText().toString());
+                double lng = Double.parseDouble(binding.editTextLongitude.getText().toString());
+                saveLocationToDatabase(lat, lng);
+            } catch (NumberFormatException e) {
+                Toast.makeText(Sun_MainActivity.this, "Invalid latitude or longitude", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Setting an OnClickListener on the 'lookup' button to perform an action when clicked
         binding.buttonLookup.setOnClickListener(new View.OnClickListener() {
@@ -62,15 +76,29 @@ public class Sun_MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // Handle any errors that occur during the network request
-                Toast.makeText(Sun_MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show();
+                if (error.networkResponse != null) {
+                    String errorMessage = new String(error.networkResponse.data);
+                    Log.e("Sun_MainActivity", "Error Response: " + errorMessage);
+                    Toast.makeText(Sun_MainActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(Sun_MainActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+                }
             }
+
         });
 
         // Adding the request to the Volley request queue to be executed
         Volley.newRequestQueue(this).add(stringRequest);
     }
+    private void saveLocationToDatabase(double latitude, double longitude) {
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "favorite_locations_db").build();
+        LocationDao dao = db.locationDao();
 
+        new Thread(() -> {
+            dao.insert(new FavoriteLocation(latitude, longitude));
+            runOnUiThread(() -> Toast.makeText(Sun_MainActivity.this, "Location saved to favorites", Toast.LENGTH_SHORT).show());
+        }).start();
+    }
     // Method to parse the JSON response and update the UI
     private void parseAndDisplayResult(String response) {
         try {
@@ -84,10 +112,14 @@ public class Sun_MainActivity extends AppCompatActivity {
             binding.textViewResult.setText("Sunrise: " + sunrise + "\nSunset: " + sunset);
             binding.textViewResult.setVisibility(View.VISIBLE);
 
+            // Turning save button visible
+            binding.btnSaveToFavorites.setVisibility(View.VISIBLE);
+
         } catch (Exception e) {
-            // Handling any JSON parsing errors
+            // Handling JSON parsing errors
             e.printStackTrace();
             Toast.makeText(this, "Error parsing data", Toast.LENGTH_SHORT).show();
         }
     }
+
 }
