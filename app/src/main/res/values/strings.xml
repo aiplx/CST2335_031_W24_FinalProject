@@ -25,5 +25,11 @@
     <string name="help">Help</string>
     <string name="lookup_search">Lookup</string>
     <string name="save_to_favorites">Save to Favorites</string>
+    <string name="example_lat">Lat: 45.4215° N</string>
+    <string name="example_lng">Lng: 75.6919° W</string>
+    <string name="a_little_sun_icon">A little sun Icon</string>
+    <string name="sunseeker">SunSeeker</string>
+    <string name="my_saved_locations">My Saved Locations</string>
+    <string name="delete" />
 
 </resources>

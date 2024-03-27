@@ -1,5 +1,4 @@
-package algonquin.cst2335.lian0122;// Import statements for necessary Android and Java classes
-import android.content.Intent;
+package algonquin.cst2335.lian0122;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -7,8 +6,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
