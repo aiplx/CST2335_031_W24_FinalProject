@@ -20,11 +20,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +48,15 @@ public class DictionaryRoom extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         setupRecyclerView();
 
+
+        if (savedInstanceState != null && savedInstanceState.containsKey("definitions")) {
+            // Restore the list of DictionaryMessage objects from JSON String
+            Type listType = new TypeToken<ArrayList<DictionaryMessage>>() {}.getType();
+            dictionaryMessages = new Gson().fromJson(savedInstanceState.getString("definitions"), listType);
+            myAdapter = new DefinitionsAdapter(dictionaryMessages);
+            binding.recycleView.setAdapter(myAdapter);
+        }
+
         // Load last search term
         SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String lastSearchTerm = sharedPreferences.getString("LastSearchTerm", "");
@@ -66,6 +77,16 @@ public class DictionaryRoom extends AppCompatActivity {
 
     } // end of onCreate method
 
+
+    //  saving the state of dictionaryMessages before the activity is destroyed due to a rotation
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Convert the list of DictionaryMessage objects to JSON String
+        String definitionsJson = new Gson().toJson(dictionaryMessages);
+        outState.putString("definitions", definitionsJson);
+    } // end of onSaveInstanceState method
+
     private void setupRecyclerView() {
         myAdapter = new DefinitionsAdapter(dictionaryMessages);
         binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
@@ -79,9 +100,7 @@ public class DictionaryRoom extends AppCompatActivity {
         myAdapter.notifyDataSetChanged(); // Notify the adapter about data change
     } // end of updateDefinitionsList method
 
-
-
-    // test fetchDefinitions
+    // fetchDefinitions
     public void fetchDefinitions(String searchTerm, Consumer<List<DictionaryMessage>> onDefinitionsFetched) {
         String url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
 
@@ -126,7 +145,7 @@ public class DictionaryRoom extends AppCompatActivity {
                 },
                 error -> Log.e("fetchDefinitions", "Volley error: " + error.toString()));
         requestQueue.add(jsonArrayRequest);
-    }// end of testing fetchDefinitions method
+    }// end of fetchDefinitions method
 
     public void saveLastSearchTerm(String searchTerm) {
         SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE);
