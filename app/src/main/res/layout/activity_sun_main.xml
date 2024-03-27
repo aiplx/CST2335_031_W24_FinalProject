@@ -1,80 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textViewLatitudeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/latitude"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Result TextView -->
 
-    <EditText
-        android:id="@+id/editTextLatitude"
+    <!-- Save to Favorites Button -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_latitude"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:importantForAutofill="yes"
-        android:textColor="@color/black"
-        android:textColorHint="@color/darker_gray"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="60dp"
+        android:background="@color/navy_blue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewLatitudeLabel" />
-
-    <TextView
-        android:id="@+id/textViewLongitudeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/longitude"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextLatitude" />
-
-    <EditText
-        android:id="@+id/editTextLongitude"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_longitude"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:importantForAutofill="yes"
-        android:textColor="@color/darker_gray"
-        android:textColorHint="@color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewLongitudeLabel" />
-
-    <Button
-        android:id="@+id/buttonLookup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lookup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextLongitude" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Sunrise and Sunset Lookup" />
 
     <TextView
         android:id="@+id/textViewResult"
-        android:layout_width="0dp"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLatitudeLabel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonLookup"
-        app:layout_constraintBottom_toTopOf="@id/btnSaveToFavorites" />
+        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/btnSaveToFavorites"
@@ -84,7 +45,70 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewResult" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
 
+    <!-- Latitude Label and EditText -->
+
+    <TextView
+        android:id="@+id/textViewLatitudeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/latitude"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLatitude"
+        app:layout_constraintStart_toStartOf="@+id/editTextLatitude" />
+
+    <!-- Longitude Label and EditText -->
+
+    <!-- Lookup Button -->
+
+    <EditText
+        android:id="@+id/editTextLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_latitude"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLookup"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewLongitudeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/longitude"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLongitude"
+        app:layout_constraintStart_toEndOf="@+id/editTextLatitude" />
+
+    <EditText
+        android:id="@+id/editTextLongitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_longitude"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textColor="@color/darker_gray"
+        android:textColorHint="@color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLookup"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextLatitude"
+        app:layout_constraintTop_toTopOf="@+id/editTextLatitude"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/buttonLookup"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Lookup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
