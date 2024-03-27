@@ -10,13 +10,13 @@ public abstract class MessageDatabase extends RoomDatabase {
     public abstract DictionaryMessageDAO dmDAO();
 
     private static volatile MessageDatabase INSTANCE;
-
     public static MessageDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (MessageDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                                     MessageDatabase.class, "dictionary-database")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

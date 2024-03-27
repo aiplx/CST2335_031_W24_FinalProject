@@ -15,7 +15,7 @@ public interface DictionaryMessageDAO {
     void insert(DictionaryMessage m);
 
     @Query("SELECT * FROM dictionary_messages")
-    LiveData<List<DictionaryMessage>> getAllMessages();
+    List<DictionaryMessage> getAllMessages();
 
     @Delete
     void delete(DictionaryMessage m);

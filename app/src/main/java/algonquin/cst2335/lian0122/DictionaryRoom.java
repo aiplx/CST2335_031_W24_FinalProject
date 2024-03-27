@@ -1,18 +1,19 @@
 package algonquin.cst2335.lian0122;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.util.Consumer;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -30,8 +31,9 @@ import java.util.List;
 import algonquin.cst2335.lian0122.databinding.ActivityDictionaryRoomBinding;
 
 public class DictionaryRoom extends AppCompatActivity {
-
+    private DefinitionsAdapter myAdapter; // use a specific adapter type
     private ActivityDictionaryRoomBinding binding;
+    private List<DictionaryMessage> dictionaryMessages = new ArrayList<>();
     private static DictionaryRoom instance;
     private RequestQueue requestQueue;
     @Override
@@ -39,51 +41,92 @@ public class DictionaryRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDictionaryRoomBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.dictionaryRoomToolbar);
+        // Assuming the initialization of requestQueue here instead of using a static instance
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+        setupRecyclerView();
 
+        // Load last search term
         SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String lastSearchTerm = sharedPreferences.getString("LastSearchTerm", "");
         binding.searchField.setText(lastSearchTerm);
 
-        // Assuming the initialization of requestQueue here instead of using a static instance
-        requestQueue = Volley.newRequestQueue(getApplicationContext());
+        binding.searchButton.setOnClickListener(cl -> {
+            String searchTerm = binding.searchField.getText().toString().trim();
+            if (!searchTerm.isEmpty()) {
+                fetchDefinitions(searchTerm,this::updateDefinitionsList);
+                saveLastSearchTerm(searchTerm);
+            }
+        }); // end of Search button
+
+        binding.savedTermsButton.setOnClickListener(cl ->{
+            Intent intent = new Intent(DictionaryRoom.this, ActivitySavedTerms.class);
+            startActivity(intent);
+        });// end of SavedTerms button
+
     } // end of onCreate method
 
-//    public static synchronized DictionaryRoom getInstance(){
-//        return instance;
-//    }// end of DictionaryRoom getInstance method
-//
-//    // fetch the dictionary content
-//    public RequestQueue getRequestQueue(){
-//        if (requestQueue == null){
-//            requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        }
-//        return requestQueue;
-//    } // end of RequestQueue method
+    private void setupRecyclerView() {
+        myAdapter = new DefinitionsAdapter(dictionaryMessages);
+        binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
+        binding.recycleView.setAdapter(myAdapter);
+    }
 
-    public void fetchDefinitions(String searchTerm, Consumer<List<Definition>> onDefinitionsFetched) {
+    @SuppressLint("NotifyDataSetChanged")
+    private void updateDefinitionsList(List<DictionaryMessage> definitions) {
+        dictionaryMessages.clear();
+        dictionaryMessages.addAll(definitions);
+        myAdapter.notifyDataSetChanged(); // Notify the adapter about data change
+    } // end of updateDefinitionsList method
+
+
+
+    // test fetchDefinitions
+    public void fetchDefinitions(String searchTerm, Consumer<List<DictionaryMessage>> onDefinitionsFetched) {
         String url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 response -> {
-                    List<Definition> definitions = new ArrayList<>();
+                    List<DictionaryMessage> definitions = new ArrayList<>();
+                    StringBuilder definitionsConcatenated = new StringBuilder();
+
                     try {
+                        // Log the response for debugging
+                        Log.d("fetchDefinitions", "Response: " + response.toString());
                         // Parsing response and adding to definitions list
                         for (int i = 0; i < response.length(); i++) {
                             JSONObject wordObj = response.getJSONObject(i);
                             JSONArray meanings = wordObj.getJSONArray("meanings");
-                            // Extract and display definitions...
+                            // Extract and display definitions
+                            for (int j = 0; j < meanings.length(); j++) {
+                                JSONObject meaningObj = meanings.getJSONObject(j);
+                                JSONArray definitionsArray = meaningObj.getJSONArray("definitions");
+                                for (int k = 0; k < definitionsArray.length(); k++) {
+                                    JSONObject definitionObj = definitionsArray.getJSONObject(k);
+                                    String definitionText = definitionObj.getString("definition");
+                                    definitionsConcatenated.append(definitionText).append("\n\n");
+                                }
+                            }
+                        }
+//                         Create a single DictionaryMessage object if definitions were found
+                        if (definitionsConcatenated.length() > 0) {
+                            DictionaryMessage dictionaryMessage = new DictionaryMessage(searchTerm, definitionsConcatenated.toString(), DictionaryMessage.TYPE_SEARCH);
+                            definitions.add(dictionaryMessage);
                         }
                         onDefinitionsFetched.accept(definitions);
+                        // Update the UI with the fetched definitions
+                        runOnUiThread(() -> {
+                            dictionaryMessages.clear();
+                            dictionaryMessages.addAll(definitions);
+                            myAdapter.notifyDataSetChanged();
+                        });
                     } catch (JSONException e) {
-                        e.printStackTrace();
+                        Log.e("fetchDefinitions", "Json parsing error: " + e.getMessage());
                     }
                 },
-                error -> Log.e("Volley", error.toString()));
-
+                error -> Log.e("fetchDefinitions", "Volley error: " + error.toString()));
         requestQueue.add(jsonArrayRequest);
-    }// end of fetchDefinitions method
+    }// end of testing fetchDefinitions method
 
     public void saveLastSearchTerm(String searchTerm) {
         SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE);
@@ -124,7 +167,7 @@ public class DictionaryRoom extends AppCompatActivity {
             String definitionsString = convertDefinitionsToString(definitions);
 
             // Prepare the dictionary message for insertion
-            DictionaryMessage newEntry = new DictionaryMessage(searchTerm, definitionsString);
+            DictionaryMessage newEntry = new DictionaryMessage(searchTerm, definitionsString,DictionaryMessage.TYPE_SEARCH);
             DictionaryMessageDAO dao = MessageDatabase.getInstance(getApplicationContext()).dmDAO();
 
             new Thread(() -> {
@@ -135,9 +178,9 @@ public class DictionaryRoom extends AppCompatActivity {
     }// end of showSaveMessagesDialog method
 
 
-    private String convertDefinitionsToString(List<Definition> definitions) {
+    private String convertDefinitionsToString(List<DictionaryMessage> dictionaryMessages) {
         Gson gson = new Gson();
-        return gson.toJson(definitions);
+        return gson.toJson(dictionaryMessages);
     }
 
     //menu item_2: about the app, using AlertDialog
@@ -152,5 +195,4 @@ public class DictionaryRoom extends AppCompatActivity {
     private void showToastAboutAuthor() {
         Toast.makeText(this, R.string.author_info_detail, Toast.LENGTH_SHORT).show();
     }
-
 }
