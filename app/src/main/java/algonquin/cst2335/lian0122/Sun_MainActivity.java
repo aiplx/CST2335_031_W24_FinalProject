@@ -36,9 +36,8 @@ public class Sun_MainActivity extends AppCompatActivity {
         // Inflating the view using View Binding and setting it as the content view
         binding = ActivitySunMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Toolbar toolbar = findViewById(R.id.mainToolbar);
-        setSupportActionBar(toolbar);
-
+        //Setting Up toolbar
+        ToolbarUtils.setupToolbar(this, R.id.mainToolbar);
         binding.btnSaveToFavorites.setOnClickListener(v -> {
             try {
                 double lat = Double.parseDouble(binding.editTextLatitude.getText().toString());
@@ -66,39 +65,8 @@ public class Sun_MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_favorites) {
-            Intent favoritesIntent = new Intent(this, Sun_FavoritesActivity.class);
-            startActivity(favoritesIntent);
-            return true;
-        } else if (id == R.id.action_about) {
-            Toast.makeText(this, "Created By Oliver Kadvany - 041096826", Toast.LENGTH_LONG).show();
-            return true;
-        } else if (id == R.id.action_help) {
-            showHelpDialog();
-            return true;
-        } else if (id == R.id.action_return) {
-            Intent mainIntent = new Intent(this, MainActivity.class);
-            startActivity(mainIntent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        return ToolbarUtils.handleMenuItem(this, item) || super.onOptionsItemSelected(item);
     }
-
-
-    private void showHelpDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.help_dialog_title);
-        builder.setMessage(R.string.help_dialog_message);
-
-        builder.setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss());
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
 
 
     // Method to handle the lookup action
