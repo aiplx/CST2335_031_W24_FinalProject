@@ -45,9 +45,9 @@ dependencies {
 //    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // Room for local database
-    implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.activity:activity:1.8.2")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.4.3")
+    annotationProcessor("androidx.room:room-compiler:2.4.3")
 
     // RecyclerView
     implementation("androidx.recyclerview:recyclerview:1.3.2")

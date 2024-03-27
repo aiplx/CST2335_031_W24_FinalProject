@@ -12,4 +12,5 @@
     <string name="sunrise_time">Aufgang Zeit:</string>
     <string name="sunset_time">Untergang Zeit:</string>
     <string name="favorites_label">Favoriten</string>
+    <string name="favorites">Favoriten</string>
 </resources>
