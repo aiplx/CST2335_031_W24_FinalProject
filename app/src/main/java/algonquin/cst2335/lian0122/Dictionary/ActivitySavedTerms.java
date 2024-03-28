@@ -1,3 +1,9 @@
+/*
+ * Student Name: Ping Liang
+ * Lab section: 031
+ * Created: Mar 25, 2024
+ * Purpose: The activity of the saved terms
+ */
 package algonquin.cst2335.lian0122.Dictionary;
 
 import android.os.Bundle;
@@ -17,101 +23,123 @@ import java.util.List;
 import algonquin.cst2335.lian0122.R;
 import algonquin.cst2335.lian0122.databinding.ActivitySavedTermsBinding;
 
+/**
+ * Activity to display saved terms from the Room Database and their definitions.
+ * Provides functionality to view, delete, and undo the deletion of terms and definitions.
+ */
 public class ActivitySavedTerms extends AppCompatActivity {
-    private ActivitySavedTermsBinding binding;
-//    private SavedTermsAdapter adapter;
+	private ActivitySavedTermsBinding binding;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivitySavedTermsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        loadSavedTerms();
-    }
+	/**
+	 * Initializes the activity, sets up the content view, and loads saved terms from the database.
+	 * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Otherwise, it is null.
+	 */
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		binding = ActivitySavedTermsBinding.inflate(getLayoutInflater());
+		setContentView(binding.getRoot());
+		loadSavedTerms();
+	}
 
-    private void setupRecyclerView(List<DictionaryMessage> savedTerms) {
-        // This block will be executed when an item is clicked.
-        // You can show a dialog with the definition or start a new activity.
-        SavedTermsAdapter adapter = new SavedTermsAdapter(this, savedTerms, this::showDefinitionPopup);
-        binding.savedTermsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        binding.savedTermsRecyclerView.setAdapter(adapter);
-    }
-    private void showDefinitionPopup(DictionaryMessage message) {
-        String formattedDefinitions = formatDefinitions(message.getDefinitions());
+	/**
+	 * Sets up the RecyclerView with saved terms using {@link SavedTermsAdapter}.
+	 * @param savedTerms List of {@link DictionaryMessage} containing saved terms and definitions to be displayed.
+	 */
+	private void setupRecyclerView(List<DictionaryMessage> savedTerms) {
+		SavedTermsAdapter adapter = new SavedTermsAdapter(this, savedTerms, this::showDefinitionPopup);
+		binding.savedTermsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+		binding.savedTermsRecyclerView.setAdapter(adapter);
+	}
 
-        new AlertDialog.Builder(this)
-                .setTitle(message.getSearchTerm())
-                .setMessage(formattedDefinitions)
-                .setPositiveButton(android.R.string.ok, null)
-                .setNegativeButton(R.string.delete_alertDialog, (dialogInterface, i) -> deleteDefinition(message))
-                .show();
-    }
+	/**
+	 * Shows a popup dialog with the definition of a saved term. Provides options to close or delete the term.
+	 * @param message {@link DictionaryMessage} containing the term and its definition to be shown.
+	 */
+	private void showDefinitionPopup(DictionaryMessage message) {
+		String formattedDefinitions = formatDefinitions(message.getDefinitions());
 
-    /**
-     * Formats the JSON string of definitions to a more readable format.
-     *
-     * @param definitionsJson The JSON string containing definitions.
-     * @return A formatted string suitable for display.
-     */
-    private String formatDefinitions(String definitionsJson) {
-        try {
-            // Parse the JSON array from the definitions string
-            JSONArray jsonArray = new JSONArray(definitionsJson);
-            StringBuilder formattedText = new StringBuilder();
+		new AlertDialog.Builder(this)
+		.setTitle(message.getSearchTerm())
+		.setMessage(formattedDefinitions)
+		.setPositiveButton(android.R.string.ok, null)
+		.setNegativeButton(R.string.delete_alertDialog, (dialogInterface, i) -> deleteDefinition(message))
+		.show();
+	}
 
-            // Iterate through each item in the array (though based on your structure, you might have just one)
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
+	/**
+	 * Formats a JSON string of definitions to a more human-readable format.
+	 * @param definitionsJson JSON string containing the definitions.
+	 * @return Formatted string of definitions.
+	 */
+	private String formatDefinitions(String definitionsJson) {
+		try {
+			// Parse the JSON array from the definitions string
+			JSONArray jsonArray = new JSONArray(definitionsJson);
+			StringBuilder formattedText = new StringBuilder();
 
-                // Extract the definitions
-                String definitions = jsonObject.getString("definitions");
+			// Iterate through each item in the array (though based on your structure, you might have just one)
+			for (int i = 0; i < jsonArray.length(); i++) {
+				JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                // Append the formatted definition to the StringBuilder
-                formattedText
-                        .append("\n")
-                        .append(getString(R.string.definitions))
-                        .append("\n\n")
-                        .append(definitions);
-            }
+				// Extract the definitions
+				String definitions = jsonObject.getString("definitions");
 
-            return formattedText.toString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return getString(R.string.error_format_definitions);
-        }
-    }
+				// Append the formatted definition to the StringBuilder
+				formattedText
+				.append("\n")
+				.append(getString(R.string.definitions))
+				.append("\n\n")
+				.append(definitions);
+			}
 
+			return formattedText.toString();
+		} catch (JSONException e) {
+			e.printStackTrace();
+			return getString(R.string.error_format_definitions);
+		}
+	}
 
-    private void deleteDefinition(DictionaryMessage message) {
-        DictionaryMessageDAO dao = MessageDatabase.getInstance(getApplicationContext()).dmDAO();
-        new Thread(() -> {
-            dao.delete(message);
+	/**
+	 * Deletes a definition from the Room Database and provides an undo option via a Snackbar.
+	 * @param message {@link DictionaryMessage} containing the term and definition to be deleted.
+	 */
+	private void deleteDefinition(DictionaryMessage message) {
+		DictionaryMessageDAO dao = MessageDatabase.getInstance(getApplicationContext()).dmDAO();
+		new Thread(() -> {
+			dao.delete(message);
 
-            // Remove the item from the current list to immediately reflect the change in UI
-            // Assuming savedTerms is accessible; otherwise, retrieve it again or adjust logic
-            runOnUiThread(() -> {
-                // Show a SnackBar with Undo option
-                Snackbar.make(binding.getRoot(), getString(R.string.definition_deletion_message) + message.getSearchTerm(), Snackbar.LENGTH_LONG)
-                        .setAction(R.string.undo_message, view -> undoDelete(message, dao))
-                        .show();
-                loadSavedTerms(); // Reload to reflect deletion, consider optimizing to avoid full reload
-            });
-        }).start();
-    }
+			// Remove the item from the current list to immediately reflect the change in UI
+			runOnUiThread(() -> {
+				// Show a SnackBar with Undo option
+				Snackbar.make(binding.getRoot(), getString(R.string.definition_deletion_message) + message.getSearchTerm(), Snackbar.LENGTH_LONG)
+				.setAction(R.string.undo_message, view -> undoDelete(message, dao))
+				.show();
+				loadSavedTerms(); // Reload to reflect deletion, consider optimizing to avoid full reload
+			});
+		}).start();
+	}
 
-    private void undoDelete(DictionaryMessage message, DictionaryMessageDAO dao) {
-        new Thread(() -> {
-            dao.insert(message); // Re-insert the deleted message
-            runOnUiThread(this::loadSavedTerms); // Reload saved terms to reflect the undo action
-        }).start();
-    }
+	/**
+	 * Restores a previously deleted definition back to the Room Database.
+	 * @param message {@link DictionaryMessage} to be restored.
+	 * @param dao {@link DictionaryMessageDAO} for accessing the Room Database.
+	 */
+	private void undoDelete(DictionaryMessage message, DictionaryMessageDAO dao) {
+		new Thread(() -> {
+			dao.insert(message); // Re-insert the deleted definitions
+			runOnUiThread(this::loadSavedTerms); // Reload saved terms to reflect the undo action
+		}).start();
+	}
 
-    // Load saved terms from Room database
-    private void loadSavedTerms() {
-        DictionaryMessageDAO dao = MessageDatabase.getInstance(getApplicationContext()).dmDAO();
-        new Thread(() -> {
-            List<DictionaryMessage> savedTerms = dao.getAllMessages();
-            runOnUiThread(() -> setupRecyclerView(savedTerms));
-        }).start();
-    }
+	/**
+	 * Loads saved terms from the Room Database and updates the RecyclerView.
+	 */
+	private void loadSavedTerms() {
+		DictionaryMessageDAO dao = MessageDatabase.getInstance(getApplicationContext()).dmDAO();
+		new Thread(() -> {
+			List<DictionaryMessage> savedTerms = dao.getAllMessages();
+			runOnUiThread(() -> setupRecyclerView(savedTerms));
+		}).start();
+	}
 }

@@ -6,11 +6,11 @@
     <string name="author_info">About</string>
     <string name="app_info">Help</string>
     <string name="author_info_detail">Version 0.1, created by Ping Liang</string>
-    <string name="app_info_detail">This app is easy to use:
-        1.Enter the word you want to search and click the \"Search\" button
-        2.Add the searched term to your saved list by clicking the menu at the top
-        3.Navigate your saved words by clicking the \"Saved terms\" button
-        4.You can delete the saved words from your list by click the specific words and confirm deletion
+    <string name="app_info_detail">This app is easy to use:\n
+        1.Enter the word you want to search and click the \"Search\" button\n
+        2.Add the searched term to your saved list by clicking the menu at the top\n
+        3.Navigate your saved words by clicking the \"Saved terms\" button\n
+        4.You can delete the saved words from your list by click the specific words and confirm deletion\n
         That\'s all you need to know, enjoy!</string>
     <string name="app_info_title">About this APP: </string>
     <string name="delete_alertDialog">Delete</string>
@@ -28,5 +28,8 @@
     <string name="save_again_message">You have already added this word</string>
     <string name="save_success">Search saved</string>
     <string name="definition_message">Definition goes here</string>
+    <string name="sunIcon_title">Sun APP</string>
+    <string name="musicIcon_title">Music APP</string>
+    <string name="recipeIcon_title">Recipe APP</string>
 
 </resources>

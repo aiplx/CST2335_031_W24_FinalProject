@@ -22,15 +22,18 @@
     <item
         android:id="@+id/item_sun"
         android:icon="@drawable/tb_sun"
+        android:title="@string/sunIcon_title"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/item_music"
         android:icon="@drawable/tb_music"
+        android:title="@string/musicIcon_title"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/item_recipe"
         android:icon="@drawable/tb_recipe"
+        android:title="@string/recipeIcon_title"
         app:showAsAction="always" />
 </menu>

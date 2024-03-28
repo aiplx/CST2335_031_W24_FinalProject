@@ -31,8 +31,10 @@
 
     <EditText
         android:id="@+id/searchField"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="16dp"
         android:inputType="text"
         android:text=""
@@ -42,7 +44,7 @@
 
     <Button
         android:id="@+id/savedTerms_Button"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#901DA89C"
@@ -57,7 +59,9 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
