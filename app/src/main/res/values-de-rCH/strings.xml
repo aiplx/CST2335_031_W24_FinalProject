@@ -21,4 +21,13 @@
     <string name="help">Hilfe</string>
     <string name="lookup_search">Suchen</string>
     <string name="save_to_favorites">Speichern</string>
+    <string name="a_little_sun_icon">EIne kleine Sonne</string>
+    <string name="my_saved_locations">Meine Orte</string>
+    <string name="delete">Loeschen</string>
+    <string name="invalid_lat_long">"Invalide Lat. und lng. "</string>
+    <string name="please_enter_both_lat_long">Bitte tragen Sie beide Felder ein</string>
+    <string name="network_error">Netzwerk Fehler</string>
+    <string name="location_saved">Ort gespeichert</string>
+    <string name="parsing_error">Fehler bei Daten Eingabe</string>
+    <string name="sunrise_sunset_result">Aufgang: %1$s\\nUntergang: %2$s</string>
 </resources>

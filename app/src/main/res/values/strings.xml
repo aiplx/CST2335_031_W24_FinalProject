@@ -25,11 +25,21 @@
     <string name="help">Help</string>
     <string name="lookup_search">Lookup</string>
     <string name="save_to_favorites">Save to Favorites</string>
-    <string name="example_lat">Lat: 45.4215° N</string>
-    <string name="example_lng">Lng: 75.6919° W</string>
+    <string name="example_lat" translatable="false">Lat: 45.4215° N</string>
+    <string name="example_lng" translatable="false">Lng: 75.6919° W</string>
     <string name="a_little_sun_icon">A little sun Icon</string>
-    <string name="sunseeker">SunSeeker</string>
+    <string name="SunSeeker" translatable="false">SunSeeker</string>
     <string name="my_saved_locations">My Saved Locations</string>
-    <string name="delete" />
+    <string name="delete">Delete</string>
+    <string name="invalid_lat_long">Invalid latitude or longitude</string>
+    <string name="please_enter_both_lat_long">Please enter both latitude and longitude</string>
+    <string name="network_error">Network error</string>
+    <string name="location_saved">Location saved to favorites</string>
+    <string name="parsing_error">Error parsing data</string>
+    <string name="sunrise_sunset_result">Sunrise: %1$s\nSunset: %2$s</string>
+    <string name="latitude_text" translatable="false">Lat: %1$s</string>
+    <string name="longitude_text" translatable="false">Lng: %1$s</string>
+
+
 
 </resources>
