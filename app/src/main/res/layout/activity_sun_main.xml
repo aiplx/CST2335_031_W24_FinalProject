@@ -104,7 +104,7 @@
         android:id="@+id/buttonLookup"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         android:text="@string/lookup_search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

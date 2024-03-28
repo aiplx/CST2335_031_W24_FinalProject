@@ -3,9 +3,12 @@ package algonquin.cst2335.lian0122;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -18,7 +21,6 @@ import org.json.JSONObject;
 import algonquin.cst2335.lian0122.databinding.ActivitySunMainBinding;
 
 public class Sun_MainActivity extends AppCompatActivity {
-
 
     private static final String API_URL = "https://api.sunrise-sunset.org/json?lat=%s&lng=%s&date=today&timezone=UTC";
     private static final String PREFS_NAME = "SunAppPrefs";
@@ -112,5 +114,16 @@ public class Sun_MainActivity extends AppCompatActivity {
             Log.e("Sun_MainActivity", "Error parsing data", e);
             Toast.makeText(this, R.string.parsing_error, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return ToolbarUtils.handleMenuItem(this, item) || super.onOptionsItemSelected(item);
     }
 }
