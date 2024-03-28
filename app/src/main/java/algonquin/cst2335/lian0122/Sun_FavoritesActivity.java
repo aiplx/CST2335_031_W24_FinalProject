@@ -1,5 +1,6 @@
 package algonquin.cst2335.lian0122;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +14,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.List;
 import androidx.room.Room;
 
-public class Sun_FavoritesActivity extends AppCompatActivity implements FavoritesAdapter.OnItemLongClickListener {
+public class Sun_FavoritesActivity extends AppCompatActivity implements FavoritesAdapter.OnItemLongClickListener, FavoritesAdapter.OnItemClickListener {
 
     private RecyclerView recyclerView;
     private FavoritesAdapter adapter;
@@ -46,7 +47,7 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
         new Thread(() -> {
             favoriteLocations = db.locationDao().getAllLocations();
             runOnUiThread(() -> {
-                adapter = new FavoritesAdapter(favoriteLocations, this);
+                adapter = new FavoritesAdapter(favoriteLocations, this, this);
                 recyclerView.setAdapter(adapter);
             });
         }).start();
@@ -66,9 +67,9 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
     @Override
     public void onItemLongClicked(int position) {
         new AlertDialog.Builder(this)
-                .setTitle("Delete Entry")
-                .setMessage("Are you sure you want to delete this entry?")
-                .setPositiveButton("Delete", (dialog, which) -> deleteFavoriteLocation(position))
+                .setTitle(R.string.delete_entry)
+                .setMessage(R.string.are_you_sure_you_want_to_delete_this_entry)
+                .setPositiveButton(R.string.delete_now, (dialog, which) -> deleteFavoriteLocation(position))
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
     }
@@ -84,9 +85,10 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
             });
         }).start();
 
-        Snackbar.make(recyclerView, "Item deleted", Snackbar.LENGTH_LONG)
-                .setAction("UNDO", view -> undoDelete(locationToDelete, position))
+        Snackbar.make(recyclerView, getString(R.string.item_deleted), Snackbar.LENGTH_LONG)
+                .setAction(getString(R.string.undo), view -> undoDelete(locationToDelete, position))
                 .show();
+
     }
 
     private void undoDelete(FavoriteLocation location, int position) {
@@ -97,5 +99,14 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
                 adapter.notifyItemInserted(position);
             });
         }).start();
+    }
+
+    @Override
+    public void onItemClicked(FavoriteLocation location) {
+        // When an item is clicked, open Sun_MainActivity with the latitude and longitude for lookup
+        Intent intent = new Intent(this, Sun_MainActivity.class);
+        intent.putExtra(getString(R.string.Latitude), location.latitude);
+        intent.putExtra(getString(R.string.Longitude), location.longitude);
+        startActivity(intent);
     }
 }

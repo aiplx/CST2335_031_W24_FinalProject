@@ -30,4 +30,16 @@
     <string name="location_saved">Ort gespeichert</string>
     <string name="parsing_error">Fehler bei Daten Eingabe</string>
     <string name="sunrise_sunset_result">Aufgang: %1$s\\nUntergang: %2$s</string>
+    <string name="delete_entry">Loeschen</string>
+    <string name="are_you_sure_you_want_to_delete_this_entry">Sind Sie sich sicher, dass Sie es loeschen wollen?</string>
+    <string name="delete_now">Loeschen</string>
+    <string name="undo">Zuerueck Setzen</string>
+    <string name="Latitude">Breite</string>
+    <string name="Longitude">Laenge</string>
+    <string name="item_deleted">Auswahl geloescht</string>
+    <string name="llatitude">Breite</string>
+    <string name="llongitude">Laenge</string>
+    <string name="results">Resultat</string>
+    <string name="sunrise">Aufgang</string>
+    <string name="sunset">Untergang</string>
 </resources>

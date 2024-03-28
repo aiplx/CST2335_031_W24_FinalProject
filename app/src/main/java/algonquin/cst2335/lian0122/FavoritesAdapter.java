@@ -12,31 +12,25 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
 
     private final List<FavoriteLocation> favorites;
     private final OnItemLongClickListener longClickListener;
+    private final OnItemClickListener clickListener;
 
     // Constructor
-    public FavoritesAdapter(List<FavoriteLocation> favorites, OnItemLongClickListener listener) {
+    public FavoritesAdapter(List<FavoriteLocation> favorites, OnItemLongClickListener longClickListener, OnItemClickListener clickListener) {
         this.favorites = favorites;
-        this.longClickListener = listener;
+        this.longClickListener = longClickListener;
+        this.clickListener = clickListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.favorite_location_item, parent, false);
-        return new ViewHolder(view, longClickListener);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        FavoriteLocation favorite = favorites.get(position);
-
-        // Using resource strings with placeholders
-        String latText = holder.itemView.getContext().getString(R.string.latitude_text, String.valueOf(favorite.latitude));
-        String lngText = holder.itemView.getContext().getString(R.string.longitude_text, String.valueOf(favorite.longitude));
-
-
-        holder.latitudeText.setText(latText);
-        holder.longitudeText.setText(lngText);
+        holder.bind(favorites.get(position), longClickListener, clickListener);
     }
 
     @Override
@@ -44,24 +38,36 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
         return favorites.size();
     }
 
-    // ViewHolder class
+    // Static ViewHolder class
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView latitudeText;
         TextView longitudeText;
 
-        public ViewHolder(View itemView, OnItemLongClickListener longClickListener) {
+        public ViewHolder(View itemView) {
             super(itemView);
             latitudeText = itemView.findViewById(R.id.latitude_text);
             longitudeText = itemView.findViewById(R.id.longitude_text);
+        }
+
+        public void bind(final FavoriteLocation favorite, final OnItemLongClickListener longClickListener, final OnItemClickListener clickListener) {
+            String latText = itemView.getContext().getString(R.string.latitude_text, String.valueOf(favorite.latitude));
+            String lngText = itemView.getContext().getString(R.string.longitude_text, String.valueOf(favorite.longitude));
+            latitudeText.setText(latText);
+            longitudeText.setText(lngText);
 
             itemView.setOnLongClickListener(view -> {
-                if (longClickListener != null) {
-                    int position = getBindingAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION) {
-                        longClickListener.onItemLongClicked(position);
-                    }
+                int position = getBindingAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    longClickListener.onItemLongClicked(position);
                 }
                 return true; // Click was handled
+            });
+
+            itemView.setOnClickListener(view -> {
+                int position = getBindingAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    clickListener.onItemClicked(favorite);
+                }
             });
         }
     }
@@ -69,5 +75,10 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     // Interface for long-click listener
     public interface OnItemLongClickListener {
         void onItemLongClicked(int position);
+    }
+
+    // Interface for click listener
+    public interface OnItemClickListener {
+        void onItemClicked(FavoriteLocation location);
     }
 }

@@ -39,7 +39,18 @@
     <string name="sunrise_sunset_result">Sunrise: %1$s\nSunset: %2$s</string>
     <string name="latitude_text" translatable="false">Lat: %1$s</string>
     <string name="longitude_text" translatable="false">Lng: %1$s</string>
-
+    <string name="delete_entry">Delete Entry</string>
+    <string name="are_you_sure_you_want_to_delete_this_entry">Are you sure you want to delete this entry?</string>
+    <string name="delete_now">Delete</string>
+    <string name="undo">UNDO</string>
+    <string name="Latitude">latitude</string>
+    <string name="Longitude">longitude</string>
+    <string name="item_deleted" >item deleted</string>
+    <string name="llatitude">latitude</string>
+    <string name="llongitude">longitude</string>
+    <string name="results">results</string>
+    <string name="sunrise">sunrise</string>
+    <string name="sunset">sunset</string>
 
 
 </resources>

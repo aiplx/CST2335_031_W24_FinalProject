@@ -34,6 +34,7 @@ public class Sun_MainActivity extends AppCompatActivity {
         ToolbarUtils.setupToolbar(this, R.id.mainToolbar);
 
         loadPreferences();
+        handleIncomingIntent();
 
         binding.btnSaveToFavorites.setOnClickListener(v -> {
             try {
@@ -49,18 +50,28 @@ public class Sun_MainActivity extends AppCompatActivity {
         binding.buttonLookup.setOnClickListener(v -> performSunriseSunsetLookup());
     }
 
+    private void handleIncomingIntent() {
+        if (getIntent().hasExtra(getString(R.string.Latitude)) && getIntent().hasExtra(getString(R.string.longitude))) {
+            double latitude = getIntent().getDoubleExtra((getString(R.string.latitude)), 0);
+            double longitude = getIntent().getDoubleExtra((getString(R.string.longitude)), 0);
+            binding.editTextLatitude.setText(String.valueOf(latitude));
+            binding.editTextLongitude.setText(String.valueOf(longitude));
+            performSunriseSunsetLookup();
+        }
+    }
+
     private void loadPreferences() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        String latitude = prefs.getString("latitude", "");
-        String longitude = prefs.getString("longitude", "");
+        String latitude = prefs.getString((getString(R.string.latitude)), "");
+        String longitude = prefs.getString((getString(R.string.longitude)), "");
         binding.editTextLatitude.setText(latitude);
         binding.editTextLongitude.setText(longitude);
     }
 
     private void savePreferences(String latitude, String longitude) {
         SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-        editor.putString("latitude", latitude);
-        editor.putString("longitude", longitude);
+        editor.putString((getString(R.string.latitude)), latitude);
+        editor.putString((getString(R.string.longitude)), longitude);
         editor.apply();
     }
 
@@ -103,9 +114,9 @@ public class Sun_MainActivity extends AppCompatActivity {
     private void parseAndDisplayResult(String response) {
         try {
             JSONObject jsonObject = new JSONObject(response);
-            JSONObject results = jsonObject.getJSONObject("results");
-            String sunrise = results.getString("sunrise");
-            String sunset = results.getString("sunset");
+            JSONObject results = jsonObject.getJSONObject(getString(R.string.results));
+            String sunrise = results.getString(getString(R.string.sunrise));
+            String sunset = results.getString(getString(R.string.sunset));
 
             binding.textViewResult.setText(getString(R.string.sunrise_sunset_result, sunrise, sunset));
             binding.textViewResult.setVisibility(View.VISIBLE);
