@@ -1,13 +1,11 @@
 package algonquin.cst2335.lian0122;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -21,10 +19,9 @@ import algonquin.cst2335.lian0122.databinding.ActivitySunMainBinding;
 
 public class Sun_MainActivity extends AppCompatActivity {
 
-    // URL for the sunrise and sunset API, formatted for latitude and longitude insertion
-    private static final String API_URL = "https://api.sunrise-sunset.org/json?lat=%s&lng=%s&date=today&timezone=UTC";
 
-    // View Binding
+    private static final String API_URL = "https://api.sunrise-sunset.org/json?lat=%s&lng=%s&date=today&timezone=UTC";
+    private static final String PREFS_NAME = "SunAppPrefs";
     private ActivitySunMainBinding binding;
 
     @Override
@@ -34,11 +31,14 @@ public class Sun_MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         ToolbarUtils.setupToolbar(this, R.id.mainToolbar);
 
+        loadPreferences();
+
         binding.btnSaveToFavorites.setOnClickListener(v -> {
             try {
                 double lat = Double.parseDouble(binding.editTextLatitude.getText().toString());
                 double lng = Double.parseDouble(binding.editTextLongitude.getText().toString());
                 saveLocationToDatabase(lat, lng);
+                savePreferences(String.valueOf(lat), String.valueOf(lng));
             } catch (NumberFormatException e) {
                 Toast.makeText(Sun_MainActivity.this, R.string.invalid_lat_long, Toast.LENGTH_SHORT).show();
             }
@@ -47,30 +47,32 @@ public class Sun_MainActivity extends AppCompatActivity {
         binding.buttonLookup.setOnClickListener(v -> performSunriseSunsetLookup());
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    private void loadPreferences() {
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String latitude = prefs.getString("latitude", "");
+        String longitude = prefs.getString("longitude", "");
+        binding.editTextLatitude.setText(latitude);
+        binding.editTextLongitude.setText(longitude);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return ToolbarUtils.handleMenuItem(this, item) || super.onOptionsItemSelected(item);
+    private void savePreferences(String latitude, String longitude) {
+        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+        editor.putString("latitude", latitude);
+        editor.putString("longitude", longitude);
+        editor.apply();
     }
 
     private void performSunriseSunsetLookup() {
         String latitude = binding.editTextLatitude.getText().toString();
         String longitude = binding.editTextLongitude.getText().toString();
-
         if (latitude.isEmpty() || longitude.isEmpty()) {
             Toast.makeText(this, R.string.please_enter_both_lat_long, Toast.LENGTH_SHORT).show();
             return;
         }
-
+        savePreferences(latitude, longitude);
         String url = String.format(API_URL, latitude, longitude);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 this::parseAndDisplayResult, this::handleErrorResponse);
-
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
