@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import algonquin.cst2335.li000543.Recipe.Recipe;
+
 public class RecipeTest5 {
     @Test
     public void testRecipeGetters() {

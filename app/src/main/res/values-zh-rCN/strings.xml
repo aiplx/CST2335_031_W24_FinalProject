@@ -15,6 +15,11 @@
     <string name="confirm_delete_message">您确认删除这个食谱吗？</string>
     <string name="delete">删除</string>
     <string name="cancel">取消</string>
+    <string name="HelpTtile">帮助</string>
+    <string name="AboutTitle">关于</string>
+    <string name="sunIcon_title">太阳升起</string>
+    <string name="musicIcon_title">音乐软件</string>
+    <string name="toolbar_dictionary">词典软件</string>
     <string name="recipe_error_message">对不起，这个食谱不能被储存</string>
     <string name="recipe_save_error">对不起，这个食谱不能被对不起，这个食谱不能被储存</string>
     <string name="recipe_display_error">对不起，这个食谱不能被储存</string>

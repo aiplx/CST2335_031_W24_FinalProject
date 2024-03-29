@@ -1,17 +1,11 @@
 package algonquin.cst2335.li000543;
 
-import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.typeText;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import android.content.Context;
 
 import androidx.room.Room;
-import androidx.test.core.app.ActivityScenario;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -19,6 +13,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
+
+import algonquin.cst2335.li000543.Recipe.RecipeDAO;
+import algonquin.cst2335.li000543.Recipe.RecipeDatabase;
+import algonquin.cst2335.li000543.Recipe.RecipeObject;
 
 /**
  * Instrumented test, which will execute on an Android device.

@@ -5,6 +5,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import algonquin.cst2335.li000543.Recipe.RecipeObject;
+
 public class RecipeTest4 {
     @Test
     public void testRecipeObjectInstantiation() {

@@ -11,6 +11,10 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import algonquin.cst2335.li000543.Recipe.RecipeDAO;
+import algonquin.cst2335.li000543.Recipe.RecipeDatabase;
+import algonquin.cst2335.li000543.Recipe.RecipeObject;
+
 @RunWith(AndroidJUnit4.class)
 public class RecipeTest3 {
     @Test
