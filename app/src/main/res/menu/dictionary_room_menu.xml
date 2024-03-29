@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_1"
+        android:icon="@drawable/save_icon"
+        android:orderInCategory="100"
+        android:title="@string/saveIcon_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_2"
+        android:title="@string/app_info"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/item_3"
+        android:title="@string/author_info"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/item_sun"
+        android:icon="@drawable/tb_sun"
+        android:title="@string/sunIcon_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_music"
+        android:icon="@drawable/tb_music"
+        android:title="@string/musicIcon_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_recipe"
+        android:icon="@drawable/tb_recipe"
+        android:title="@string/recipeIcon_title"
+        app:showAsAction="always" />
+</menu>
