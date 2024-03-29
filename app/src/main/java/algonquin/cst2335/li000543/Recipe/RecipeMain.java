@@ -1,8 +1,7 @@
-package algonquin.cst2335.li000543;
+package algonquin.cst2335.li000543.Recipe;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -17,12 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,8 +45,10 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
+import algonquin.cst2335.li000543.R;
 import algonquin.cst2335.li000543.databinding.ActivityMainBinding;
 import algonquin.cst2335.li000543.databinding.SearchViewBinding;
+
 /**
  * Author: Shanghao Li 040903008
  * Section: 031
@@ -207,17 +204,6 @@ public class RecipeMain extends AppCompatActivity {
             });
             queue.add(request);
         });
-
-        // Set the click listener for the save button.
-      /**  binding.ViewSavedButton.setOnClickListener(c -> {
-            recipes.clear();
-
-            thread.execute(() -> {
-                recipes.addAll(rDAO.getAllRecipes().stream().map(Recipe::covertFromItemToRecipe).collect(Collectors.toList()));
-
-                runOnUiThread(() -> myAdapter.notifyDataSetChanged());
-            });
-        });*/
     }
 
     /**
@@ -252,7 +238,20 @@ public class RecipeMain extends AppCompatActivity {
                 runOnUiThread(() -> myAdapter.notifyDataSetChanged());
             });
             return true;
-        }
+        } // BACK TO THIS, need to do
+        //         else if (item.getItemId() == R.id.item_sun) {
+        //            Intent sunPage = new Intent(RecipeMain.this, SunActivity.class);
+        //            startActivity(sunPage);
+        //            return true;
+        //        }else if (item.getItemId() == R.id.item_music) {
+        //            Intent musicPage = new Intent(RecipeMain.this, MusicActivity.class);
+        //            startActivity(musicPage);
+        //            return true;
+        //        }else if (item.getItemId() == R.id.item_dictionary) {
+        //            Intent dictionaryPage = new Intent(RecipeMain.this, DictionaryRoom.class);
+        //            startActivity(dictionaryPage);
+        //            return true;
+        //         }
         return super.onOptionsItemSelected(item);
     }
 
@@ -384,7 +383,7 @@ public class RecipeMain extends AppCompatActivity {
 
                     runOnUiThread(() -> {
                         delete.setVisibility(View.GONE);
-                       // save.setVisibility(View.VISIBLE);
+                        // save.setVisibility(View.VISIBLE);
                     });
 
                 });

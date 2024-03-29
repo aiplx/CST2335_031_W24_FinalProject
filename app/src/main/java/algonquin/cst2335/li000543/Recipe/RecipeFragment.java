@@ -1,4 +1,4 @@
-package algonquin.cst2335.li000543;
+package algonquin.cst2335.li000543.Recipe;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -10,14 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.room.Room;
-import androidx.room.RoomDatabase;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,7 +32,9 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+import algonquin.cst2335.li000543.R;
 import algonquin.cst2335.li000543.databinding.RecipeDetailsBinding;
+
 /**
  * Author: Shanghao Li 040903008
  * Section: 031

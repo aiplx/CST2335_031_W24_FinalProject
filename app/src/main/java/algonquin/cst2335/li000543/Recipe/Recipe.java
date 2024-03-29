@@ -1,4 +1,4 @@
-package algonquin.cst2335.li000543;
+package algonquin.cst2335.li000543.Recipe;
 
 /**
  * Author: Shanghao Li 040903008
