@@ -1,0 +1,30 @@
+<resources>
+    <string name="rec_app_name">Recipe</string>
+    <string name="rec_search_name">Recipe App</string>
+    <string name="rec_search_hint">Enter a recipe name</string>
+    <string name="rec_search">Search</string>
+    <string name="rec_welcome_message">Welcome to your Recipe</string>
+    <string name="rec_ViewButton">View Saved Recipes</string>
+    <string name="rec_delete_button">Delete</string>
+    <string name="rec_save_button">Save</string>
+    <string name="rec_recipe_image">Recipe Image</string>
+    <string name="rec_title_placeholder">Title</string>
+    <string name="rec_source_url_placeholder">Source URL</string>
+    <string name="recipe_display_error">Sorry, This Recipe cannot be show</string>
+    <string name="recipe_save_error">Sorry, shi Recipe cannot be saved</string>
+    <string name="rec_search_promo">Search Permission</string>
+    <string name="rec_About">Program created by Shanghao Li</string>
+    <string name="rec_Help">This App is a user-friendly mobile application that streamlines the process of finding recipes. Simply input the name of a recipe, and the app, powered by the Spoonacular API, retrieves a list of corresponding recipes. You can browse through the results, view detailed information, save your favorite recipes to a local database for easy access later. The app also remembers your search term for a seamless user experience.</string>
+    <string name="rec_about">About</string>
+    <string name="rec_OK">OK</string>
+    <string name="rec_help">help</string>
+    <string name="rec_confirm_delete_title">Delete Recipe</string>
+    <string name="rec_confirm_delete_message">Are you sure you want to delete this recipe?</string>
+    <string name="rec_delete">Delete</string>
+    <string name="rec_cancel">Cancel</string>
+    <string name="rec_HelpTtile">Help</string>
+    <string name="rec_AboutTitle">About</string>
+    <string name="rec_sunIcon_title">SunRise App</string>
+    <string name="rec_musicIcon_title">Music App</string>
+    <string name="rec_toolbar_dictionary">Dictionary Aoo</string>
+</resources>

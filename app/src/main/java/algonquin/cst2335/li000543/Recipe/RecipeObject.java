@@ -20,16 +20,16 @@ public class RecipeObject {
     public int id; // Unique identifier for the recipe.
 
     @ColumnInfo(name = "title")
-    protected String title; // Title of the recipe.
+    public String title; // Title of the recipe.
 
     @ColumnInfo(name = "summary")
-    protected String summary; // Brief summary of the recipe.
+    public String summary; // Brief summary of the recipe.
 
     @ColumnInfo(name = "sourceURL")
-    protected String sourceURL; // URL to the original recipe source.
+    public String sourceURL; // URL to the original recipe source.
 
     @ColumnInfo(name = "image")
-    protected String image; // URL to the recipe's image.
+    public String image; // URL to the recipe's image.
 
     // Default constructor.
     public RecipeObject() {

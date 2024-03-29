@@ -14,7 +14,7 @@
         android:id="@+id/imageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:contentDescription="@string/recipe_image"
+        android:contentDescription="@string/rec_recipe_image"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_weight="1"
-        android:text="@string/title_placeholder"
+        android:text="@string/rec_title_placeholder"
         android:textSize="16sp" />
 
     <Button
@@ -43,7 +43,7 @@
         android:insetBottom="0dp"
         android:paddingStart="4dp"
         android:paddingEnd="4dp"
-        app:icon="@drawable/download"
+        app:icon="@drawable/rec_download"
         app:iconGravity="textStart"
         app:iconPadding="0dp" />
 
@@ -60,7 +60,7 @@
         android:insetBottom="0dp"
         android:paddingStart="4dp"
         android:paddingEnd="4dp"
-        app:icon="@drawable/delete"
+        app:icon="@drawable/rec_delete"
         app:iconGravity="textStart"
         app:iconPadding="0dp" />
 </LinearLayout>

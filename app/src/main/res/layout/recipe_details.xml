@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/title_placeholder"
+            android:text="@string/rec_title_placeholder"
             android:textAlignment="center"
             android:textSize="30sp" />
 
@@ -52,14 +52,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/save_button" />
+                android:text="@string/rec_save_button" />
 
             <Button
                 android:id="@+id/deleteButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/delete_button" />
+                android:text="@string/rec_delete_button" />
         </LinearLayout>
 
         <TextView
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autoLink="web"
-            android:text="@string/source_url_placeholder"
+            android:text="@string/rec_source_url_placeholder"
             android:textAlignment="center" />
     </LinearLayout>
 </ScrollView>

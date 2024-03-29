@@ -152,9 +152,9 @@ public class RecipeFragment extends Fragment {
             binding.deleteButton.setOnClickListener(v -> {
                 // Create and show an AlertDialog for confirming deletion
                 new AlertDialog.Builder(requireContext())
-                        .setTitle(R.string.confirm_delete_title) // 设置标题
-                        .setMessage(R.string.confirm_delete_message) // 设置消息内容
-                        .setPositiveButton(R.string.delete, (dialog, which) -> {
+                        .setTitle(R.string.rec_confirm_delete_title) // 设置标题
+                        .setMessage(R.string.rec_confirm_delete_message) // 设置消息内容
+                        .setPositiveButton(R.string.rec_delete, (dialog, which) -> {
                             // User confirms deletion
                             thread.execute(() -> {
                                 RecipeObject deletedRecipe = rDAO.getRecipeById(selected.getId()).get(0);
@@ -168,7 +168,7 @@ public class RecipeFragment extends Fragment {
                                 });
                             });
                         })
-                        .setNegativeButton(R.string.cancel, null)
+                        .setNegativeButton(R.string.rec_cancel, null)
                         .show();
             });
 

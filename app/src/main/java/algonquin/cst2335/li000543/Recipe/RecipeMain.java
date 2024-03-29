@@ -46,7 +46,7 @@ import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 import algonquin.cst2335.li000543.R;
-import algonquin.cst2335.li000543.databinding.ActivityMainBinding;
+import algonquin.cst2335.li000543.databinding.RecipeActivityMainBinding;
 import algonquin.cst2335.li000543.databinding.SearchViewBinding;
 
 /**
@@ -61,7 +61,7 @@ public class RecipeMain extends AppCompatActivity {
     // The queue for managing network requests.
     protected RequestQueue queue;
     // The binding for accessing the layout's views.
-    ActivityMainBinding binding;
+    RecipeActivityMainBinding binding;
     // The shared preferences for storing user settings.
     SharedPreferences sharedPreferences;
     // The model for managing the recipes.
@@ -80,7 +80,7 @@ public class RecipeMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = RecipeActivityMainBinding.inflate(getLayoutInflater());
         // Set the content view to the root view of the layout.
         setContentView(binding.getRoot());
 
@@ -264,7 +264,7 @@ public class RecipeMain extends AppCompatActivity {
 
             runOnUiThread(() -> {
                 View rootView = findViewById(android.R.id.content);
-                Snackbar.make(rootView, getString(R.string.About) + savedRecipes.size(), Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(rootView, getString(R.string.rec_About) + savedRecipes.size(), Snackbar.LENGTH_SHORT).show();
             });
         });
     }
@@ -273,8 +273,8 @@ public class RecipeMain extends AppCompatActivity {
      */
     private void showAlertDialog() {
         new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.help))
-                .setMessage(getString(R.string.Help))
+                .setTitle(getString(R.string.rec_help))
+                .setMessage(getString(R.string.rec_Help))
                 .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
                 .show();
     }
