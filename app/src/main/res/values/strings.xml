@@ -2,15 +2,9 @@
     <string name="app_name">Final Project</string>
     <string name="open_sunrise_and_sunset_lookup">Open Sunrise and Sunset Lookup</string>
     <string name="latitude">Latitude</string>
-    <string name="enter_latitude">Enter Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="enter_longitude">Enter Longitude</string>
-    <string name="lookup">Lookup</string>
-    <string name="result">Result</string>
-    <string name="details_label">Details</string>
-    <string name="sunrise_time">Sunrise Time: </string>
-    <string name="sunset_time">Sunset Time: </string>
-    <string name="favorites_label">Favorites</string>
+    <string name="enter_latitude">Enter Longitude</string>
     <string name="favorites">Favorites</string>
     <string name="toolbar">SunSearch Menu Bar</string>
     <string name="about">About</string>
@@ -30,7 +24,6 @@
     <string name="a_little_sun_icon">A little sun Icon</string>
     <string name="SunSeeker" translatable="false">SunSeeker</string>
     <string name="my_saved_locations">My Saved Locations</string>
-    <string name="delete">Delete</string>
     <string name="invalid_lat_long">Invalid latitude or longitude</string>
     <string name="please_enter_both_lat_long">Please enter both latitude and longitude</string>
     <string name="network_error">Network error</string>
@@ -46,17 +39,13 @@
     <string name="Longitude">longitude</string>
     <string name="item_deleted" >item deleted</string>
     <string name="results">results</string>
-    <string name="sunrise">sunrise</string>
-    <string name="sunset">sunset</string>
     <string name="not_available">Not Available</string>
     <string name="template_sunrise">Sunrise: %1$s</string>
     <string name="template_sunset">Sunset: %1$s</string>
     <string name="template_solar_noon">Solar Noon: %1$s</string>
     <string name="solar_noon">Solar Noon:</string>
-    <string name="sunsetColon">Sunset:</string>
     <string name="sunrisecolon">Sunrise:</string>
     <string name="sunriseColon">Sunrise:</string>
-    <string name="recepies">recepies</string>
 
 
 </resources>
