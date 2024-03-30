@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="12dp"
-        android:text="@string/search_Button"
+        android:text="@string/dict_search_Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#901DA89C"
-        android:text="@string/savedTerms_Button"
+        android:text="@string/dict_savedTerms_Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

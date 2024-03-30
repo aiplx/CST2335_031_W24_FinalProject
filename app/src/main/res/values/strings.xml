@@ -1,36 +1,36 @@
 <resources>
-    <string name="app_name">CST2335 031 W24 Final Project</string>
-    <string name="search_Button">Search</string>
-    <string name="savedTerms_Button">Saved terms</string>
-    <string name="saveIcon_title">Save</string>
-    <string name="author_info">About</string>
-    <string name="app_info">Help</string>
-    <string name="author_info_detail">Version 0.1, created by Ping Liang</string>
-    <string name="app_info_detail">This app is easy to use:\n
+    <string name="dict_app_name">CST2335 031 W24 Final Project</string>
+    <string name="dict_search_Button">Search</string>
+    <string name="dict_savedTerms_Button">Saved terms</string>
+    <string name="dict_saveIcon_title">Save</string>
+    <string name="dict_author_info">About</string>
+    <string name="dict_app_info">Help</string>
+    <string name="dict_author_info_detail">Version 0.1, created by Ping Liang</string>
+    <string name="dict_app_info_detail">This app is easy to use:\n
         1.Enter the word you want to search and click the \"Search\" button\n
         2.Add the searched term to your saved list by clicking the menu at the top\n
         3.Navigate your saved words by clicking the \"Saved terms\" button\n
         4.You can delete the saved words from your list by click the specific words and confirm deletion\n
         That\'s all you need to know, enjoy!</string>
-    <string name="app_info_title">About this APP: </string>
-    <string name="delete_alertDialog">Delete</string>
-    <string name="error_format_definitions">Error formatting definitions.</string>
-    <string name="definitions">Definitions:</string>
-    <string name="definition_deletion_message">"Definition deleted for word: "</string>
-    <string name="undo_message">UNDO</string>
-    <string name="definition_tableName">Definitions</string>
-    <string name="definitionsArray">definitions</string>
-    <string name="definitionObj">definition</string>
-    <string name="api_url">https://api.dictionaryapi.dev/api/v2/entries/en/</string>
-    <string name="sharedPreferences_AppPreferences">AppPreferences</string>
-    <string name="sharedPreferences_LastSearchTerm">LastSearchTerm</string>
-    <string name="meaningsArray">meanings</string>
-    <string name="save_again_message">You have already added this word</string>
-    <string name="save_success">Search saved</string>
-    <string name="definition_message">Definition goes here</string>
-    <string name="sunIcon_title">Sun APP</string>
-    <string name="musicIcon_title">Music APP</string>
-    <string name="recipeIcon_title">Recipe APP</string>
+    <string name="dict_app_info_title">About this APP: </string>
+    <string name="dict_delete_alertDialog">Delete</string>
+    <string name="dict_error_format_definitions">Error formatting definitions.</string>
+    <string name="dict_definitions">Definitions:</string>
+    <string name="dict_definition_deletion_message">"Definition deleted for word: "</string>
+    <string name="dict_undo_message">UNDO</string>
+    <string name="dict_definition_tableName">Definitions</string>
+    <string name="dict_definitionsArray">definitions</string>
+    <string name="dict_definitionObj">definition</string>
+    <string name="dict_api_url">https://api.dictionaryapi.dev/api/v2/entries/en/</string>
+    <string name="dict_sharedPreferences_AppPreferences">AppPreferences</string>
+    <string name="dict_sharedPreferences_LastSearchTerm">LastSearchTerm</string>
+    <string name="dict_meaningsArray">meanings</string>
+    <string name="dict_save_again_message">You have already added this word</string>
+    <string name="dict_save_success">Search saved</string>
+    <string name="dict_definition_message">Definition goes here</string>
+    <string name="dict_sunIcon_title">Sun APP</string>
+    <string name="dict_musicIcon_title">Music APP</string>
+    <string name="dict_recipeIcon_title">Recipe APP</string>
 
 
     <string name="app_name">Recipe</string>

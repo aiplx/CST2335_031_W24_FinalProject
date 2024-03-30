@@ -20,14 +20,14 @@ import algonquin.cst2335.lian0122.databinding.ActivityDefinitionBinding;
  * This adapter is responsible for handling a list of DictionaryMessage objects,
  * each representing a definition to be displayed in the RecyclerView.
  */
-public class DefinitionsAdapter extends RecyclerView.Adapter<DefinitionViewHolder> {
+public class Dict_DefinitionsAdapter extends RecyclerView.Adapter<Dict_DefinitionViewHolder> {
 	private List<DictionaryMessage> definitionsList;
 
 	/**
 	 * Constructs a DefinitionsAdapter with a specified list of DictionaryMessage objects.
 	 * @param definitionsList List of DictionaryMessage objects to be displayed by the adapter.
 	 */
-	public DefinitionsAdapter(List<DictionaryMessage> definitionsList) {
+	public Dict_DefinitionsAdapter(List<DictionaryMessage> definitionsList) {
 		this.definitionsList = definitionsList;
 	}
 
@@ -41,11 +41,11 @@ public class DefinitionsAdapter extends RecyclerView.Adapter<DefinitionViewHolde
 	 */
 	@NonNull
 	@Override
-	public DefinitionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+	public Dict_DefinitionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 		// the layout is inflated
 		LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
 		ActivityDefinitionBinding definitionBinding = ActivityDefinitionBinding.inflate(layoutInflater, parent, false);
-		return new DefinitionViewHolder(definitionBinding);
+		return new Dict_DefinitionViewHolder(definitionBinding);
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class DefinitionsAdapter extends RecyclerView.Adapter<DefinitionViewHolde
 	 * @param position The position of the item within the adapter's data set.
 	 */
 	@Override
-	public void onBindViewHolder(@NonNull DefinitionViewHolder holder, int position) {
+	public void onBindViewHolder(@NonNull Dict_DefinitionViewHolder holder, int position) {
 		DictionaryMessage definition = definitionsList.get(position);
 		holder.bind(definition);
 	}

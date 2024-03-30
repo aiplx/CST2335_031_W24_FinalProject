@@ -14,7 +14,7 @@ import algonquin.cst2335.lian0122.databinding.ItemSavedTermsBinding;
 /**
  * ViewHolder for displaying a saved term within a RecyclerView in the SavedTermsAdapter.
  */
-public class SavedTermsViewHolder extends RecyclerView.ViewHolder {
+public class Dict_SavedTermsViewHolder extends RecyclerView.ViewHolder {
 	private final ItemSavedTermsBinding binding;
 	TextView termTextView;
 
@@ -23,7 +23,7 @@ public class SavedTermsViewHolder extends RecyclerView.ViewHolder {
 	 *
 	 * @param savedTermsBinding Binding instance of the item layout.
 	 */
-	public SavedTermsViewHolder(ItemSavedTermsBinding savedTermsBinding) {
+	public Dict_SavedTermsViewHolder(ItemSavedTermsBinding savedTermsBinding) {
 		super(savedTermsBinding.getRoot());
 		this.binding = savedTermsBinding;
 		termTextView = this.binding.termTextView;

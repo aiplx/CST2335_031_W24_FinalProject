@@ -14,7 +14,7 @@ import algonquin.cst2335.lian0122.databinding.ActivityDefinitionBinding;
  * This class is used in conjunction with DefinitionsAdapter to present
  * definition data fetched from a dictionary API or database.
  */
-public class DefinitionViewHolder extends RecyclerView.ViewHolder {
+public class Dict_DefinitionViewHolder extends RecyclerView.ViewHolder {
 	TextView messageText;
 
 	/**
@@ -24,7 +24,7 @@ public class DefinitionViewHolder extends RecyclerView.ViewHolder {
 	 * @param binding The binding for the activity_definition layout, which contains the TextView
 	 *                for displaying a dictionary definition.
 	 */
-	public DefinitionViewHolder(ActivityDefinitionBinding binding) {
+	public Dict_DefinitionViewHolder(ActivityDefinitionBinding binding) {
 		super(binding.getRoot());
 		messageText = binding.definitionMessageText;
 	}
