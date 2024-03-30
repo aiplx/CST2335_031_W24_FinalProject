@@ -27,7 +27,7 @@ import algonquin.cst2335.lian0122.databinding.ActivitySavedTermsBinding;
  * Activity to display saved terms from the Room Database and their definitions.
  * Provides functionality to view, delete, and undo the deletion of terms and definitions.
  */
-public class ActivitySavedTerms extends AppCompatActivity {
+public class Dict_ActivitySavedTerms extends AppCompatActivity {
 	private ActivitySavedTermsBinding binding;
 
 	/**
@@ -43,11 +43,11 @@ public class ActivitySavedTerms extends AppCompatActivity {
 	}
 
 	/**
-	 * Sets up the RecyclerView with saved terms using {@link SavedTermsAdapter}.
+	 * Sets up the RecyclerView with saved terms using {@link Dict_SavedTermsAdapter}.
 	 * @param savedTerms List of {@link DictionaryMessage} containing saved terms and definitions to be displayed.
 	 */
 	private void setupRecyclerView(List<DictionaryMessage> savedTerms) {
-		SavedTermsAdapter adapter = new SavedTermsAdapter(this, savedTerms, this::showDefinitionPopup);
+		Dict_SavedTermsAdapter adapter = new Dict_SavedTermsAdapter(this, savedTerms, this::showDefinitionPopup);
 		binding.savedTermsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		binding.savedTermsRecyclerView.setAdapter(adapter);
 	}
@@ -63,7 +63,7 @@ public class ActivitySavedTerms extends AppCompatActivity {
 		.setTitle(message.getSearchTerm())
 		.setMessage(formattedDefinitions)
 		.setPositiveButton(android.R.string.ok, null)
-		.setNegativeButton(R.string.delete_alertDialog, (dialogInterface, i) -> deleteDefinition(message))
+		.setNegativeButton(R.string.dict_delete_alertDialog, (dialogInterface, i) -> deleteDefinition(message))
 		.show();
 	}
 
@@ -88,7 +88,7 @@ public class ActivitySavedTerms extends AppCompatActivity {
 				// Append the formatted definition to the StringBuilder
 				formattedText
 				.append("\n")
-				.append(getString(R.string.definitions))
+				.append(getString(R.string.dict_definitions))
 				.append("\n\n")
 				.append(definitions);
 			}
@@ -96,7 +96,7 @@ public class ActivitySavedTerms extends AppCompatActivity {
 			return formattedText.toString();
 		} catch (JSONException e) {
 			e.printStackTrace();
-			return getString(R.string.error_format_definitions);
+			return getString(R.string.dict_error_format_definitions);
 		}
 	}
 
@@ -112,8 +112,8 @@ public class ActivitySavedTerms extends AppCompatActivity {
 			// Remove the item from the current list to immediately reflect the change in UI
 			runOnUiThread(() -> {
 				// Show a SnackBar with Undo option
-				Snackbar.make(binding.getRoot(), getString(R.string.definition_deletion_message) + message.getSearchTerm(), Snackbar.LENGTH_LONG)
-				.setAction(R.string.undo_message, view -> undoDelete(message, dao))
+				Snackbar.make(binding.getRoot(), getString(R.string.dict_definition_deletion_message) + message.getSearchTerm(), Snackbar.LENGTH_LONG)
+				.setAction(R.string.dict_undo_message, view -> undoDelete(message, dao))
 				.show();
 				loadSavedTerms(); // Reload to reflect deletion, consider optimizing to avoid full reload
 			});

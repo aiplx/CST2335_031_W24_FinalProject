@@ -46,7 +46,7 @@ import algonquin.cst2335.lian0122.databinding.ActivityDictionaryRoomBinding;
  * and navigating to saved terms.
  */
 public class DictionaryRoom extends AppCompatActivity {
-	private DefinitionsAdapter myAdapter; // use a specific adapter type
+	private Dict_DefinitionsAdapter myAdapter; // use a specific adapter type
 	private ActivityDictionaryRoomBinding binding;
 	private List<DictionaryMessage> dictionaryMessages = new ArrayList<>();
 	private static DictionaryRoom instance;
@@ -70,13 +70,13 @@ public class DictionaryRoom extends AppCompatActivity {
 			// Restore the list of DictionaryMessage objects from JSON String
 			Type listType = new TypeToken<ArrayList<DictionaryMessage>>() {}.getType();
 			dictionaryMessages = new Gson().fromJson(savedInstanceState.getString("definitions"), listType);
-			myAdapter = new DefinitionsAdapter(dictionaryMessages);
+			myAdapter = new Dict_DefinitionsAdapter(dictionaryMessages);
 			binding.recycleView.setAdapter(myAdapter);
 		}
 
 		// Load last search term
-		SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.sharedPreferences_AppPreferences), MODE_PRIVATE);
-		String lastSearchTerm = sharedPreferences.getString(getString(R.string.sharedPreferences_LastSearchTerm), "");
+		SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.dict_sharedPreferences_AppPreferences), MODE_PRIVATE);
+		String lastSearchTerm = sharedPreferences.getString(getString(R.string.dict_sharedPreferences_LastSearchTerm), "");
 		binding.searchField.setText(lastSearchTerm);
 
 		binding.searchButton.setOnClickListener(cl -> {
@@ -88,7 +88,7 @@ public class DictionaryRoom extends AppCompatActivity {
 		}); // end of Search button
 
 		binding.savedTermsButton.setOnClickListener(cl ->{
-			Intent intent = new Intent(DictionaryRoom.this, ActivitySavedTerms.class);
+			Intent intent = new Intent(DictionaryRoom.this, Dict_ActivitySavedTerms.class);
 			startActivity(intent);
 		});// end of SavedTerms button
 
@@ -110,7 +110,7 @@ public class DictionaryRoom extends AppCompatActivity {
 	 * Sets up the RecyclerView with the DefinitionsAdapter and assigns it to the RecyclerView in the layout.
 	 */
 	private void setupRecyclerView() {
-		myAdapter = new DefinitionsAdapter(dictionaryMessages);
+		myAdapter = new Dict_DefinitionsAdapter(dictionaryMessages);
 		binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
 		binding.recycleView.setAdapter(myAdapter);
 	}
@@ -133,7 +133,7 @@ public class DictionaryRoom extends AppCompatActivity {
 	 * @param onDefinitionsFetched A Consumer functional interface to handle the list of fetched definitions.
 	 */
 	public void fetchDefinitions(String searchTerm, Consumer<List<DictionaryMessage>> onDefinitionsFetched) {
-		String url = getString(R.string.api_url) + searchTerm;
+		String url = getString(R.string.dict_api_url) + searchTerm;
 
 		JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
 				response -> {
@@ -146,14 +146,14 @@ public class DictionaryRoom extends AppCompatActivity {
 						// Parsing response and adding to definitions list
 						for (int i = 0; i < response.length(); i++) {
 							JSONObject wordObj = response.getJSONObject(i);
-							JSONArray meanings = wordObj.getJSONArray(getString(R.string.meaningsArray));
+							JSONArray meanings = wordObj.getJSONArray(getString(R.string.dict_meaningsArray));
 							// Extract and display definitions
 							for (int j = 0; j < meanings.length(); j++) {
 								JSONObject meaningObj = meanings.getJSONObject(j);
-								JSONArray definitionsArray = meaningObj.getJSONArray(getString(R.string.definitionsArray));
+								JSONArray definitionsArray = meaningObj.getJSONArray(getString(R.string.dict_definitionsArray));
 								for (int k = 0; k < definitionsArray.length(); k++) {
 									JSONObject definitionObj = definitionsArray.getJSONObject(k);
-									String definitionText = definitionObj.getString(getString(R.string.definitionObj));
+									String definitionText = definitionObj.getString(getString(R.string.dict_definitionObj));
 									definitionsConcatenated.append(definitionText).append("\n\n");
 								}
 							}
@@ -183,9 +183,9 @@ public class DictionaryRoom extends AppCompatActivity {
 	 * @param searchTerm The term that was last searched.
 	 */
 	public void saveLastSearchTerm(String searchTerm) {
-		SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.sharedPreferences_AppPreferences), MODE_PRIVATE);
+		SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.dict_sharedPreferences_AppPreferences), MODE_PRIVATE);
 		SharedPreferences.Editor editor = sharedPreferences.edit();
-		editor.putString(getString(R.string.sharedPreferences_LastSearchTerm), searchTerm);
+		editor.putString(getString(R.string.dict_sharedPreferences_LastSearchTerm), searchTerm);
 		editor.apply();
 	}// end of saveLastSearchTerm method
 
@@ -258,10 +258,10 @@ public class DictionaryRoom extends AppCompatActivity {
 				if (existingEntry == null) {
 					// If it doesn't exist, insert the new entry
 					dao.insert(newEntry);
-					runOnUiThread(() -> Toast.makeText(this, R.string.save_success, Toast.LENGTH_SHORT).show());
+					runOnUiThread(() -> Toast.makeText(this, R.string.dict_save_success, Toast.LENGTH_SHORT).show());
 				} else {
 					// If it exists, show a toast message
-					runOnUiThread(() -> Toast.makeText(this, R.string.save_again_message, Toast.LENGTH_SHORT).show());
+					runOnUiThread(() -> Toast.makeText(this, R.string.dict_save_again_message, Toast.LENGTH_SHORT).show());
 				}
 			}).start();
 		});
@@ -282,8 +282,8 @@ public class DictionaryRoom extends AppCompatActivity {
 	 */
 	private void showToastAboutAPP() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(DictionaryRoom.this);
-		builder.setMessage(R.string.app_info_detail)
-		.setTitle(R.string.app_info_title)
+		builder.setMessage(R.string.dict_app_info_detail)
+		.setTitle(R.string.dict_app_info_title)
 		.show();
 	}
 
@@ -291,6 +291,6 @@ public class DictionaryRoom extends AppCompatActivity {
 	 * menu item_3: Shows a Toast message with information about the author.
 	 */
 	private void showToastAboutAuthor() {
-		Toast.makeText(this, R.string.author_info_detail, Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, R.string.dict_author_info_detail, Toast.LENGTH_SHORT).show();
 	}
 }

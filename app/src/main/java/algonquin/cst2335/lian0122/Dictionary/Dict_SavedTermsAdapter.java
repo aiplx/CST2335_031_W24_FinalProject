@@ -23,7 +23,7 @@ import algonquin.cst2335.lian0122.R;
  * Adapter for a RecyclerView that displays saved terms from the dictionary.
  * This adapter is responsible for providing views that represent each saved term in a list.
  */
-public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.SavedTermsViewHolder> {
+public class Dict_SavedTermsAdapter extends RecyclerView.Adapter<Dict_SavedTermsAdapter.SavedTermsViewHolder> {
 	private List<DictionaryMessage> savedTerms;
 	private Context context;
 	private LayoutInflater layoutInflater;
@@ -47,7 +47,7 @@ public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.Sa
 	 * @param savedTerms The list of saved dictionary messages.
 	 * @param listener The callback that will run when an item is clicked.
 	 */
-	public SavedTermsAdapter(Context context, List<DictionaryMessage> savedTerms, OnItemClickListener listener) {
+	public Dict_SavedTermsAdapter(Context context, List<DictionaryMessage> savedTerms, OnItemClickListener listener) {
 		this.context = context;
 		this.savedTerms = savedTerms;
 		this.layoutInflater = LayoutInflater.from(context);

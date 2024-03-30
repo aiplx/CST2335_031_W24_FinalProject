@@ -10,7 +10,7 @@
         android:id="@+id/definitionMessageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/definition_message"
+        android:text="@string/dict_definition_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
