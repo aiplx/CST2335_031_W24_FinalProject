@@ -123,7 +123,7 @@
         app:srcCompat="@drawable/ic_noon" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/logo_favorites"
         android:layout_width="254dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
@@ -149,6 +149,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_favorites" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
