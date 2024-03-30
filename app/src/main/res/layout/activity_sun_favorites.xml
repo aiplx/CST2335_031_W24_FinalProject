@@ -9,6 +9,7 @@
         android:id="@+id/toolbarFavorites"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="24dp"
         android:background="#00D3AE9A"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
@@ -19,8 +20,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFavorites"
-        android:layout_width="412dp"
-        android:layout_height="367dp"
+        android:layout_width="444dp"
+        android:layout_height="470dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
