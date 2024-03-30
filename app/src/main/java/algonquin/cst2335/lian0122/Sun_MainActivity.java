@@ -22,7 +22,7 @@ import algonquin.cst2335.lian0122.databinding.ActivitySunMainBinding;
 
 public class Sun_MainActivity extends AppCompatActivity {
 
-    private static final String API_URL = "https://api.sunrise-sunset.org/json?lat=%s&lng=%s&date=today&timezone=UTC";
+    private static final String API_URL = "https://api.sunrise-sunset.org/json?lat=%s&lng=%s&date=today&timezone=EST";
     private static final String PREFS_NAME = "SunAppPrefs";
     private ActivitySunMainBinding binding;
 
@@ -115,12 +115,17 @@ public class Sun_MainActivity extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject(response);
             JSONObject results = jsonObject.getJSONObject(getString(R.string.results));
-            String sunrise = results.getString(getString(R.string.sunrise));
-            String sunset = results.getString(getString(R.string.sunset));
+            String sunrise = results.optString("sunrise", getString(R.string.not_available));
+            String sunset = results.optString("sunset", getString(R.string.not_available));
+            String solarNoon = results.optString("solar_noon", getString(R.string.not_available));
 
-            binding.textViewResult.setText(getString(R.string.sunrise_sunset_result, sunrise, sunset));
-            binding.textViewResult.setVisibility(View.VISIBLE);
+            // Setting the text of each TextView
+            binding.textViewSunrise.setText(getString(R.string.template_sunrise, sunrise));
+            binding.textViewSunset.setText(getString(R.string.template_sunset, sunset));
+            binding.textViewSolarNoon.setText(getString(R.string.template_solar_noon, solarNoon));
+
             binding.btnSaveToFavorites.setVisibility(View.VISIBLE);
+
         } catch (Exception e) {
             Log.e("Sun_MainActivity", "Error parsing data", e);
             Toast.makeText(this, R.string.parsing_error, Toast.LENGTH_SHORT).show();

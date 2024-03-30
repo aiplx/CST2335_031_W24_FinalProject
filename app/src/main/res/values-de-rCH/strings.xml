@@ -42,4 +42,8 @@
     <string name="results">Resultat</string>
     <string name="sunrise">Aufgang</string>
     <string name="sunset">Untergang</string>
+    <string name="not_available">Nich verfuegbar</string>
+    <string name="template_sunrise">Aufgang: %1$s</string>
+    <string name="template_sunset">Untergang: %1$s</string>
+    <string name="template_solar_noon">Hoch: %1$s</string>
 </resources>

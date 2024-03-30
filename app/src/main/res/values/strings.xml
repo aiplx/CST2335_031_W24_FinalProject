@@ -36,7 +36,6 @@
     <string name="network_error">Network error</string>
     <string name="location_saved">Location saved to favorites</string>
     <string name="parsing_error">Error parsing data</string>
-    <string name="sunrise_sunset_result">Sunrise: %1$s\nSunset: %2$s</string>
     <string name="latitude_text" translatable="false">Lat: %1$s</string>
     <string name="longitude_text" translatable="false">Lng: %1$s</string>
     <string name="delete_entry">Delete Entry</string>
@@ -46,11 +45,17 @@
     <string name="Latitude">latitude</string>
     <string name="Longitude">longitude</string>
     <string name="item_deleted" >item deleted</string>
-    <string name="llatitude">latitude</string>
-    <string name="llongitude">longitude</string>
     <string name="results">results</string>
     <string name="sunrise">sunrise</string>
     <string name="sunset">sunset</string>
+    <string name="not_available">Not Available</string>
+    <string name="template_sunrise">Sunrise: %1$s</string>
+    <string name="template_sunset">Sunset: %1$s</string>
+    <string name="template_solar_noon">Solar Noon: %1$s</string>
+    <string name="solar_noon">Solar Noon:</string>
+    <string name="sunsetColon">Sunset:</string>
+    <string name="sunrisecolon">Sunrise:</string>
+    <string name="sunriseColon">Sunrise:</string>
 
 
 </resources>

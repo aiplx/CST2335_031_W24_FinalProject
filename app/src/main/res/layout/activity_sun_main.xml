@@ -9,51 +9,26 @@
         android:id="@+id/mainToolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
+        android:background="@color/wine"
+        android:contentDescription="@string/toolbar"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:background="@color/Pink"
-        android:contentDescription="@string/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/textViewResult"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/textViewLatitudeLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
-        app:layout_constraintVertical_bias="0.5" />
-
     <Button
         android:id="@+id/btnSaveToFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="@string/save_to_favorites"
-        android:visibility="gone"
+        android:textColorLink="#00DD1515"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLongitude"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
-
-
-    <TextView
-        android:id="@+id/textViewLatitudeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/latitude"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextLatitude"
-        app:layout_constraintStart_toStartOf="@+id/editTextLatitude" />
+        app:layout_constraintTop_toBottomOf="@+id/image_sundown" />
 
     <EditText
         android:id="@+id/editTextLatitude"
@@ -67,26 +42,12 @@
         android:textColor="@color/black"
         android:textColorHint="@color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonLookup"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewLongitudeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/longitude"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextLongitude"
-        app:layout_constraintStart_toEndOf="@+id/editTextLatitude" />
 
     <EditText
         android:id="@+id/editTextLongitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:hint="@string/enter_longitude"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
@@ -95,10 +56,7 @@
         android:textColorHint="@color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonLookup"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextLatitude"
-        app:layout_constraintTop_toTopOf="@+id/editTextLatitude"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintStart_toEndOf="@+id/editTextLatitude" />
 
     <Button
         android:id="@+id/buttonLookup"
@@ -108,4 +66,78 @@
         android:text="@string/lookup_search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_sundown"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/image_sunset"
+        app:layout_constraintTop_toTopOf="@+id/textViewSolarNoon"
+        app:srcCompat="@drawable/ic_dawn" />
+
+    <TextView
+        android:id="@+id/textViewSolarNoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/solar_noon"
+        app:layout_constraintEnd_toEndOf="@+id/image_sun"
+        app:layout_constraintStart_toStartOf="@+id/image_sun"
+        app:layout_constraintTop_toBottomOf="@+id/image_sun" />
+
+    <TextView
+        android:id="@+id/textViewSunset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/sunrisecolon"
+        app:layout_constraintEnd_toEndOf="@+id/image_sundown"
+        app:layout_constraintStart_toStartOf="@+id/image_sundown"
+        app:layout_constraintTop_toBottomOf="@+id/image_sundown" />
+
+    <TextView
+        android:id="@+id/textViewSunrise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/sunriseColon"
+        app:layout_constraintEnd_toEndOf="@+id/image_sunset"
+        app:layout_constraintStart_toStartOf="@+id/image_sunset"
+        app:layout_constraintTop_toBottomOf="@+id/image_sunset" />
+
+    <ImageView
+        android:id="@+id/image_sunset"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/image_sundown"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewSolarNoon"
+        app:srcCompat="@drawable/ic_sunrise" />
+
+    <ImageView
+        android:id="@+id/image_sun"
+        android:layout_width="154dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/ic_noon" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="254dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+        app:srcCompat="@drawable/sun_logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

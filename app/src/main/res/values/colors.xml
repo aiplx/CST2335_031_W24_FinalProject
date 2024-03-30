@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color  name="my_primary">@color/light_blue</color>
+    <color  name="my_primary">#B13E00</color>
     <color  name="my_secondary">#939B4D</color>
     <color  name="my_statusbar">#802C21</color>
     <color  name="my_text">@color/darker_gray</color>
@@ -11,7 +11,7 @@
     <color name="darker_gray">#4E4E4E</color>
     <color name="navy_blue">#09007E</color>
     <color name="light_blue">#60C9D6</color>
-    <color name="transparent" />
     <color name="Pink">#ED6D8C</color>
     <color name="Dark_Pink">@color/light_blue</color>
+    <color name="wine">#48D93625</color>
 </resources>
