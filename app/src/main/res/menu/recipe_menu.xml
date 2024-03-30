@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Help"
+        android:icon="@drawable/help"
+        android:title="@string/HelpTtile"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/About"
+        android:icon="@drawable/about"
+        android:title="@string/AboutTitle"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/item_sun"
+        android:icon="@drawable/toolbar_sunset"
+        android:title="@string/sunIcon_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_music"
+        android:icon="@drawable/toolbar_music"
+        android:title="@string/musicIcon_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_dictionary"
+        android:icon="@drawable/toolbar_dictionary"
+        android:title="@string/toolbar_dictionary"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ViewSavedRecipes"
+        android:icon="@drawable/download"
+        android:title="@string/ViewButton"
+        app:showAsAction="always"/>
+</menu>

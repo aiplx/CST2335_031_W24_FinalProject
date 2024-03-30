@@ -1,19 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.PingsAndroidLabs" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary brand color -->
-         <item name="colorPrimary">@color/my_primary</item>
+    <style name="Base.Theme.ShanghaoLisAndroidProject" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/my_primary</item>
 
-        <!-- Secondary brand color -->
+        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/my_secondary</item>
 
-        <!-- Status bar color -->
+        <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/my_statusbar</item>
 
-        <!-- Android text color       -->
+        <!-- Text color. -->
         <item name="android:textColor">@color/my_text</item>
-
     </style>
 
-    <style name="Theme.PingsAndroidLabs" parent="Base.Theme.PingsAndroidLabs" />
+
+    <style name="Theme.ShanghaoLisAndroidProject" parent="Base.Theme.ShanghaoLisAndroidProject" />
 </resources>
