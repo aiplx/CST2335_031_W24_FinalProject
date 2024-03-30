@@ -1,8 +1,10 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Dictionary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import algonquin.cst2335.lian0122.R;
 
 public class MainActivity extends AppCompatActivity {
 
