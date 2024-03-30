@@ -9,7 +9,7 @@
         android:id="@+id/mainToolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#48631640"
+        android:background="@color/my_statusbar"
         android:contentDescription="@string/toolbar"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
@@ -18,18 +18,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnSaveToFavorites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="16dp"
-        android:text="@string/save_to_favorites"
-        android:textColorLink="#00DD1515"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <EditText
         android:id="@+id/editTextLatitude"
@@ -65,6 +53,9 @@
         android:layout_height="48dp"
         android:layout_marginEnd="24dp"
         android:text="@string/lookup_search"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -138,8 +129,26 @@
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextLongitude"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSolarNoon"
+        app:layout_constraintVertical_bias="0.585"
         app:srcCompat="@drawable/sun_logo" />
+
+    <Button
+        android:id="@+id/btnSaveToFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="28dp"
+        android:text="@string/save_to_favorites"
+        android:textColor="@color/white"
+        android:textColorLink="#00DD1515"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
