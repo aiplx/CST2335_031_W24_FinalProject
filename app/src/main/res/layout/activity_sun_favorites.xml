@@ -9,21 +9,24 @@
         android:id="@+id/toolbarFavorites"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/my_primary"
+        android:background="#00D3AE9A"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
+        android:title=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFavorites"
-        android:layout_width="411dp"
-        android:layout_height="580dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="413dp"
+        android:layout_height="548dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <TextView
         android:id="@+id/mySavedLocations"
@@ -34,16 +37,16 @@
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewFavorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.08" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="368dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/imageView6"
+        android:layout_width="254dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarFavorites"
         app:srcCompat="@drawable/sun_logo" />

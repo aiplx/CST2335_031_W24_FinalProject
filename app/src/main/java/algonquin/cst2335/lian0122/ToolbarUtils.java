@@ -26,9 +26,9 @@ public class ToolbarUtils {
         } else if (id == R.id.action_help) {
             showHelpDialog(activity);
             return true;
-        } else if (id == R.id.action_return) {
-            Intent mainIntent = new Intent(activity, MainActivity.class);
-            activity.startActivity(mainIntent);
+        } else if (id == R.id.action_sunSeeker) {
+            Intent intent = new Intent(activity, Sun_MainActivity.class);
+            activity.startActivity(intent);
             return true;
         }
 

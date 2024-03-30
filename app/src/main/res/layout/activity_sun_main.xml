@@ -9,26 +9,27 @@
         android:id="@+id/mainToolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/wine"
+        android:background="#48631640"
         android:contentDescription="@string/toolbar"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
+        android:title=""
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/btnSaveToFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="16dp"
         android:text="@string/save_to_favorites"
         android:textColorLink="#00DD1515"
-        app:layout_constraintBottom_toTopOf="@+id/editTextLongitude"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_sundown" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <EditText
         android:id="@+id/editTextLatitude"
@@ -124,10 +125,10 @@
         android:id="@+id/image_sun"
         android:layout_width="154dp"
         android:layout_height="159dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
         app:srcCompat="@drawable/ic_noon" />
 
     <ImageView
@@ -135,9 +136,10 @@
         android:layout_width="254dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLongitude"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSolarNoon"
         app:srcCompat="@drawable/sun_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

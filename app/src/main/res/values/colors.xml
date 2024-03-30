@@ -13,5 +13,5 @@
     <color name="light_blue">#60C9D6</color>
     <color name="Pink">#ED6D8C</color>
     <color name="Dark_Pink">@color/light_blue</color>
-    <color name="wine">#48D93625</color>
+    <color name="wine">#488C1E59</color>
 </resources>
