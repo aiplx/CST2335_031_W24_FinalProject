@@ -38,6 +38,10 @@ public class ToolbarUtils {
             Intent intent = new Intent(activity, Sun_MainActivity.class);
             activity.startActivity(intent);
             return true;
+        }else if (id == R.id.action_song) {
+            Intent intent = new Intent(activity, Sun_MainActivity.class);
+            activity.startActivity(intent);
+            return true;
         }
 
 
