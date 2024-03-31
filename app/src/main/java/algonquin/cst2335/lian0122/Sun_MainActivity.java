@@ -65,14 +65,15 @@ public class Sun_MainActivity extends AppCompatActivity {
     }
 
     private void handleIncomingIntent() {
-        if (getIntent().hasExtra(getString(R.string.Latitude)) && getIntent().hasExtra(getString(R.string.longitude))) {
-            double latitude = getIntent().getDoubleExtra((getString(R.string.latitude)), 0);
-            double longitude = getIntent().getDoubleExtra((getString(R.string.longitude)), 0);
+        if (getIntent().hasExtra(getString(R.string.latitude)) && getIntent().hasExtra(getString(R.string.longitude))) {
+            double latitude = getIntent().getDoubleExtra(getString(R.string.latitude), 0);
+            double longitude = getIntent().getDoubleExtra(getString(R.string.longitude), 0);
             binding.editTextLatitude.setText(String.valueOf(latitude));
             binding.editTextLongitude.setText(String.valueOf(longitude));
             performSunriseSunsetLookup();
         }
     }
+
 
     private void loadPreferences() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);

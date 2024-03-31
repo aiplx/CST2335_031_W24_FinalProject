@@ -118,10 +118,10 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
 
     @Override
     public void onItemClicked(FavoriteLocation location) {
-        // When an item is clicked, open Sun_MainActivity with the latitude and longitude for lookup
         Intent intent = new Intent(this, Sun_MainActivity.class);
-        intent.putExtra(getString(R.string.Latitude), location.latitude);
-        intent.putExtra(getString(R.string.Longitude), location.longitude);
+        intent.putExtra(getString(R.string.latitude), location.latitude);
+        intent.putExtra(getString(R.string.longitude), location.longitude);
         startActivity(intent);
     }
+
 }
