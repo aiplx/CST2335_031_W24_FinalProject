@@ -1,35 +1,30 @@
 <resources>
-    <string name="dict_app_name">CST2335 031 W24 Final Project</string>
-    <string name="dict_search_Button">Search</string>
-    <string name="dict_savedTerms_Button">Saved terms</string>
-    <string name="dict_saveIcon_title">Save</string>
-    <string name="dict_author_info">About</string>
-    <string name="dict_app_info">Help</string>
-    <string name="dict_author_info_detail">Version 0.1, created by Ping Liang</string>
-    <string name="dict_app_info_detail">This app is easy to use:\n
-        1.Enter the word you want to search and click the \"Search\" button\n
-        2.Add the searched term to your saved list by clicking the menu at the top\n
-        3.Navigate your saved words by clicking the \"Saved terms\" button\n
-        4.You can delete the saved words from your list by click the specific words and confirm deletion\n
-        That\'s all you need to know, enjoy!</string>
-    <string name="dict_app_info_title">About this APP: </string>
-    <string name="dict_delete_alertDialog">Delete</string>
-    <string name="dict_error_format_definitions">Error formatting definitions.</string>
-    <string name="dict_definitions">Definitions:</string>
-    <string name="dict_definition_deletion_message">"Definition deleted for word: "</string>
-    <string name="dict_undo_message">UNDO</string>
-    <string name="dict_definition_tableName">Definitions</string>
-    <string name="dict_definitionsArray">definitions</string>
-    <string name="dict_definitionObj">definition</string>
-    <string name="dict_api_url">https://api.dictionaryapi.dev/api/v2/entries/en/</string>
-    <string name="dict_sharedPreferences_AppPreferences">AppPreferences</string>
-    <string name="dict_sharedPreferences_LastSearchTerm">LastSearchTerm</string>
-    <string name="dict_meaningsArray">meanings</string>
-    <string name="dict_save_again_message">You have already added this word</string>
-    <string name="dict_save_success">Search saved</string>
-    <string name="dict_definition_message">Definition goes here</string>
-    <string name="dict_sunIcon_title">Sun APP</string>
-    <string name="dict_musicIcon_title">Music APP</string>
-    <string name="dict_recipeIcon_title">Recipe APP</string>
-
+    <string name="rec_app_name">Recipe</string>
+    <string name="rec_search_name">Recipe App</string>
+    <string name="rec_search_hint">Enter a recipe name</string>
+    <string name="rec_search">Search</string>
+    <string name="rec_welcome_message">Welcome to your Recipe</string>
+    <string name="rec_ViewButton">View Saved Recipes</string>
+    <string name="rec_delete_button">Delete</string>
+    <string name="rec_save_button">Save</string>
+    <string name="rec_recipe_image">Recipe Image</string>
+    <string name="rec_title_placeholder">Title</string>
+    <string name="rec_source_url_placeholder">Source URL</string>
+    <string name="recipe_display_error">Sorry, This Recipe cannot be show</string>
+    <string name="recipe_save_error">Sorry, shi Recipe cannot be saved</string>
+    <string name="rec_search_promo">Search Permission</string>
+    <string name="rec_About">Program created by Shanghao Li</string>
+    <string name="rec_Help">This App is a user-friendly mobile application that streamlines the process of finding recipes. Simply input the name of a recipe, and the app, powered by the Spoonacular API, retrieves a list of corresponding recipes. You can browse through the results, view detailed information, save your favorite recipes to a local database for easy access later. The app also remembers your search term for a seamless user experience.</string>
+    <string name="rec_about">About</string>
+    <string name="rec_OK">OK</string>
+    <string name="rec_help">help</string>
+    <string name="rec_confirm_delete_title">Delete Recipe</string>
+    <string name="rec_confirm_delete_message">Are you sure you want to delete this recipe?</string>
+    <string name="rec_delete">Delete</string>
+    <string name="rec_cancel">Cancel</string>
+    <string name="rec_HelpTtile">Help</string>
+    <string name="rec_AboutTitle">About</string>
+    <string name="rec_sunIcon_title">SunRise App</string>
+    <string name="rec_musicIcon_title">Music App</string>
+    <string name="rec_toolbar_dictionary">Dictionary Aoo</string>
 </resources>
