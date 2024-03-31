@@ -1,3 +1,11 @@
+/**
+ * Main activity for the Sunrise & Sunset lookup feature.
+ * Handles user inputs, API calls, and display of results.
+ * Author: Oliver Kadvany - 041096826
+ * Lab Section: 031
+ * Creation Date: 2024-03-31
+ */
+
 package algonquin.cst2335.lian0122;
 
 import android.content.SharedPreferences;
@@ -9,6 +17,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -32,7 +41,11 @@ public class Sun_MainActivity extends AppCompatActivity {
         binding = ActivitySunMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         ToolbarUtils.setupToolbar(this, R.id.mainToolbar);
-        getSupportActionBar().setTitle("");
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("");
+        }
 
         loadPreferences();
         handleIncomingIntent();

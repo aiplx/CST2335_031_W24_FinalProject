@@ -1,3 +1,11 @@
+/**
+ * Activity for displaying and managing favorite locations.
+ * Allows users to view, add, and delete favorites.
+ * Author: Oliver Kadvany - 041096826
+ * Lab Section: 031
+ * Creation Date: 2024-03-31
+ */
+
 package algonquin.cst2335.lian0122;
 
 import android.content.Intent;
@@ -6,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,7 +37,13 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
         setContentView(R.layout.activity_sun_favorites);
 
         ToolbarUtils.setupToolbar(this, R.id.toolbarFavorites);
-        getSupportActionBar().setTitle("");
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("");
+        }
+
+
         initializeRecyclerView();
         initializeDatabase();
     }

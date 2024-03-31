@@ -1,3 +1,11 @@
+/**
+ * RecyclerView Adapter for displaying favorite locations.
+ * Handles the layout and interaction of list items.
+ * Author: Oliver Kadvany - 041096826
+ * Lab Section: 031
+ * Creation Date: 2024-03-31
+ */
+
 package algonquin.cst2335.lian0122;
 
 import android.view.LayoutInflater;

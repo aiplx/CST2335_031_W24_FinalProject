@@ -1,3 +1,11 @@
+/**
+ * FavoriteLocation entity class for the Room database.
+ * This class represents a table for storing favorite locations with latitude, longitude, and solar noon.
+ * Author: Oliver Kadvany - 041096826
+ * Lab Section: 031
+ * Creation Date: 2024-03-31
+ */
+
 package algonquin.cst2335.lian0122;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

@@ -1,3 +1,11 @@
+/**
+ * Utility class for handling toolbar-related actions.
+ * Includes methods for setting up and managing toolbar items.
+ * Author: Oliver Kadvany - 041096826
+ * Lab Section: 031
+ * Creation Date: 2024-03-31
+ */
+
 package algonquin.cst2335.lian0122;
 
 import android.content.Intent;
@@ -38,13 +46,11 @@ public class ToolbarUtils {
             Intent intent = new Intent(activity, Sun_MainActivity.class);
             activity.startActivity(intent);
             return true;
-        }else if (id == R.id.action_song) {
+        } else if (id == R.id.action_song) {
             Intent intent = new Intent(activity, Sun_MainActivity.class);
             activity.startActivity(intent);
             return true;
         }
-
-
 
         return false;
     }
