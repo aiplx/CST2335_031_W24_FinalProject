@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_app_name">Final Project</string>
+    <string name="sun_open_sunrise_and_sunset_lookup">Oeffen Sie den Sonnenauf und Untergang App</string>
+    <string name="sun_latitude">Breite</string>
+    <string name="sun_longitude">Laenge</string>
+    <string name="sun_enter_longitude">Lange Eingeben</string>
+    <string name="sun_favorites">Favoriten</string>
+    <string name="sun_toolbar">SunSearch Menue</string>
+    <string name="sun_about">Ueber</string>
+    <string name="sun_return_main">Zurueck zu Homepage</string>
+    <string name="sun_help_dialog_title">Erklaerung</string>
+    <string name="sun_help_dialog_message">Anleitung:\\n     - - Geben Sie die Breiten- und Längengrade ein und klicken Sie auf \\\'Suchen\\\', um die Sonnenauf- und -untergangszeiten zu finden.\\n     - - Klicken Sie auf \\\'Zu Favoriten hinzufügen\\\', um einen Standort zu speichern\\n     - - Greifen Sie über das Favoritenmenü auf Ihre gespeicherten Standorte zu.\\n</string>
+    <string name="sun_help">Hilfe</string>
+    <string name="sun_lookup_search">Suchen</string>
+    <string name="sun_save_to_favorites">Speichern</string>
+    <string name="sun_a_little_sun_icon">EIne kleine Sonne</string>
+    <string name="sun_my_saved_locations">Meine Orte</string>
+    <string name="sun_invalid_lat_long">"Invalide Lat. und lng. "</string>
+    <string name="sun_please_enter_both_lat_long">Bitte tragen Sie beide Felder ein</string>
+    <string name="sun_network_error">Netzwerk Fehler</string>
+    <string name="sun_location_saved">Ort gespeichert</string>
+    <string name="sun_parsing_error">Fehler bei Daten Eingabe</string>
+    <string name="sun_solar_noon">Hoch:</string>
+    <string name="sun_sunrisecolon">Aufgang</string>
+    <string name="sun_sunriseColon">Aufgang</string>
+    <string name="sun_delete_entry">Loeschen</string>
+    <string name="sun_are_you_sure_you_want_to_delete_this_entry">Sind Sie sich sicher, dass Sie es loeschen wollen?</string>
+    <string name="sun_delete_now">Loeschen</string>
+    <string name="sun_undo">Zuerueck Setzen</string>
+    <string name="sun_Latitude">Breite</string>
+    <string name="sun_Longitude">Laenge</string>
+    <string name="sun_item_deleted">Auswahl geloescht</string>
+    <string name="sun_results">Resultat</string>
+    <string name="sun_not_available">Nicht verfuegbar</string>
+    <string name="sun_template_sunrise">Aufgang: %1$s</string>
+    <string name="sun_template_sunset">Untergang: %1$s</string>
+    <string name="sun_template_solar_noon">Hoch: %1$s</string>
+    <string name="sun_enter_latitude">Laenge eingeben</string>
+    <string name="sun_a_sundown_icon">Unergang Logo</string>
+    <string name="sun_a_sunset_icon">Aufgang Logo</string>
+    <string name="sun_a_generic_sun_icon">Sonnen Logo</string>
+    <string name="sun_a_favorites_icon">Favoriten Logo</string>
+</resources>
