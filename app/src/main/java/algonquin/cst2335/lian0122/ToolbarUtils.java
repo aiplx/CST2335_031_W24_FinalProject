@@ -15,12 +15,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
+/**
+ * Utility class for handling toolbar-related actions.
+ * Provides methods for setting up toolbars and handling menu item selections.
+ */
 public class ToolbarUtils {
+
+    /**
+     * Sets up a toolbar for an AppCompatActivity.
+     * @param activity The activity where the toolbar is used.
+     * @param toolbarId The resource ID of the toolbar.
+     */
     public static void setupToolbar(AppCompatActivity activity, int toolbarId) {
         Toolbar toolbar = activity.findViewById(toolbarId);
         activity.setSupportActionBar(toolbar);
     }
 
+    /**
+     * Handles toolbar menu item selections.
+     * @param activity The activity where the menu item is selected.
+     * @param item The selected menu item.
+     * @return true if the menu item action is handled, false otherwise.
+     */
     public static boolean handleMenuItem(AppCompatActivity activity, MenuItem item) {
         int id = item.getItemId();
 
@@ -55,6 +71,10 @@ public class ToolbarUtils {
         return false;
     }
 
+    /**
+     * Displays a help dialog.
+     * @param activity The activity in which the dialog should be shown.
+     */
     private static void showHelpDialog(AppCompatActivity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle(R.string.help_dialog_title);

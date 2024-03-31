@@ -29,12 +29,32 @@ import org.json.JSONObject;
 
 import algonquin.cst2335.lian0122.databinding.ActivitySunMainBinding;
 
+/**
+ * Main activity for the Sunrise & Sunset lookup feature.
+ * Handles user inputs, API calls, and the display of results.
+ */
 public class Sun_MainActivity extends AppCompatActivity {
 
+    /**
+     * API URL for fetching sunrise and sunset times.
+     */
     private static final String API_URL = "https://api.sunrise-sunset.org/json?lat=%s&lng=%s&date=today&timezone=EST";
+
+    /**
+     * Shared preferences file name.
+     */
     private static final String PREFS_NAME = "SunAppPrefs";
+
+    /**
+     * Binding instance for interacting with view elements.
+     */
     private ActivitySunMainBinding binding;
 
+
+    /**
+     * Initializes the activity and sets up views and event handlers.
+     * @param savedInstanceState Previous state data.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +84,9 @@ public class Sun_MainActivity extends AppCompatActivity {
         binding.buttonLookup.setOnClickListener(v -> performSunriseSunsetLookup());
     }
 
+    /**
+     * Handles incoming intents and sets up views accordingly.
+     */
     private void handleIncomingIntent() {
         if (getIntent().hasExtra(getString(R.string.latitude)) && getIntent().hasExtra(getString(R.string.longitude))) {
             double latitude = getIntent().getDoubleExtra(getString(R.string.latitude), 0);
@@ -74,7 +97,9 @@ public class Sun_MainActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Loads saved preferences (latitude and longitude).
+     */
     private void loadPreferences() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String latitude = prefs.getString((getString(R.string.latitude)), "");
@@ -83,6 +108,11 @@ public class Sun_MainActivity extends AppCompatActivity {
         binding.editTextLongitude.setText(longitude);
     }
 
+    /**
+     * Saves latitude and longitude to preferences.
+     * @param latitude  Latitude to save.
+     * @param longitude Longitude to save.
+     */
     private void savePreferences(String latitude, String longitude) {
         SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
         editor.putString((getString(R.string.latitude)), latitude);
@@ -90,6 +120,9 @@ public class Sun_MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * Performs the sunrise and sunset lookup operation.
+     */
     private void performSunriseSunsetLookup() {
         String latitude = binding.editTextLatitude.getText().toString();
         String longitude = binding.editTextLongitude.getText().toString();
@@ -104,6 +137,10 @@ public class Sun_MainActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
+    /**
+     * Handles errors in the API request.
+     * @param error VolleyError object containing error details.
+     */
     private void handleErrorResponse(VolleyError error) {
         if (error.networkResponse != null) {
             String errorMessage = new String(error.networkResponse.data);
@@ -114,6 +151,11 @@ public class Sun_MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Saves the provided location to the database.
+     * @param latitude  Latitude of the location.
+     * @param longitude Longitude of the location.
+     */
     private void saveLocationToDatabase(double latitude, double longitude) {
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "favorite_locations_db").build();
@@ -126,6 +168,10 @@ public class Sun_MainActivity extends AppCompatActivity {
         }).start();
     }
 
+    /**
+     * Parses and displays the API response.
+     * @param response The JSON response from the API.
+     */
     private void parseAndDisplayResult(String response) {
         try {
             JSONObject jsonObject = new JSONObject(response);
@@ -147,12 +193,22 @@ public class Sun_MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Creates the options menu.
+     * @param menu Menu to be created.
+     * @return true if menu is created.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+    /**
+     * Handles options menu item selections.
+     * @param item Selected item.
+     * @return true if selection handled.
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return ToolbarUtils.handleMenuItem(this, item) || super.onOptionsItemSelected(item);
