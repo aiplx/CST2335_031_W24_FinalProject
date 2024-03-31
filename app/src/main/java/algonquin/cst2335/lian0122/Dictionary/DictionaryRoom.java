@@ -36,8 +36,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import algonquin.cst2335.li000543.R;
-import algonquin.cst2335.li000543.databinding.ActivityDictionaryRoomBinding;
+import algonquin.cst2335.li000543.Recipe.RecipeMain;
+import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.lian0122.databinding.ActivityDictionaryRoomBinding;
 
 
 /**
@@ -232,6 +233,11 @@ public class DictionaryRoom extends AppCompatActivity {
 			//            Intent recipePage = new Intent(DictionaryRoom.this, RecipeActivity.class);
 			//            startActivity(recipePage);
 			//            return true;
+		}
+		else if (item.getItemId() == R.id.item_recipe) {
+			Intent recipePage = new Intent(DictionaryRoom.this, RecipeMain.class);
+			startActivity(recipePage);
+			return true;
 		}
 		else {
 			return super.onOptionsItemSelected(item);

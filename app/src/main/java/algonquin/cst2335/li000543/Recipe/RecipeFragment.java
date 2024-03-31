@@ -32,8 +32,8 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-import algonquin.cst2335.li000543.R;
-import algonquin.cst2335.li000543.databinding.RecipeDetailsBinding;
+import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.lian0122.databinding.RecipeDetailsBinding;
 
 /**
  * Author: Shanghao Li 040903008

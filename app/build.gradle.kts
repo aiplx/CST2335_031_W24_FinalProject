@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "algonquin.cst2335.li000543"
+    namespace = "algonquin.cst2335.lian0122"
     compileSdk = 34
 
     buildFeatures{
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "algonquin.cst2335.li000543"
+        applicationId = "algonquin.cst2335.lian0122"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -39,7 +39,7 @@ android {
 
 dependencies {
 
-    implementation ("com.google.code.gson:gson:2.8.6")
+    implementation ("com.google.code.gson:gson:2.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")

@@ -3,6 +3,7 @@ package algonquin.cst2335.li000543.Recipe;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -45,9 +46,10 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-import algonquin.cst2335.li000543.R;
-import algonquin.cst2335.li000543.databinding.RecipeActivityMainBinding;
-import algonquin.cst2335.li000543.databinding.SearchViewBinding;
+import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
+import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.lian0122.databinding.RecipeActivityMainBinding;
+import algonquin.cst2335.lian0122.databinding.SearchViewBinding;
 
 /**
  * Author: Shanghao Li 040903008
@@ -238,7 +240,13 @@ public class RecipeMain extends AppCompatActivity {
                 runOnUiThread(() -> myAdapter.notifyDataSetChanged());
             });
             return true;
-        } // BACK TO THIS, need to do
+        } else if (item.getItemId() == R.id.item_dictionary) {
+                        Intent dictionaryPage = new Intent(RecipeMain.this, DictionaryRoom.class);
+                        startActivity(dictionaryPage);
+                        return true;
+                     }
+
+        // BACK TO THIS, need to do
         //         else if (item.getItemId() == R.id.item_sun) {
         //            Intent sunPage = new Intent(RecipeMain.this, SunActivity.class);
         //            startActivity(sunPage);
