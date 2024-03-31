@@ -108,7 +108,7 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.sun_menu_main, menu);
         return true;
     }
 

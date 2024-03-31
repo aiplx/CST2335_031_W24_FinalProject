@@ -2,36 +2,8 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="SunFavoritesActivityTest">
+      <entry key="Test_FavoriteAdd">
         <State />
-      </entry>
-      <entry key="TestFavoriteButton">
-        <State />
-      </entry>
-      <entry key="TestToolbarWidget">
-        <State />
-      </entry>
-      <entry key="TestToolbarWidgets">
-        <State />
-      </entry>
-      <entry key="Tests in 'algonquin.cst2335.lian0122'">
-        <State />
-      </entry>
-      <entry key="app">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\draco\.android\avd\Medium_Phone_API_34_Kadvany_Oliver.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-30T18:48:24.595614Z" />
-        </State>
       </entry>
     </value>
   </component>
