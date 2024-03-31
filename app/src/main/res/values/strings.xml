@@ -1,54 +1,108 @@
 <resources>
-    <string name="sun_app_name">Final Project</string>
-    <string name="sun_open_sunrise_and_sunset_lookup">Open Sunrise and Sunset Lookup</string>
-    <string name="sun_latitude">Latitude</string>
-    <string name="sun_longitude">Longitude</string>
-    <string name="sun_enter_longitude">Enter Longitude</string>
-    <string name="sun_enter_latitude">Enter Latitude</string>
-    <string name="sun_favorites">Favorites</string>
-    <string name="sun_toolbar">SunSearch Menu Bar</string>
-    <string name="sun_about">About</string>
-    <string name="sun_return_main">Go Back to Home</string>
-    <string name="sun_help_dialog_title">How to Use</string>
-    <string name="sun_help_dialog_message">
-    Instructions:\n
-    - Enter the latitude and longitude and click \'Lookup\' to find sunrise and sunset times.\n
-    - Click \'Save to Favorites\' to store a location.\n
-    - Access your favorite locations from the Favorites menu.\n
-</string>
-    <string name="sun_help">Help</string>
-    <string name="sun_lookup_search">Lookup</string>
-    <string name="sun_save_to_favorites">Save to Favorites</string>
-    <string name="sun_example_lat" translatable="false">Lat: 45.4215° N</string>
-    <string name="sun_example_lng" translatable="false">Lng: 75.6919° W</string>
-    <string name="sun_a_little_sun_icon">A little sun Icon</string>
-    <string name="sun_SunSeeker" translatable="false">SunSeeker</string>
-    <string name="sun_my_saved_locations">My Saved Locations</string>
-    <string name="sun_invalid_lat_long">Invalid latitude or longitude</string>
-    <string name="sun_please_enter_both_lat_long">Please enter both latitude and longitude</string>
-    <string name="sun_network_error">Network error</string>
-    <string name="sun_location_saved">Location saved to favorites</string>
-    <string name="sun_parsing_error">Error parsing data</string>
-    <string name="sun_latitude_text" translatable="false">Lat: %1$s</string>
-    <string name="sun_longitude_text" translatable="false">Lng: %1$s</string>
-    <string name="sun_delete_entry">Delete Entry</string>
-    <string name="sun_are_you_sure_you_want_to_delete_this_entry">Are you sure you want to delete this entry?</string>
-    <string name="sun_delete_now">Delete</string>
-    <string name="sun_undo">UNDO</string>
-    <string name="sun_Latitude">latitude</string>
-    <string name="sun_Longitude">longitude</string>
-    <string name="sun_item_deleted" >item deleted</string>
-    <string name="sun_results">results</string>
-    <string name="sun_not_available">Not Available</string>
-    <string name="sun_template_sunrise">Sunrise: %1$s</string>
-    <string name="sun_template_sunset">Sunset: %1$s</string>
-    <string name="sun_template_solar_noon">Solar Noon: %1$s</string>
-    <string name="sun_solar_noon">Solar Noon:</string>
-    <string name="sun_sunrisecolon">Sunrise:</string>
-    <string name="sun_sunriseColon">Sunrise:</string>
-    <string name="sun_sunseeker_logo" translatable="false">SunSeeker Logo</string>
-    <string name="sun_a_sundown_icon">A sundown icon</string>
-    <string name="sun_a_sunset_icon">A sunset icon</string>
-    <string name="sun_a_generic_sun_icon">A generic sun icon</string>
-    <string name="sun_a_favorites_icon">A favorites icon</string>
+    <string name="rec_app_name">Recipe</string>
+    <string name="rec_search_name">Recipe App</string>
+    <string name="rec_search_hint">Enter a recipe name</string>
+    <string name="rec_search">Search</string>
+    <string name="rec_welcome_message">Welcome to your Recipe</string>
+    <string name="rec_ViewButton">View Saved Recipes</string>
+    <string name="rec_delete_button">Delete</string>
+    <string name="rec_save_button">Save</string>
+    <string name="rec_recipe_image">Recipe Image</string>
+    <string name="rec_title_placeholder">Title</string>
+    <string name="rec_source_url_placeholder">Source URL</string>
+    <string name="recipe_display_error">Sorry, This Recipe cannot be show</string>
+    <string name="recipe_save_error">Sorry, shi Recipe cannot be saved</string>
+    <string name="rec_search_promo">Search Permission</string>
+    <string name="rec_About">Program created by Shanghao Li</string>
+    <string name="rec_Help">This App is a user-friendly mobile application that streamlines the process of finding recipes. Simply input the name of a recipe, and the app, powered by the Spoonacular API, retrieves a list of corresponding recipes. You can browse through the results, view detailed information, save your favorite recipes to a local database for easy access later. The app also remembers your search term for a seamless user experience.</string>
+    <string name="rec_about">About</string>
+    <string name="rec_OK">OK</string>
+    <string name="rec_help">help</string>
+    <string name="rec_confirm_delete_title">Delete Recipe</string>
+    <string name="rec_confirm_delete_message">Are you sure you want to delete this recipe?</string>
+    <string name="rec_delete">Delete</string>
+    <string name="rec_cancel">Cancel</string>
+    <string name="rec_HelpTtile">Help</string>
+    <string name="rec_AboutTitle">About</string>
+    <string name="rec_sunIcon_title">SunRise App</string>
+    <string name="rec_musicIcon_title">Music App</string>
+    <string name="rec_toolbar_dictionary">Dictionary Aoo</string>
+
+<!--    Dict String-->
+
+    <string name="dict_app_name">CST2335 031 W24 Final Project</string>
+    <string name="dict_search_Button">Search</string>
+    <string name="dict_savedTerms_Button">Saved terms</string>
+    <string name="dict_saveIcon_title">Save</string>
+    <string name="dict_author_info">About</string>
+    <string name="dict_app_info">Help</string>
+    <string name="dict_author_info_detail">Version 0.1, created by Ping Liang</string>
+    <string name="dict_app_info_detail">This app is easy to use:\n
+        1.Enter the word you want to search and click the \"Search\" button\n
+        2.Add the searched term to your saved list by clicking the menu at the top\n
+        3.Navigate your saved words by clicking the \"Saved terms\" button\n
+        4.You can delete the saved words from your list by click the specific words and confirm deletion\n
+        That\'s all you need to know, enjoy!</string>
+    <string name="dict_app_info_title">About this APP: </string>
+    <string name="dict_delete_alertDialog">Delete</string>
+    <string name="dict_error_format_definitions">Error formatting definitions.</string>
+    <string name="dict_definitions">Definitions:</string>
+    <string name="dict_definition_deletion_message">"Definition deleted for word: "</string>
+    <string name="dict_undo_message">UNDO</string>
+    <string name="dict_definition_tableName">Definitions</string>
+    <string name="dict_definitionsArray">definitions</string>
+    <string name="dict_definitionObj">definition</string>
+    <string name="dict_api_url">https://api.dictionaryapi.dev/api/v2/entries/en/</string>
+    <string name="dict_sharedPreferences_AppPreferences">AppPreferences</string>
+    <string name="dict_sharedPreferences_LastSearchTerm">LastSearchTerm</string>
+    <string name="dict_meaningsArray">meanings</string>
+    <string name="dict_save_again_message">You have already added this word</string>
+    <string name="dict_save_success">Search saved</string>
+    <string name="dict_definition_message">Definition goes here</string>
+    <string name="dict_sunIcon_title">Sun APP</string>
+    <string name="dict_musicIcon_title">Music APP</string>
+    <string name="dict_recipeIcon_title">Recipe APP</string>
+
+    <!--    Music String-->
+    <string name="app_name">CST2335 031 W24 Final Project</string>
+    <string name="music_favItem">Favorite Music</string>
+    <string name="music_addItem">Save This Music</string>
+    <string name="music_deleteItem">Delete This Music</string>
+    <string name="music_backToMainItem">Back To Main</string>
+    <string name="music_aboutItem">About</string>
+    <string name="music_helpItem">Help</string>
+    <string name="music_sampleList">Music name goes here</string>
+
+    <string name="music_activityTitle">DeezerDiscover</string>
+    <string name="music_titleText">Favorite Music</string>
+    <string name="music_searchButton">Search</string>
+    <string name="music_hintText">Enter artist</string>
+    <string name="music_frgTitle">Music Name</string>
+    <string name="music_duration">Duration</string>
+    <string name="music_albumName">Album Name</string>
+
+    <string name="music_notFoundToast">Sorry,found nothing</string>
+    <string name="music_insertSucceedToast">Music saved successfully</string>
+    <string name="music_alreadyInToast">Music already in your list</string>
+    <string name="music_noSelectedToast">No music selected</string>
+    <string name="music_aboutToast">DeezerDiscover created by Jialin Wang</string>
+    <string name="music_addTitle">Add your favorite song</string>
+    <string name="music_deleteAlert">Do you want to delete the music of</string>
+    <string name="music_yes">Yes</string>
+    <string name="music_no">No</string>
+    <string name="music_undo">Undo</string>>
+    <string name="music_deleteSnackBar">You deleted music #</string>
+    <string name="music_helpDetail" translatable="false">
+            Welcome to DeezerDiscover , here\'s a quick guide for you:\n\n
+            1. Search Artist:
+            Type in the name of the artist in the search bar and click on Search button.\n\n
+            2. Dive into Details:
+            Scroll down and click on the button for all details about the music of the artist that you search.\n\n
+            3. Save for Later:
+            Love this music? Save it for later by clicking on save icon.\n
+            Your saved music will be easily accessible whenever you\'re ready to listen.\n\n
+
+          </string>
+    <string name="music_helpTitle" translatable="false">Your Help Title Here</string>
+
 </resources>
