@@ -2,13 +2,18 @@ package algonquin.cst2335.lian0122;
 
 import android.content.Context;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
+
+import algonquin.cst2335.lian0122.music.Music;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -24,3 +29,7 @@ public class ExampleInstrumentedTest {
         assertEquals("algonquin.cst2335.lian0122", appContext.getPackageName());
     }
 }
+
+
+
+

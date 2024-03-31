@@ -1,3 +1,10 @@
+/**
+ * Name: Jialin Wang
+ * ID#: 041041336
+ * Section: 031
+ * Description: Final project for the course CST2335.
+ * This class represents a Music object.
+ */
 package algonquin.cst2335.lian0122.music;
 
 import static android.app.ProgressDialog.show;
@@ -62,6 +69,10 @@ import algonquin.cst2335.lian0122.R;
 import algonquin.cst2335.lian0122.databinding.ActivityMusicBinding;
 import algonquin.cst2335.lian0122.databinding.SearchMusicBinding;
 
+/**
+ * This class represents the main activity for the Music application.
+ * It allows users to search for music, view details, add to favorites, and delete music items.
+ */
 public class MusicActivity extends AppCompatActivity {
 
     ActivityMusicBinding binding;
@@ -76,6 +87,11 @@ public class MusicActivity extends AppCompatActivity {
 
     protected RequestQueue queue = null;
 
+    /**
+     * Initializes the activity when created.
+     * It sets up the UI, initializes ViewModel, sets up RecyclerView, and handles search button clicks.
+     * @param savedInstanceState The saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -252,6 +268,9 @@ public class MusicActivity extends AppCompatActivity {
         binding.musicRecycleView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    /**
+     * Represents a ViewHolder for the RecyclerView.
+     */
     public class MyRowHolder extends RecyclerView.ViewHolder {
         public TextView musicName;
 
@@ -270,12 +289,23 @@ public class MusicActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Initializes the options menu for the activity.
+     * @param menu The menu to be inflated
+     * @return Returns true if the menu is displayed, false otherwise
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.music_menu, menu);
         return true;
     }
+
+    /**
+     * Handles options menu item clicks.
+     * @param item The selected menu item
+     * @return Returns true if the item is successfully handled, false otherwise
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.favoriteMusic) {
@@ -340,8 +370,9 @@ public class MusicActivity extends AppCompatActivity {
                 }
             }
         } else if (item.getItemId() == R.id.backItem) {
-            Intent nextPage1 = new Intent(MusicActivity.this, MainActivity.class);
+            Intent nextPage1 = new Intent(MusicActivity.this, MusicActivity.class);
             startActivity(nextPage1);
+            finish();
         } else if (item.getItemId() == R.id.helpItem) {
             AlertDialog.Builder builder = new AlertDialog.Builder(MusicActivity.this);
             builder.setMessage(R.string.music_helpDetail)
@@ -358,8 +389,10 @@ public class MusicActivity extends AppCompatActivity {
 
 
     /**
-         * onConfigurationChanged() to resolve the fragment problem when configuration changes, like rotation or change language
-         * */
+     * Handles the configuration changes, such as rotation or language change.
+     * It resolves the fragment problem when configuration changes.
+     * @param newConfig The new configuration
+     */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -370,5 +403,3 @@ public class MusicActivity extends AppCompatActivity {
         }
     }
 }
-
-

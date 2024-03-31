@@ -1,16 +1,23 @@
+/**
+ * Name: Jialin Wang
+ * ID#: 041041336
+ * Section: 031
+ * Description: Final project for the course CST2335.
+ * ViewModel class for managing music data and selected music item.
+ */
 package algonquin.cst2335.lian0122.music;
-
-import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+
 
 public class MusicViewModel extends ViewModel {
 
-public MutableLiveData<ArrayList<Music>> musics = new MutableLiveData<>();
+    /** MutableLiveData for storing list of music items. */
+    public MutableLiveData<ArrayList<Music>> musics = new MutableLiveData<>();
 
-    public  MutableLiveData<Music> selectedMusic = new MutableLiveData<>();
+    /** MutableLiveData for storing the selected music item. */
+    public MutableLiveData<Music> selectedMusic = new MutableLiveData<>();
 }
