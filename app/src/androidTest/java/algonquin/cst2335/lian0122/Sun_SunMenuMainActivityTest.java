@@ -26,13 +26,11 @@ public class Sun_SunMenuMainActivityTest {
 
     @Test
     public void testLookupButtonUpdatesUI() {
-        // Assume editTextLatitude and editTextLongitude are the IDs for the latitude and longitude input fields
         onView(withId(R.id.editTextLatitude)).perform(typeText("40.7128"), closeSoftKeyboard());
         onView(withId(R.id.editTextLongitude)).perform(typeText("-74.0060"), closeSoftKeyboard());
 
         onView(withId(R.id.buttonLookup)).perform(click());
 
-        // Checking if TextViews are updated
         onView(withId(R.id.textViewSunrise)).check(matches(not(withText(""))));
         onView(withId(R.id.textViewSunset)).check(matches(not(withText(""))));
         onView(withId(R.id.textViewSolarNoon)).check(matches(not(withText(""))));
