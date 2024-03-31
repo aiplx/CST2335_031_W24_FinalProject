@@ -28,7 +28,7 @@
     <string name="rec_musicIcon_title">Music App</string>
     <string name="rec_toolbar_dictionary">Dictionary Aoo</string>
 
-<!--    Dic String-->
+<!--    Dict String-->
 
     <string name="dict_app_name">CST2335 031 W24 Final Project</string>
     <string name="dict_search_Button">Search</string>
@@ -62,4 +62,47 @@
     <string name="dict_sunIcon_title">Sun APP</string>
     <string name="dict_musicIcon_title">Music APP</string>
     <string name="dict_recipeIcon_title">Recipe APP</string>
+
+    <!--    Music String-->
+    <string name="app_name">CST2335 031 W24 Final Project</string>
+    <string name="music_favItem">Favorite Music</string>
+    <string name="music_addItem">Save This Music</string>
+    <string name="music_deleteItem">Delete This Music</string>
+    <string name="music_backToMainItem">Back To Main</string>
+    <string name="music_aboutItem">About</string>
+    <string name="music_helpItem">Help</string>
+    <string name="music_sampleList">Music name goes here</string>
+
+    <string name="music_activityTitle">DeezerDiscover</string>
+    <string name="music_titleText">Favorite Music</string>
+    <string name="music_searchButton">Search</string>
+    <string name="music_hintText">Enter artist</string>
+    <string name="music_frgTitle">Music Name</string>
+    <string name="music_duration">Duration</string>
+    <string name="music_albumName">Album Name</string>
+
+    <string name="music_notFoundToast">Sorry,found nothing</string>
+    <string name="music_insertSucceedToast">Music saved successfully</string>
+    <string name="music_alreadyInToast">Music already in your list</string>
+    <string name="music_noSelectedToast">No music selected</string>
+    <string name="music_aboutToast">DeezerDiscover created by Jialin Wang</string>
+    <string name="music_addTitle">Add your favorite song</string>
+    <string name="music_deleteAlert">Do you want to delete the music of</string>
+    <string name="music_yes">Yes</string>
+    <string name="music_no">No</string>
+    <string name="music_undo">Undo</string>>
+    <string name="music_deleteSnackBar">You deleted music #</string>
+    <string name="music_helpDetail" translatable="false">
+            Welcome to DeezerDiscover , here\'s a quick guide for you:\n\n
+            1. Search Artist:
+            Type in the name of the artist in the search bar and click on Search button.\n\n
+            2. Dive into Details:
+            Scroll down and click on the button for all details about the music of the artist that you search.\n\n
+            3. Save for Later:
+            Love this music? Save it for later by clicking on save icon.\n
+            Your saved music will be easily accessible whenever you\'re ready to listen.\n\n
+
+          </string>
+    <string name="music_helpTitle" translatable="false">Your Help Title Here</string>
+
 </resources>

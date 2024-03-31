@@ -29,7 +29,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import algonquin.cst2335.li000543.R;
+import algonquin.cst2335.lian0122.R;
 
 
 @LargeTest

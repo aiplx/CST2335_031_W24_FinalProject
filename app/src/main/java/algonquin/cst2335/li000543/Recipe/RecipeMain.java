@@ -50,6 +50,8 @@ import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
 import algonquin.cst2335.lian0122.R;
 import algonquin.cst2335.lian0122.databinding.RecipeActivityMainBinding;
 import algonquin.cst2335.lian0122.databinding.SearchViewBinding;
+import algonquin.cst2335.lian0122.music.MusicActivity;
+
 
 /**
  * Author: Shanghao Li 040903008
@@ -244,7 +246,11 @@ public class RecipeMain extends AppCompatActivity {
                         Intent dictionaryPage = new Intent(RecipeMain.this, DictionaryRoom.class);
                         startActivity(dictionaryPage);
                         return true;
-                     }
+        } else if (item.getItemId() == R.id.item_music) {
+                        Intent musicPage = new Intent(RecipeMain.this, MusicActivity.class);
+                        startActivity(musicPage);
+                        return true;
+        }
 
         // BACK TO THIS, need to do
         //         else if (item.getItemId() == R.id.item_sun) {
