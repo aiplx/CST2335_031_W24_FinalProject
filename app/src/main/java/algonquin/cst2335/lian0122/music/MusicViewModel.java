@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class MusicViewModel extends ViewModel {
 
-    public MutableLiveData<ArrayList<Music>> musics = new MutableLiveData<>();
-
+public MutableLiveData<ArrayList<Music>> musics = new MutableLiveData<>();
 
     public  MutableLiveData<Music> selectedMusic = new MutableLiveData<>();
 }

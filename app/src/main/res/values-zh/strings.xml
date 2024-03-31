@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CST2335 031 W24 Final Project</string>
+    <string name="music_favItem">喜欢的音乐</string>
+    <string name="music_addItem">保存这个音乐</string>
+    <string name="music_deleteItem">删除这个音乐</string>
+    <string name="music_backToMainItem">回到主菜单</string>
+    <string name="music_aboutItem">关于</string>
+    <string name="music_helpItem">帮助</string>
+    <string name="music_sampleList">音乐名字在这里</string>
+    <string name="music_activityTitle">迪泽发现</string>
+    <string name="music_titleText">喜欢的音乐</string>
+    <string name="music_searchButton">搜索</string>
+    <string name="music_hintText">输入艺术家</string>
+    <string name="music_frgTitle">音乐名字</string>
+    <string name="music_duration">时长</string>
+    <string name="music_albumName">名字</string>
+    <string name="music_notFoundToast">对不起，没有发现</string>
+    <string name="music_insertSucceedToast">音乐保存成功</string>
+    <string name="music_alreadyInToast">音乐已经在列表里</string>
+    <string name="music_noSelectedToast">没有选中音乐</string>
+    <string name="music_aboutToast">创建通过王嘉林</string>
+    <string name="music_addTitle">添加你喜欢的音乐</string>
+    <string name="music_deleteAlert">你想删除这个音乐吗</string>
+    <string name="music_yes">是的</string>
+    <string name="music_no">不</string>
+    <string name="music_undo">撤销</string>
+    <string name="music_deleteSnackBar">你删除了音乐#</string>
+</resources>

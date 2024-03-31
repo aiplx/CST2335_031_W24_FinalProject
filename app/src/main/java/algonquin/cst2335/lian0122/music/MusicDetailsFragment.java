@@ -30,7 +30,7 @@ public class MusicDetailsFragment extends Fragment {
         super.onCreateView(inflater,container,saveInstanceState);
         setRetainInstance(true);
         MusicDetailsLayoutBinding binding = MusicDetailsLayoutBinding.inflate(getLayoutInflater());
-        File file = new file(requireContext().getFilesDir(),selected.getFileName());
+        File file = new File(requireContext().getFilesDir(),selected.getFileName());
         if (file.exists()){
             Log.d("Image Log","Got large image");
             Bitmap img = BitmapFactory.decodeFile(file.getAbsolutePath());
@@ -39,6 +39,6 @@ public class MusicDetailsFragment extends Fragment {
         binding.songTitle.setText(selected.songTitle);
         binding.duration.setText("Duration" + ": " +selected.duration + "s");
         binding.albumName.setText(selected.albumName);
-        return binding.getRoot;
+        return binding.getRoot();
     }
 }

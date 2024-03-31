@@ -2,21 +2,7 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/musicGotoSunItem"
-        android:icon="@drawable/sun_icon"
-        android:title="SunSeeker"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/musicGotoRecipeItem"
-        android:icon="@drawable/recipe_icon"
-        android:title="RecipeRover"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/musicGotoDictItem"
-        android:icon="@drawable/dict_icon"
-        android:title="WordWiz"
-        app:showAsAction="always" />
+
     <item
         android:id="@+id/favoriteMusic"
         android:icon="@drawable/favorite"

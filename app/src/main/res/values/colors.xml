@@ -4,6 +4,7 @@
     <color  name="my_secondary">#939B4D</color>
     <color  name="my_statusbar">#802C21</color>
     <color  name="my_text">#F1E80C5B</color>
+    <color name="frameBG">#FFFFFF</color>
 
 
     <color name="black">#FF000000</color>

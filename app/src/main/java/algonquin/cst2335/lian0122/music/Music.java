@@ -27,13 +27,26 @@ public class Music {
     @PrimaryKey
     @ColumnInfo(name = "id")
     public long id;
+    public Music(long id, String songTitle,int duration,String albumName,String imgUrl, long albumId, String fileName) {
+        this.id =id;
+        this.songTitle =songTitle;
+        this.albumName = albumName;
+        this.duration = duration;
+        this.imgUrl = imgUrl;
+        this.albumId = albumId;
+        this.fileName = fileName;
+     }
 
     public String getSongTitle() { return songTitle; }
     public void setSongTitle(String songTitle){ this.songTitle = songTitle;}
 
     public String getImgUrl(){ return imgUrl = imgUrl;}
+
+    public void setImgUrl(String imgUrl) {this.imgUrl = imgUrl;}
+
     public String getAlbumName(){return albumName;}
     public void setAlbumName(String albumName){this.albumName = albumName;}
+
     public int getDuration() {return duration;}
 
     public void setDuration (int duration){this.duration = duration;}
