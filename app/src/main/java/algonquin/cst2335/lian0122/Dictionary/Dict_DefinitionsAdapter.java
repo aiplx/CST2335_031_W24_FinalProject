@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import algonquin.cst2335.lian0122.databinding.ActivityDefinitionBinding;
+import algonquin.cst2335.li000543.databinding.ActivityDefinitionBinding;
+
+
 /**
  * Adapter class for a RecyclerView in the DictionaryRoom activity.
  * This adapter is responsible for handling a list of DictionaryMessage objects,

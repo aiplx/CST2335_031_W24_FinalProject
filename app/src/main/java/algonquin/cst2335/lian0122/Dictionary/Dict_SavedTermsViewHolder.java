@@ -9,7 +9,9 @@ package algonquin.cst2335.lian0122.Dictionary;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-import algonquin.cst2335.lian0122.databinding.ItemSavedTermsBinding;
+
+import algonquin.cst2335.li000543.databinding.ItemSavedTermsBinding;
+
 
 /**
  * ViewHolder for displaying a saved term within a RecyclerView in the SavedTermsAdapter.

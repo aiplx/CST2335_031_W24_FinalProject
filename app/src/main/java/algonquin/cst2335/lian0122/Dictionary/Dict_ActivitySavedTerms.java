@@ -20,8 +20,9 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-import algonquin.cst2335.lian0122.R;
-import algonquin.cst2335.lian0122.databinding.ActivitySavedTermsBinding;
+import algonquin.cst2335.li000543.R;
+import algonquin.cst2335.li000543.databinding.ActivitySavedTermsBinding;
+
 
 /**
  * Activity to display saved terms from the Room Database and their definitions.

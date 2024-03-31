@@ -20,7 +20,6 @@
     <string name="rec_sunIcon_title">太阳升起</string>
     <string name="rec_musicIcon_title">音乐软件</string>
     <string name="rec_toolbar_dictionary">词典软件</string>
-    <string name="recipe_error_message">对不起，这个食谱不能被储存</string>
     <string name="recipe_save_error">对不起，这个食谱不能被对不起，这个食谱不能被储存</string>
     <string name="recipe_display_error">对不起，这个食谱不能被储存</string>
     <string name="rec_search_promo">搜索许可</string>

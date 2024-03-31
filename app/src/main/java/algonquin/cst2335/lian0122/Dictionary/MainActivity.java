@@ -4,7 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.li000543.R;
+
 
 public class MainActivity extends AppCompatActivity {
 

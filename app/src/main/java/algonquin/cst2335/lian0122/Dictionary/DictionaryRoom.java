@@ -36,8 +36,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import algonquin.cst2335.lian0122.R;
-import algonquin.cst2335.lian0122.databinding.ActivityDictionaryRoomBinding;
+import algonquin.cst2335.li000543.R;
+import algonquin.cst2335.li000543.databinding.ActivityDictionaryRoomBinding;
+
 
 /**
  * The main activity class for the DictionaryRoom application.
