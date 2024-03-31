@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class SunMainActivityTest {
+public class Sun_SunMenuMainActivityTest {
 
     @Rule
     public ActivityScenarioRule<Sun_MainActivity> activityRule = new ActivityScenarioRule<>(Sun_MainActivity.class);

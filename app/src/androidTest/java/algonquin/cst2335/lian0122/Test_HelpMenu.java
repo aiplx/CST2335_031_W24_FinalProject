@@ -3,10 +3,9 @@ package algonquin.cst2335.lian0122;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -30,14 +29,14 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class TestFavoriteButton {
+public class Test_HelpMenu {
 
     @Rule
-    public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
-            new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityScenarioRule<Menu_MainActivity> mActivityScenarioRule =
+            new ActivityScenarioRule<>(Menu_MainActivity.class);
 
     @Test
-    public void testFavoriteButton() {
+    public void test_HelpMenu() {
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.btnOpenSunriseSunsetLookup), withText("Open Sunrise and Sunset Lookup"),
                         childAtPosition(
@@ -49,41 +48,31 @@ public class TestFavoriteButton {
                         isDisplayed()));
         materialButton.perform(click());
 
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.editTextLatitude),
+        ViewInteraction overflowMenuButton = onView(
+                allOf(withContentDescription("More options"),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(android.R.id.content),
+                                        allOf(withId(R.id.mainToolbar), withContentDescription("SunSearch Menu Bar")),
                                         0),
-                                1),
+                                5),
                         isDisplayed()));
-        appCompatEditText.perform(replaceText("50"), closeSoftKeyboard());
+        overflowMenuButton.perform(click());
 
-        ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.editTextLongitude),
+        ViewInteraction materialTextView = onView(
+                allOf(withId(androidx.transition.R.id.title), withText("Help"),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(android.R.id.content),
+                                        withId(androidx.appcompat.R.id.content),
                                         0),
-                                2),
+                                0),
                         isDisplayed()));
-        appCompatEditText2.perform(replaceText("50"), closeSoftKeyboard());
+        materialTextView.perform(click());
 
-        ViewInteraction materialButton2 = onView(
-                allOf(withId(R.id.buttonLookup), withText("Lookup"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                3),
+        ViewInteraction textView = onView(
+                allOf(withId(android.R.id.message), withText("Instructions:\n - Enter the latitude and longitude and click 'Lookup' to find sunrise and sunset times.\n - Click 'Save to Favorites' to store a location.\n - Access your favorite locations from the Favorites menu.\n"),
+                        withParent(withParent(withId(androidx.appcompat.R.id.scrollView))),
                         isDisplayed()));
-        materialButton2.perform(click());
-
-        ViewInteraction button = onView(
-                allOf(withId(R.id.btnSaveToFavorites), withText("Save to Favorites"),
-                        withParent(withParent(withId(android.R.id.content))),
-                        isDisplayed()));
-        button.check(matches(isDisplayed()));
+        textView.check(matches(withText("Instructions:  - Enter the latitude and longitude and click 'Lookup' to find sunrise and sunset times.  - Click 'Save to Favorites' to store a location.  - Access your favorite locations from the Favorites menu. ")));
     }
 
     private static Matcher<View> childAtPosition(

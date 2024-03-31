@@ -9,11 +9,11 @@ import androidx.room.RoomDatabase;
  * Defines the database schema and version.
  */
 @Database(entities = {FavoriteLocation.class}, version = 1, exportSchema = false)
-public abstract class AppDatabase extends RoomDatabase {
+public abstract class Sun_AppDatabase extends RoomDatabase {
     /**
      * Provides access to LocationDao for database operations.
      * @return Instance of LocationDao.
      */
-    public abstract LocationDao locationDao();
+    public abstract Sun_LocationDao locationDao();
 }
 

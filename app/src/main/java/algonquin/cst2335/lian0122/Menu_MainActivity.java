@@ -19,7 +19,7 @@ import algonquin.cst2335.lian0122.databinding.ActivityMainBinding;
  * Main activity class for the application.
  * Entry point of the app, handling initial user navigation.
  */
-public class MainActivity extends AppCompatActivity {
+public class Menu_MainActivity extends AppCompatActivity {
 
     /**
      * Called when the activity is starting.
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.btnOpenSunriseSunsetLookup.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Sun_MainActivity.class);
+            Intent intent = new Intent(Menu_MainActivity.this, Sun_MainActivity.class);
             startActivity(intent);
         });
     }

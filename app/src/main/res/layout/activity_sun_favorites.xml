@@ -33,7 +33,7 @@
         android:id="@+id/mySavedLocations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/my_saved_locations"
+        android:text="@string/sun_my_saved_locations"
         android:textColor="@color/darker_gray"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewFavorites"
@@ -44,7 +44,7 @@
 
     <ImageView
         android:id="@+id/logo_favorites"
-        android:contentDescription="@string/sunseeker_logo"
+        android:contentDescription="@string/sun_sunseeker_logo"
         android:layout_width="254dp"
         android:layout_height="58dp"
         android:layout_marginTop="24dp"

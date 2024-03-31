@@ -42,7 +42,7 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
     /**
      * Database instance for accessing favorite locations.
      */
-    private AppDatabase db;
+    private Sun_AppDatabase db;
 
     /**
      * List to hold favorite location data retrieved from the database.
@@ -84,7 +84,7 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
      * Initializes the database and loads favorite locations.
      */
     private void initializeDatabase() {
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "favorite_locations_db").build();
+        db = Room.databaseBuilder(getApplicationContext(), Sun_AppDatabase.class, "favorite_locations_db").build();
         loadFavoriteLocations();
     }
 
@@ -129,9 +129,9 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
     @Override
     public void onItemLongClicked(int position) {
         new AlertDialog.Builder(this)
-                .setTitle(R.string.delete_entry)
-                .setMessage(R.string.are_you_sure_you_want_to_delete_this_entry)
-                .setPositiveButton(R.string.delete_now, (dialog, which) -> deleteFavoriteLocation(position))
+                .setTitle(R.string.sun_delete_entry)
+                .setMessage(R.string.sun_are_you_sure_you_want_to_delete_this_entry)
+                .setPositiveButton(R.string.sun_delete_now, (dialog, which) -> deleteFavoriteLocation(position))
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
     }
@@ -152,8 +152,8 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
             });
         }).start();
 
-        Snackbar.make(recyclerView, getString(R.string.item_deleted), Snackbar.LENGTH_LONG)
-                .setAction(getString(R.string.undo), view -> undoDelete(locationToDelete, position))
+        Snackbar.make(recyclerView, getString(R.string.sun_item_deleted), Snackbar.LENGTH_LONG)
+                .setAction(getString(R.string.sun_undo), view -> undoDelete(locationToDelete, position))
                 .show();
 
     }
@@ -180,8 +180,8 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
     @Override
     public void onItemClicked(FavoriteLocation location) {
         Intent intent = new Intent(this, Sun_MainActivity.class);
-        intent.putExtra(getString(R.string.latitude), location.latitude);
-        intent.putExtra(getString(R.string.longitude), location.longitude);
+        intent.putExtra(getString(R.string.sun_latitude), location.latitude);
+        intent.putExtra(getString(R.string.sun_longitude), location.longitude);
         startActivity(intent);
     }
 

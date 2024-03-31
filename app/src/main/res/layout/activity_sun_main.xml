@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/my_statusbar"
-        android:contentDescription="@string/toolbar"
+        android:contentDescription="@string/sun_toolbar"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:title=""
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:hint="@string/enter_latitude"
+        android:hint="@string/sun_enter_latitude"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
@@ -37,7 +37,7 @@
         android:id="@+id/editTextLongitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_longitude"
+        android:hint="@string/sun_enter_longitude"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginEnd="24dp"
-        android:text="@string/lookup_search"
+        android:text="@string/sun_lookup_search"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -61,7 +61,7 @@
 
     <ImageView
         android:id="@+id/image_sundown"
-        android:contentDescription="@string/a_sundown_icon"
+        android:contentDescription="@string/sun_a_sundown_icon"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginStart="60dp"
@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/solar_noon"
+        android:text="@string/sun_solar_noon"
         app:layout_constraintEnd_toEndOf="@+id/image_sun"
         app:layout_constraintStart_toStartOf="@+id/image_sun"
         app:layout_constraintTop_toBottomOf="@+id/image_sun" />
@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/sunrisecolon"
+        android:text="@string/sun_sunrisecolon"
         app:layout_constraintEnd_toEndOf="@+id/image_sundown"
         app:layout_constraintStart_toStartOf="@+id/image_sundown"
         app:layout_constraintTop_toBottomOf="@+id/image_sundown" />
@@ -97,14 +97,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/sunriseColon"
+        android:text="@string/sun_sunriseColon"
         app:layout_constraintEnd_toEndOf="@+id/image_sunset"
         app:layout_constraintStart_toStartOf="@+id/image_sunset"
         app:layout_constraintTop_toBottomOf="@+id/image_sunset" />
 
     <ImageView
         android:id="@+id/image_sunset"
-        android:contentDescription="@string/a_sunset_icon"
+        android:contentDescription="@string/sun_a_sunset_icon"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginTop="32dp"
@@ -116,7 +116,7 @@
 
     <ImageView
         android:id="@+id/image_sun"
-        android:contentDescription="@string/a_generic_sun_icon"
+        android:contentDescription="@string/sun_a_generic_sun_icon"
         android:layout_width="154dp"
         android:layout_height="159dp"
         android:layout_marginTop="50dp"
@@ -127,7 +127,7 @@
 
     <ImageView
         android:id="@+id/logo_favorites"
-        android:contentDescription="@string/a_favorites_icon"
+        android:contentDescription="@string/sun_a_favorites_icon"
         android:layout_width="254dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
@@ -145,7 +145,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_marginTop="28dp"
-        android:text="@string/save_to_favorites"
+        android:text="@string/sun_save_to_favorites"
         android:textColor="@color/white"
         android:textColorLink="#00DD1515"
         android:textSize="16sp"

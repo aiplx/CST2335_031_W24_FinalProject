@@ -115,8 +115,8 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
          * @param clickListener Listener for click events.
          */
         public void bind(final FavoriteLocation favorite, final OnItemLongClickListener longClickListener, final OnItemClickListener clickListener) {
-            String latText = itemView.getContext().getString(R.string.latitude_text, String.valueOf(favorite.latitude));
-            String lngText = itemView.getContext().getString(R.string.longitude_text, String.valueOf(favorite.longitude));
+            String latText = itemView.getContext().getString(R.string.sun_latitude_text, String.valueOf(favorite.latitude));
+            String lngText = itemView.getContext().getString(R.string.sun_longitude_text, String.valueOf(favorite.longitude));
             latitudeText.setText(latText);
             longitudeText.setText(lngText);
 

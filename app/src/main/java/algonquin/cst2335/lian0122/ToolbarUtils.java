@@ -66,6 +66,10 @@ public class ToolbarUtils {
             Intent intent = new Intent(activity, Sun_MainActivity.class);
             activity.startActivity(intent);
             return true;
+        } else if (id == R.id.action_return) {
+            Intent intent = new Intent(activity, Sun_MainActivity.class);
+            activity.startActivity(intent);
+            return true;
         }
 
         return false;
@@ -77,8 +81,8 @@ public class ToolbarUtils {
      */
     private static void showHelpDialog(AppCompatActivity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setTitle(R.string.help_dialog_title);
-        builder.setMessage(R.string.help_dialog_message);
+        builder.setTitle(R.string.sun_help_dialog_title);
+        builder.setMessage(R.string.sun_help_dialog_message);
 
         builder.setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss());
 

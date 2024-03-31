@@ -9,7 +9,7 @@
         android:id="@+id/btnOpenSunriseSunsetLookup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_sunrise_and_sunset_lookup"
+        android:text="@string/sun_open_sunrise_and_sunset_lookup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

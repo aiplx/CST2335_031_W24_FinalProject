@@ -20,7 +20,7 @@ import java.util.List;
  * This interface defines methods for accessing the FavoriteLocation entities in the database.
  */
 @Dao
-public interface LocationDao {
+public interface Sun_LocationDao {
 
     /**
      * Inserts a FavoriteLocation into the database.

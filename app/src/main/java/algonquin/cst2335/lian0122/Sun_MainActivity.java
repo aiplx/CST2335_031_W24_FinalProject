@@ -77,7 +77,7 @@ public class Sun_MainActivity extends AppCompatActivity {
                 saveLocationToDatabase(lat, lng);
                 savePreferences(String.valueOf(lat), String.valueOf(lng));
             } catch (NumberFormatException e) {
-                Toast.makeText(Sun_MainActivity.this, R.string.invalid_lat_long, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Sun_MainActivity.this, R.string.sun_invalid_lat_long, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -88,9 +88,9 @@ public class Sun_MainActivity extends AppCompatActivity {
      * Handles incoming intents and sets up views accordingly.
      */
     private void handleIncomingIntent() {
-        if (getIntent().hasExtra(getString(R.string.latitude)) && getIntent().hasExtra(getString(R.string.longitude))) {
-            double latitude = getIntent().getDoubleExtra(getString(R.string.latitude), 0);
-            double longitude = getIntent().getDoubleExtra(getString(R.string.longitude), 0);
+        if (getIntent().hasExtra(getString(R.string.sun_latitude)) && getIntent().hasExtra(getString(R.string.sun_longitude))) {
+            double latitude = getIntent().getDoubleExtra(getString(R.string.sun_latitude), 0);
+            double longitude = getIntent().getDoubleExtra(getString(R.string.sun_longitude), 0);
             binding.editTextLatitude.setText(String.valueOf(latitude));
             binding.editTextLongitude.setText(String.valueOf(longitude));
             performSunriseSunsetLookup();
@@ -102,8 +102,8 @@ public class Sun_MainActivity extends AppCompatActivity {
      */
     private void loadPreferences() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        String latitude = prefs.getString((getString(R.string.latitude)), "");
-        String longitude = prefs.getString((getString(R.string.longitude)), "");
+        String latitude = prefs.getString((getString(R.string.sun_latitude)), "");
+        String longitude = prefs.getString((getString(R.string.sun_longitude)), "");
         binding.editTextLatitude.setText(latitude);
         binding.editTextLongitude.setText(longitude);
     }
@@ -115,8 +115,8 @@ public class Sun_MainActivity extends AppCompatActivity {
      */
     private void savePreferences(String latitude, String longitude) {
         SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-        editor.putString((getString(R.string.latitude)), latitude);
-        editor.putString((getString(R.string.longitude)), longitude);
+        editor.putString((getString(R.string.sun_latitude)), latitude);
+        editor.putString((getString(R.string.sun_longitude)), longitude);
         editor.apply();
     }
 
@@ -127,7 +127,7 @@ public class Sun_MainActivity extends AppCompatActivity {
         String latitude = binding.editTextLatitude.getText().toString();
         String longitude = binding.editTextLongitude.getText().toString();
         if (latitude.isEmpty() || longitude.isEmpty()) {
-            Toast.makeText(this, R.string.please_enter_both_lat_long, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.sun_please_enter_both_lat_long, Toast.LENGTH_SHORT).show();
             return;
         }
         savePreferences(latitude, longitude);
@@ -147,7 +147,7 @@ public class Sun_MainActivity extends AppCompatActivity {
             Log.e("Sun_MainActivity", "Error Response: " + errorMessage);
             Toast.makeText(Sun_MainActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(Sun_MainActivity.this, R.string.network_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(Sun_MainActivity.this, R.string.sun_network_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -157,14 +157,14 @@ public class Sun_MainActivity extends AppCompatActivity {
      * @param longitude Longitude of the location.
      */
     private void saveLocationToDatabase(double latitude, double longitude) {
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "favorite_locations_db").build();
-        LocationDao dao = db.locationDao();
+        Sun_AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                Sun_AppDatabase.class, "favorite_locations_db").build();
+        Sun_LocationDao dao = db.locationDao();
 
         new Thread(() -> {
             dao.insert(new FavoriteLocation(latitude, longitude));
             runOnUiThread(() ->
-                    Toast.makeText(Sun_MainActivity.this, R.string.location_saved, Toast.LENGTH_SHORT).show());
+                    Toast.makeText(Sun_MainActivity.this, R.string.sun_location_saved, Toast.LENGTH_SHORT).show());
         }).start();
     }
 
@@ -175,21 +175,21 @@ public class Sun_MainActivity extends AppCompatActivity {
     private void parseAndDisplayResult(String response) {
         try {
             JSONObject jsonObject = new JSONObject(response);
-            JSONObject results = jsonObject.getJSONObject(getString(R.string.results));
-            String sunrise = results.optString("sunrise", getString(R.string.not_available));
-            String sunset = results.optString("sunset", getString(R.string.not_available));
-            String solarNoon = results.optString("solar_noon", getString(R.string.not_available));
+            JSONObject results = jsonObject.getJSONObject(getString(R.string.sun_results));
+            String sunrise = results.optString("sunrise", getString(R.string.sun_not_available));
+            String sunset = results.optString("sunset", getString(R.string.sun_not_available));
+            String solarNoon = results.optString("solar_noon", getString(R.string.sun_not_available));
 
             // Setting the text of each TextView
-            binding.textViewSunrise.setText(getString(R.string.template_sunrise, sunrise));
-            binding.textViewSunset.setText(getString(R.string.template_sunset, sunset));
-            binding.textViewSolarNoon.setText(getString(R.string.template_solar_noon, solarNoon));
+            binding.textViewSunrise.setText(getString(R.string.sun_template_sunrise, sunrise));
+            binding.textViewSunset.setText(getString(R.string.sun_template_sunset, sunset));
+            binding.textViewSolarNoon.setText(getString(R.string.sun_template_solar_noon, solarNoon));
 
             binding.btnSaveToFavorites.setVisibility(View.VISIBLE);
 
         } catch (Exception e) {
             Log.e("Sun_MainActivity", "Error parsing data", e);
-            Toast.makeText(this, R.string.parsing_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.sun_parsing_error, Toast.LENGTH_SHORT).show();
         }
     }
 
