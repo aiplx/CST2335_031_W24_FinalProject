@@ -32,6 +32,7 @@ public class Sun_MainActivity extends AppCompatActivity {
         binding = ActivitySunMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         ToolbarUtils.setupToolbar(this, R.id.mainToolbar);
+        getSupportActionBar().setTitle("");
 
         loadPreferences();
         handleIncomingIntent();

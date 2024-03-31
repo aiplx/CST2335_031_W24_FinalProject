@@ -1,16 +1,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <item
+        android:id="@+id/action_recepie"
+        android:icon="@drawable/ic_rec"
+        android:title="@string/SunSeeker"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_dictionary"
+        android:icon="@drawable/ic_dict"
+        android:title="@string/SunSeeker"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_sunSeeker"
         android:icon="@drawable/ic_sun_home"
         android:title="@string/SunSeeker"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_favorites"
         android:title="@string/favorites"
         android:icon="@drawable/ic_favorite"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_about"

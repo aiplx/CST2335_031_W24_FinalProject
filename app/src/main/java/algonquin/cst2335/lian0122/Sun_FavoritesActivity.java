@@ -28,7 +28,7 @@ public class Sun_FavoritesActivity extends AppCompatActivity implements Favorite
         setContentView(R.layout.activity_sun_favorites);
 
         ToolbarUtils.setupToolbar(this, R.id.toolbarFavorites);
-
+        getSupportActionBar().setTitle("");
         initializeRecyclerView();
         initializeDatabase();
     }
