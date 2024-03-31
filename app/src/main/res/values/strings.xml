@@ -4,7 +4,7 @@
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="enter_longitude">Enter Longitude</string>
-    <string name="enter_latitude">Enter Longitude</string>
+    <string name="enter_latitude">Enter Latitude</string>
     <string name="favorites">Favorites</string>
     <string name="toolbar">SunSearch Menu Bar</string>
     <string name="about">About</string>
@@ -46,6 +46,11 @@
     <string name="solar_noon">Solar Noon:</string>
     <string name="sunrisecolon">Sunrise:</string>
     <string name="sunriseColon">Sunrise:</string>
+    <string name="sunseeker_logo" translatable="false">SunSeeker Logo</string>
+    <string name="a_sundown_icon">A sundown icon</string>
+    <string name="a_sunset_icon">A sunset icon</string>
+    <string name="a_generic_sun_icon">A generic sun icon</string>
+    <string name="a_favorites_icon">A favorites icon</string>
 
 
 </resources>

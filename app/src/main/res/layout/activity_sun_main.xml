@@ -61,6 +61,7 @@
 
     <ImageView
         android:id="@+id/image_sundown"
+        android:contentDescription="@string/a_sundown_icon"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginStart="60dp"
@@ -103,6 +104,7 @@
 
     <ImageView
         android:id="@+id/image_sunset"
+        android:contentDescription="@string/a_sunset_icon"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginTop="32dp"
@@ -114,6 +116,7 @@
 
     <ImageView
         android:id="@+id/image_sun"
+        android:contentDescription="@string/a_generic_sun_icon"
         android:layout_width="154dp"
         android:layout_height="159dp"
         android:layout_marginTop="50dp"
@@ -124,6 +127,7 @@
 
     <ImageView
         android:id="@+id/logo_favorites"
+        android:contentDescription="@string/a_favorites_icon"
         android:layout_width="254dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"

@@ -37,4 +37,8 @@
     <string name="template_sunset">Untergang: %1$s</string>
     <string name="template_solar_noon">Hoch: %1$s</string>
     <string name="enter_latitude">Laenge eingeben</string>
+    <string name="a_sundown_icon">Unergang Logo</string>
+    <string name="a_sunset_icon">Aufgang Logo</string>
+    <string name="a_generic_sun_icon">Sonnen Logo</string>
+    <string name="a_favorites_icon">Favoriten Logo</string>
 </resources>
