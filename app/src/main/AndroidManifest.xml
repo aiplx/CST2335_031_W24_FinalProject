@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +13,7 @@
         android:theme="@style/Theme.PingsAndroidLabs"
         tools:targetApi="31">
 
-        <!-- 只保留一个 MusicActivity -->
+
         <activity
             android:name=".music.MusicActivity"
             android:exported="true">
@@ -30,4 +30,4 @@
 
     </application>
 
-</manifest>
+</manifest> -->
