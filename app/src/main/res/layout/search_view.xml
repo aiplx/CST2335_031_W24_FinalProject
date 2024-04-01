@@ -60,7 +60,7 @@
         android:insetBottom="0dp"
         android:paddingStart="4dp"
         android:paddingEnd="4dp"
-        app:icon="@drawable/rec_delete"
+        app:icon="@drawable/delete"
         app:iconGravity="textStart"
         app:iconPadding="0dp" />
 </LinearLayout>

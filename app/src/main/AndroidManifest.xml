@@ -18,7 +18,7 @@
             android:exported="false" />
         <activity
             android:name=".Dictionary.Dict_ActivitySavedTerms"
-            android:exported="false" />
+            android:exported="false" /> 
 
         <activity
             android:name=".Dictionary.DictionaryRoom"
@@ -27,9 +27,19 @@
         <activity
             android:name=".music.MusicActivity"
             android:exported="false" />
+        <activity
+            android:name=".Sun_MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Sun_FavoritesActivity"
+            android:exported="false" />
 
         <activity
             android:name="algonquin.cst2335.li000543.Recipe.RecipeMain"
+            android:exported="false" />
+        <activity
+            android:name=".Menu_MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

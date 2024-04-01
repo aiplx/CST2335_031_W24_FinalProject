@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color  name="my_primary">#E75A18</color>
+    <color  name="my_primary">#AA8371</color>
     <color  name="my_secondary">#939B4D</color>
     <color  name="my_statusbar">#00702300</color>
     <color  name="my_text">@color/darker_gray</color>
-
+    <color  name="frameBG">#FFFFFFFF</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -15,4 +15,9 @@
     <color name="Dark_Pink">@color/light_blue</color>
     <color name="wine">#488C1E59</color>
     <color name="orange_text">#F39519</color>
+<!--    <color  name="my_primary">#FFBB86FC</color>-->
+<!--    <color  name="my_secondary">#939B4D</color>-->
+<!--    <color  name="my_statusbar">#802C21</color>-->
+<!--    <color  name="my_text">#F1E80C5B</color>-->
+
 </resources>

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="RecipeTest">
+      <entry key="Test_HelpMenu">
+        <State />
+      </entry>
+      <entry key="Tests in 'algonquin.cst2335'">
+        <State />
+      </entry>
+      <entry key="Tests in 'algonquin.cst2335.lian0122'">
         <State />
       </entry>
       <entry key="app">
@@ -21,16 +27,10 @@
           <timeTargetWasSelectedWithDropDown value="2024-03-31T01:58:56.145758Z" />
         </State>
       </entry>
-      <entry key="testRecipeDeletion()">
+      <entry key="testFavoriteButton()">
         <State />
       </entry>
-      <entry key="testRecipeGetters()">
-        <State />
-      </entry>
-      <entry key="testRecipeObjectInstantiation()">
-        <State />
-      </entry>
-      <entry key="testRecipeSearch()">
+      <entry key="testToolbarWidget()">
         <State />
       </entry>
     </value>

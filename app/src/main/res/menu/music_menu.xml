@@ -2,6 +2,23 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/item_sun"
+        android:icon="@drawable/tb_sun"
+        android:title="@string/dict_sunIcon_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_dictionary"
+        android:icon="@drawable/tb_dictionary"
+        android:title="@string/dict_dictIcon_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_recipe"
+        android:icon="@drawable/tb_recipe"
+        android:title="@string/dict_recipeIcon_title"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/favoriteMusic"
@@ -11,7 +28,7 @@
 
     <item
         android:id="@+id/addItem"
-        android:icon="@drawable/add"
+        android:icon="@drawable/rec_download"
         android:title="@string/music_addItem"
         app:showAsAction="always" />
 
@@ -20,10 +37,6 @@
         android:icon="@drawable/delete"
         android:title="@string/music_deleteItem"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/backItem"
-        android:title="@string/music_backToMainItem"
-        app:showAsAction="never" />
 
     <item
         android:id="@+id/helpItem"

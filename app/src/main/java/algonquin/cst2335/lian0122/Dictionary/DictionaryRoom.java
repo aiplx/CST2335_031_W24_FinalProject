@@ -38,6 +38,7 @@ import java.util.List;
 
 import algonquin.cst2335.li000543.Recipe.RecipeMain;
 import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.lian0122.Sun_MainActivity;
 import algonquin.cst2335.lian0122.databinding.ActivityDictionaryRoomBinding;
 import algonquin.cst2335.lian0122.music.MusicActivity;
 
@@ -220,22 +221,12 @@ public class DictionaryRoom extends AppCompatActivity {
 		} else if (item.getItemId() == R.id.item_3) {
 			showToastAboutAuthor();
 			return true;
+		}else if (item.getItemId() == R.id.item_sun) {
+			Intent sunPage = new Intent(DictionaryRoom.this, Sun_MainActivity.class);
+			startActivity(sunPage);
+			return true;
 
-			// BACK TO THIS, need to do
-			//        } else if (item.getItemId() == R.id.item_sun) {
-			//            Intent sunPage = new Intent(DictionaryRoom.this, SunActivity.class);
-			//            startActivity(sunPage);
-			//            return true;
-			//        }else if (item.getItemId() == R.id.item_music) {
-			//            Intent musicPage = new Intent(DictionaryRoom.this, MusicActivity.class);
-			//            startActivity(musicPage);
-			//            return true;
-			//        }else if (item.getItemId() == R.id.item_recipe) {
-			//            Intent recipePage = new Intent(DictionaryRoom.this, RecipeActivity.class);
-			//            startActivity(recipePage);
-			//            return true;
-		}
-		else if (item.getItemId() == R.id.item_recipe) {
+		} else if (item.getItemId() == R.id.item_recipe) {
 			Intent recipePage = new Intent(DictionaryRoom.this, RecipeMain.class);
 			startActivity(recipePage);
 			return true;

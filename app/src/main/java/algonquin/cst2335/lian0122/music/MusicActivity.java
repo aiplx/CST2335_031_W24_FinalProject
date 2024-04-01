@@ -64,8 +64,10 @@ import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-import algonquin.cst2335.lian0122.MainActivity;
+import algonquin.cst2335.li000543.Recipe.RecipeMain;
+import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
 import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.lian0122.Sun_MainActivity;
 import algonquin.cst2335.lian0122.databinding.ActivityMusicBinding;
 import algonquin.cst2335.lian0122.databinding.SearchMusicBinding;
 
@@ -369,10 +371,6 @@ public class MusicActivity extends AppCompatActivity {
                     Toast.makeText(this, R.string.music_noSelectedToast, Toast.LENGTH_SHORT).show();
                 }
             }
-        } else if (item.getItemId() == R.id.backItem) {
-            Intent nextPage1 = new Intent(MusicActivity.this, MusicActivity.class);
-            startActivity(nextPage1);
-            finish();
         } else if (item.getItemId() == R.id.helpItem) {
             AlertDialog.Builder builder = new AlertDialog.Builder(MusicActivity.this);
             builder.setMessage(R.string.music_helpDetail)
@@ -381,7 +379,20 @@ public class MusicActivity extends AppCompatActivity {
                     }).create().show();
         } else if (item.getItemId() == R.id.aboutMusic) {
             Toast.makeText(this, R.string.music_aboutToast, Toast.LENGTH_LONG).show();
-        } else {
+
+        }else if (item.getItemId() == R.id.item_sun) {
+            Intent recipePage = new Intent(MusicActivity.this, Sun_MainActivity.class);
+            startActivity(recipePage);
+            return true;
+        }else if (item.getItemId() == R.id.item_recipe) {
+            Intent recipePage = new Intent(MusicActivity.this, RecipeMain.class);
+            startActivity(recipePage);
+            return true;
+        }else if (item.getItemId() == R.id.item_dictionary) {
+            Intent musicPage = new Intent(MusicActivity.this, DictionaryRoom.class);
+            startActivity(musicPage);
+            return true;}
+        else {
             return super.onOptionsItemSelected(item);
         }
         return true;

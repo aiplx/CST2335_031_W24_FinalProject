@@ -1,6 +1,7 @@
 <resources>
+    <string name="finalPJ_app_name" translatable="false">CST2335 031 W24 Final Project</string>
     <string name="rec_app_name">Recipe</string>
-    <string name="rec_search_name">Recipe App</string>
+    <string name="rec_search_name">Recipe</string>
     <string name="rec_search_hint">Enter a recipe name</string>
     <string name="rec_search">Search</string>
     <string name="rec_welcome_message">Welcome to your Recipe</string>
@@ -30,7 +31,7 @@
 
 <!--    Dict String-->
 
-    <string name="dict_app_name">CST2335 031 W24 Final Project</string>
+    <string name="dict_app_name">Dictionary</string>
     <string name="dict_search_Button">Search</string>
     <string name="dict_savedTerms_Button">Saved terms</string>
     <string name="dict_saveIcon_title">Save</string>
@@ -62,13 +63,13 @@
     <string name="dict_sunIcon_title">Sun APP</string>
     <string name="dict_musicIcon_title">Music APP</string>
     <string name="dict_recipeIcon_title">Recipe APP</string>
+    <string name="dict_dictIcon_title">Dictionary APP</string>
 
     <!--    Music String-->
-    <string name="app_name">CST2335 031 W24 Final Project</string>
+    <string name="music_app_name">Music</string>
     <string name="music_favItem">Favorite Music</string>
     <string name="music_addItem">Save This Music</string>
     <string name="music_deleteItem">Delete This Music</string>
-    <string name="music_backToMainItem">Back To Main</string>
     <string name="music_aboutItem">About</string>
     <string name="music_helpItem">Help</string>
     <string name="music_sampleList">Music name goes here</string>
@@ -103,6 +104,63 @@
             Your saved music will be easily accessible whenever you\'re ready to listen.\n\n
 
           </string>
-    <string name="music_helpTitle" translatable="false">Your Help Title Here</string>
+    <string name="music_helpTitle" translatable="false">Help</string>
+
+<!--    Sun String-->
+    <string name="sun_app_name">Sun</string>
+    <string name="sun_open_sunrise_and_sunset_lookup">Open Sunrise and Sunset Lookup</string>
+    <string name="sun_latitude">Latitude</string>
+    <string name="sun_longitude">Longitude</string>
+    <string name="sun_enter_longitude">Enter Longitude</string>
+    <string name="sun_enter_latitude">Enter Latitude</string>
+    <string name="sun_favorites">Favorites</string>
+    <string name="sun_toolbar">SunSearch Menu Bar</string>
+    <string name="sun_about">About</string>
+    <string name="sun_return_main">Go Back to Home</string>
+    <string name="sun_help_dialog_title">How to Use</string>
+    <string name="sun_help_dialog_message">
+    Instructions:\n
+    - Enter the latitude and longitude and click \'Lookup\' to find sunrise and sunset times.\n
+    - Click \'Save to Favorites\' to store a location.\n
+    - Access your favorite locations from the Favorites menu.\n
+</string>
+    <string name="sun_help">Help</string>
+    <string name="sun_lookup_search">Lookup</string>
+    <string name="sun_save_to_favorites">Save to Favorites</string>
+    <string name="sun_example_lat" translatable="false">Lat: 45.4215° N</string>
+    <string name="sun_example_lng" translatable="false">Lng: 75.6919° W</string>
+    <string name="sun_a_little_sun_icon">A little sun Icon</string>
+    <string name="sun_SunSeeker" translatable="false">SunSeeker</string>
+    <string name="sun_my_saved_locations">My Saved Locations</string>
+    <string name="sun_invalid_lat_long">Invalid latitude or longitude</string>
+    <string name="sun_please_enter_both_lat_long">Please enter both latitude and longitude</string>
+    <string name="sun_network_error">Network error</string>
+    <string name="sun_location_saved">Location saved to favorites</string>
+    <string name="sun_parsing_error">Error parsing data</string>
+    <string name="sun_latitude_text" translatable="false">Lat: %1$s</string>
+    <string name="sun_longitude_text" translatable="false">Lng: %1$s</string>
+    <string name="sun_delete_entry">Delete Entry</string>
+    <string name="sun_are_you_sure_you_want_to_delete_this_entry">Are you sure you want to delete this entry?</string>
+    <string name="sun_delete_now">Delete</string>
+    <string name="sun_undo">UNDO</string>
+    <string name="sun_Latitude">latitude</string>
+    <string name="sun_Longitude">longitude</string>
+    <string name="sun_item_deleted" >item deleted</string>
+    <string name="sun_results">results</string>
+    <string name="sun_not_available">Not Available</string>
+    <string name="sun_template_sunrise">Sunrise: %1$s</string>
+    <string name="sun_template_sunset">Sunset: %1$s</string>
+    <string name="sun_template_solar_noon">Solar Noon: %1$s</string>
+    <string name="sun_solar_noon">Solar Noon:</string>
+    <string name="sun_sunrisecolon">Sunrise:</string>
+    <string name="sun_sunriseColon">Sunrise:</string>
+    <string name="sun_sunseeker_logo" translatable="false">SunSeeker Logo</string>
+    <string name="sun_a_sundown_icon">A sundown icon</string>
+    <string name="sun_a_sunset_icon">A sunset icon</string>
+    <string name="sun_a_generic_sun_icon">A generic sun icon</string>
+    <string name="sun_a_favorites_icon">A favorites icon</string>
+    <string name="mainPage_Open_Recipe">Open Recipe</string>
+    <string name="mainPage_Open_Dictionary">Open Dictionary</string>
+    <string name="mainPage_Open_Music">Open Music</string>
 
 </resources>

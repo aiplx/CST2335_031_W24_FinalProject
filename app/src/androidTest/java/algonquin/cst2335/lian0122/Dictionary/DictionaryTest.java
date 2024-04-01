@@ -54,7 +54,7 @@ public class DictionaryTest {
         appCompatEditText.perform(replaceText("sun"), closeSoftKeyboard());
 
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.search_Button), withText("Recherche"),
+                allOf(withId(R.id.search_Button), withText("Search"),
                         childAtPosition(
                                 allOf(withId(R.id.main),
                                         childAtPosition(
@@ -68,7 +68,7 @@ public class DictionaryTest {
     @Test
     public void dictionarySaveTest() {
     ViewInteraction actionMenuItemView = onView(
-            allOf(withId(R.id.item_1), withContentDescription("enregistrer"),
+            allOf(withId(R.id.item_1), withContentDescription("Save"),
                     childAtPosition(
                             childAtPosition(
                                     withId(R.id.dictionaryRoomToolbar),
@@ -78,7 +78,7 @@ public class DictionaryTest {
         actionMenuItemView.perform(click());
 
     ViewInteraction button = onView(
-            allOf(withId(R.id.item_1), withContentDescription("enregistrer"),
+            allOf(withId(R.id.item_1), withContentDescription("Save"),
                     withParent(withParent(withId(R.id.dictionaryRoomToolbar))),
                     isDisplayed()));
         button.check(matches(isDisplayed()));
@@ -87,7 +87,7 @@ public class DictionaryTest {
     @Test
     public void dictionarySavedTermsTest() {
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.savedTerms_Button), withText("Termes enregistrés"),
+                allOf(withId(R.id.savedTerms_Button), withText("Saved terms"),
                         childAtPosition(
                                 allOf(withId(R.id.main),
                                         childAtPosition(
@@ -112,7 +112,7 @@ public class DictionaryTest {
         appCompatEditText.perform(replaceText("sun"), closeSoftKeyboard());
 
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.search_Button), withText("Recherche"),
+                allOf(withId(R.id.search_Button), withText("Search"),
                         childAtPosition(
                                 allOf(withId(R.id.main),
                                         childAtPosition(
@@ -123,7 +123,7 @@ public class DictionaryTest {
         materialButton.perform(click());
 
         ViewInteraction actionMenuItemView = onView(
-                allOf(withId(R.id.item_1), withContentDescription("enregistrer"),
+                allOf(withId(R.id.item_1), withContentDescription("Save"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(R.id.dictionaryRoomToolbar),
@@ -133,7 +133,7 @@ public class DictionaryTest {
         actionMenuItemView.perform(click());
 
         ViewInteraction actionMenuItemView2 = onView(
-                allOf(withId(R.id.item_1), withContentDescription("enregistrer"),
+                allOf(withId(R.id.item_1), withContentDescription("Save"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(R.id.dictionaryRoomToolbar),
@@ -143,7 +143,7 @@ public class DictionaryTest {
         actionMenuItemView2.perform(click());
 
         ViewInteraction button = onView(
-                allOf(withId(R.id.item_1), withContentDescription("enregistrer"),
+                allOf(withId(R.id.item_1), withContentDescription("Save"),
                         withParent(withParent(withId(R.id.dictionaryRoomToolbar))),
                         isDisplayed()));
         button.check(matches(isDisplayed()));
@@ -152,7 +152,7 @@ public class DictionaryTest {
     @Test
     public void dictionaryAuthorTest() {
         ViewInteraction overflowMenuButton = onView(
-                allOf(withContentDescription("Plus d'options"),
+                allOf(withContentDescription("More options"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(R.id.dictionaryRoomToolbar),
@@ -162,7 +162,7 @@ public class DictionaryTest {
         overflowMenuButton.perform(click());
 
         ViewInteraction materialTextView = onView(
-                allOf(withId(androidx.transition.R.id.title), withText("À propos"),
+                allOf(withId(androidx.transition.R.id.title), withText("About"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(androidx.appcompat.R.id.content),

@@ -48,6 +48,7 @@ import java.util.stream.Collectors;
 
 import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
 import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.lian0122.Sun_MainActivity;
 import algonquin.cst2335.lian0122.databinding.RecipeActivityMainBinding;
 import algonquin.cst2335.lian0122.databinding.SearchViewBinding;
 import algonquin.cst2335.lian0122.music.MusicActivity;
@@ -242,6 +243,11 @@ public class RecipeMain extends AppCompatActivity {
                 runOnUiThread(() -> myAdapter.notifyDataSetChanged());
             });
             return true;
+        }else if (item.getItemId() == R.id.item_sun) {
+            Intent sunPage = new Intent(RecipeMain.this, Sun_MainActivity.class);
+            startActivity(sunPage);
+            return true;
+
         } else if (item.getItemId() == R.id.item_dictionary) {
                         Intent dictionaryPage = new Intent(RecipeMain.this, DictionaryRoom.class);
                         startActivity(dictionaryPage);
@@ -253,10 +259,7 @@ public class RecipeMain extends AppCompatActivity {
         }
 
         // BACK TO THIS, need to do
-        //         else if (item.getItemId() == R.id.item_sun) {
-        //            Intent sunPage = new Intent(RecipeMain.this, SunActivity.class);
-        //            startActivity(sunPage);
-        //            return true;
+        //
         //        }else if (item.getItemId() == R.id.item_music) {
         //            Intent musicPage = new Intent(RecipeMain.this, MusicActivity.class);
         //            startActivity(musicPage);

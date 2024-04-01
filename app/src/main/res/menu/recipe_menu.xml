@@ -34,7 +34,7 @@
 
     <item
         android:id="@+id/ViewSavedRecipes"
-        android:icon="@drawable/rec_download"
+        android:icon="@drawable/favorite"
         android:title="@string/rec_ViewButton"
         app:showAsAction="always"/>
 </menu>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CST2335 031 W24 Final Project</string>
+    <string name="music_app_name">CST2335 031 W24 Final Project</string>
     <string name="music_favItem">喜欢的音乐</string>
     <string name="music_addItem">保存这个音乐</string>
     <string name="music_deleteItem">删除这个音乐</string>
-    <string name="music_backToMainItem">回到主菜单</string>
     <string name="music_aboutItem">关于</string>
     <string name="music_helpItem">帮助</string>
     <string name="music_sampleList">音乐名字在这里</string>

@@ -15,6 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
+import algonquin.cst2335.li000543.Recipe.RecipeMain;
+import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
+import algonquin.cst2335.lian0122.music.MusicActivity;
+
 /**
  * Utility class for handling toolbar-related actions.
  * Provides methods for setting up toolbars and handling menu item selections.
@@ -55,15 +59,15 @@ public class ToolbarUtils {
             activity.startActivity(intent);
             return true;
         } else if (id == R.id.action_dictionary) {
-            Intent intent = new Intent(activity, Sun_MainActivity.class);
+            Intent intent = new Intent(activity, DictionaryRoom.class);
             activity.startActivity(intent);
             return true;
         } else if (id == R.id.action_recepie) {
-            Intent intent = new Intent(activity, Sun_MainActivity.class);
+            Intent intent = new Intent(activity, RecipeMain.class);
             activity.startActivity(intent);
             return true;
         } else if (id == R.id.action_song) {
-            Intent intent = new Intent(activity, Sun_MainActivity.class);
+            Intent intent = new Intent(activity, MusicActivity.class);
             activity.startActivity(intent);
             return true;
         } else if (id == R.id.action_return) {

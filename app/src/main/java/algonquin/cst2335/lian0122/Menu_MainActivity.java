@@ -13,7 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import algonquin.cst2335.li000543.Recipe.RecipeMain;
+import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
 import algonquin.cst2335.lian0122.databinding.ActivityMainBinding;
+import algonquin.cst2335.lian0122.music.MusicActivity;
 
 /**
  * Main activity class for the application.
@@ -34,6 +37,21 @@ public class Menu_MainActivity extends AppCompatActivity {
 
         binding.btnOpenSunriseSunsetLookup.setOnClickListener(v -> {
             Intent intent = new Intent(Menu_MainActivity.this, Sun_MainActivity.class);
+            startActivity(intent);
+        });
+
+        binding.dictionaryMainPage.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu_MainActivity.this, DictionaryRoom.class);
+            startActivity(intent);
+        });
+
+        binding.recipeMainPage.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu_MainActivity.this, RecipeMain.class);
+            startActivity(intent);
+        });
+
+        binding.musicMainPage.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu_MainActivity.this, MusicActivity.class);
             startActivity(intent);
         });
     }
