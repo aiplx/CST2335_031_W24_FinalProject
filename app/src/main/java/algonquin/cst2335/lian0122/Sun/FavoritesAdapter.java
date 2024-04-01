@@ -6,7 +6,7 @@
  * Creation Date: 2024-03-31
  */
 
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +15,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
+
+import algonquin.cst2335.lian0122.R;
 
 /**
  * Adapter for managing a RecyclerView displaying favorite locations.

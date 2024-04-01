@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

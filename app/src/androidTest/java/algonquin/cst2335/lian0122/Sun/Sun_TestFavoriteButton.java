@@ -1,11 +1,12 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -16,29 +17,34 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import algonquin.cst2335.lian0122.Menu_MainActivity;
+import algonquin.cst2335.lian0122.R;
+
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class Sun_TestToolbarWidget {
+public class Sun_TestFavoriteButton {
 
     @Rule
     public ActivityScenarioRule<Menu_MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(Menu_MainActivity.class);
 
     @Test
-    public void testToolbarWidget() {
+    public void testFavoriteButton() {
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.btnOpenSunriseSunsetLookup), withText("Open Sunrise and Sunset Lookup"),
+                Matchers.allOf(ViewMatchers.withId(R.id.btnOpenSunriseSunsetLookup), withText("Open Sunrise and Sunset Lookup"),
                         childAtPosition(
                                 allOf(withId(R.id.linearLayout),
                                         childAtPosition(
@@ -48,35 +54,41 @@ public class Sun_TestToolbarWidget {
                         isDisplayed()));
         materialButton.perform(click());
 
+        ViewInteraction appCompatEditText = onView(
+                allOf(withId(R.id.editTextLatitude),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                1),
+                        isDisplayed()));
+        appCompatEditText.perform(replaceText("50"), closeSoftKeyboard());
+
+        ViewInteraction appCompatEditText2 = onView(
+                allOf(withId(R.id.editTextLongitude),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                2),
+                        isDisplayed()));
+        appCompatEditText2.perform(replaceText("50"), closeSoftKeyboard());
+
+        ViewInteraction materialButton2 = onView(
+                allOf(withId(R.id.buttonLookup), withText("Lookup"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                3),
+                        isDisplayed()));
+        materialButton2.perform(click());
+
         ViewInteraction button = onView(
-                allOf(withId(R.id.action_song), withContentDescription("SunSeeker"),
-                        withParent(withParent(allOf(withId(R.id.mainToolbar), withContentDescription("SunSearch Menu Bar")))),
+                allOf(withId(R.id.btnSaveToFavorites), withText("Save to Favorites"),
+                        withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         button.check(matches(isDisplayed()));
-
-        ViewInteraction button2 = onView(
-                allOf(withId(R.id.action_recepie), withContentDescription("SunSeeker"),
-                        withParent(withParent(allOf(withId(R.id.mainToolbar), withContentDescription("SunSearch Menu Bar")))),
-                        isDisplayed()));
-        button2.check(matches(isDisplayed()));
-
-        ViewInteraction button3 = onView(
-                allOf(withId(R.id.action_dictionary), withContentDescription("SunSeeker"),
-                        withParent(withParent(allOf(withId(R.id.mainToolbar), withContentDescription("SunSearch Menu Bar")))),
-                        isDisplayed()));
-        button3.check(matches(isDisplayed()));
-
-        ViewInteraction button4 = onView(
-                allOf(withId(R.id.action_sunSeeker), withContentDescription("SunSeeker"),
-                        withParent(withParent(allOf(withId(R.id.mainToolbar), withContentDescription("SunSearch Menu Bar")))),
-                        isDisplayed()));
-        button4.check(matches(isDisplayed()));
-
-        ViewInteraction button5 = onView(
-                allOf(withId(R.id.action_favorites), withContentDescription("Favorites"),
-                        withParent(withParent(allOf(withId(R.id.mainToolbar), withContentDescription("SunSearch Menu Bar")))),
-                        isDisplayed()));
-        button5.check(matches(isDisplayed()));
     }
 
     private static Matcher<View> childAtPosition(

@@ -6,7 +6,7 @@
  * Creation Date: 2024-03-31
  */
 
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.List;
 import androidx.room.Room;
+
+import algonquin.cst2335.lian0122.R;
 
 /**
  * Activity for displaying and managing favorite locations.

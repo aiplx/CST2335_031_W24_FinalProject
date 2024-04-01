@@ -6,7 +6,7 @@
  * Creation Date: 2024-03-31
  */
 
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -27,6 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 
+import algonquin.cst2335.lian0122.R;
 import algonquin.cst2335.lian0122.databinding.ActivitySunMainBinding;
 
 /**

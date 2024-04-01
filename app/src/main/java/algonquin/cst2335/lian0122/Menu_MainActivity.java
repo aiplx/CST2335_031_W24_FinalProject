@@ -1,7 +1,7 @@
 /**
  * Main activity class of the application.
  * Entry point for the app, handling initial navigation.
- * Author: Oliver Kadvany - 041096826
+ * Author: Oliver Kadvany - 041096826, Ping Liang, Shanghao Li, Jialin Wang
  * Lab Section: 031
  * Creation Date: 2024-03-31
  */
@@ -15,6 +15,7 @@ import android.os.Bundle;
 
 import algonquin.cst2335.li000543.Recipe.RecipeMain;
 import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
+import algonquin.cst2335.lian0122.Sun.Sun_MainActivity;
 import algonquin.cst2335.lian0122.databinding.ActivityMainBinding;
 import algonquin.cst2335.lian0122.music.MusicActivity;
 

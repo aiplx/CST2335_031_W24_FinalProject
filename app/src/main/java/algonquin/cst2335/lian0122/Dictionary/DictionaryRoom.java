@@ -38,7 +38,7 @@ import java.util.List;
 
 import algonquin.cst2335.li000543.Recipe.RecipeMain;
 import algonquin.cst2335.lian0122.R;
-import algonquin.cst2335.lian0122.Sun_MainActivity;
+import algonquin.cst2335.lian0122.Sun.Sun_MainActivity;
 import algonquin.cst2335.lian0122.databinding.ActivityDictionaryRoomBinding;
 import algonquin.cst2335.lian0122.music.MusicActivity;
 

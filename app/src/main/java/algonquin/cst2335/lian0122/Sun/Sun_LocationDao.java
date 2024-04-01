@@ -6,7 +6,7 @@
  * Creation Date: 2024-03-31
  */
 
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

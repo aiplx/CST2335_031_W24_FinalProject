@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 
 import static androidx.test.espresso.Espresso.onView;
@@ -18,17 +18,22 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeMatcher;
 import org.hamcrest.core.IsInstanceOf;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import algonquin.cst2335.lian0122.Menu_MainActivity;
+import algonquin.cst2335.lian0122.R;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -41,7 +46,7 @@ public class Test_FavoriteAdd {
     @Test
     public void test_FavoriteAdd() {
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.btnOpenSunriseSunsetLookup), withText("Open Sunrise and Sunset Lookup"),
+                Matchers.allOf(ViewMatchers.withId(R.id.btnOpenSunriseSunsetLookup), withText("Open Sunrise and Sunset Lookup"),
                         childAtPosition(
                                 allOf(withId(R.id.linearLayout),
                                         childAtPosition(

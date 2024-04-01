@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -9,6 +9,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static org.hamcrest.Matchers.not;
 
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
@@ -16,6 +17,9 @@ import androidx.test.filters.LargeTest;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import algonquin.cst2335.lian0122.R;
+import algonquin.cst2335.lian0122.Sun.Sun_MainActivity;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -26,7 +30,7 @@ public class Sun_SunMenuMainActivityTest {
 
     @Test
     public void testLookupButtonUpdatesUI() {
-        onView(withId(R.id.editTextLatitude)).perform(typeText("40.7128"), closeSoftKeyboard());
+        onView(ViewMatchers.withId(R.id.editTextLatitude)).perform(typeText("40.7128"), closeSoftKeyboard());
         onView(withId(R.id.editTextLongitude)).perform(typeText("-74.0060"), closeSoftKeyboard());
 
         onView(withId(R.id.buttonLookup)).perform(click());

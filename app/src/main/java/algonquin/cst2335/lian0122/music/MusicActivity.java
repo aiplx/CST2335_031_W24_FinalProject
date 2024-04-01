@@ -10,7 +10,6 @@ package algonquin.cst2335.lian0122.music;
 import static android.app.ProgressDialog.show;
 
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -22,22 +21,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.PixelCopy;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,7 +39,6 @@ import androidx.room.Room;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageRequest;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
@@ -67,7 +59,7 @@ import java.util.concurrent.Executors;
 import algonquin.cst2335.li000543.Recipe.RecipeMain;
 import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
 import algonquin.cst2335.lian0122.R;
-import algonquin.cst2335.lian0122.Sun_MainActivity;
+import algonquin.cst2335.lian0122.Sun.Sun_MainActivity;
 import algonquin.cst2335.lian0122.databinding.ActivityMusicBinding;
 import algonquin.cst2335.lian0122.databinding.SearchMusicBinding;
 

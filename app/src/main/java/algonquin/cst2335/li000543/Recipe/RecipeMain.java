@@ -48,7 +48,7 @@ import java.util.stream.Collectors;
 
 import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
 import algonquin.cst2335.lian0122.R;
-import algonquin.cst2335.lian0122.Sun_MainActivity;
+import algonquin.cst2335.lian0122.Sun.Sun_MainActivity;
 import algonquin.cst2335.lian0122.databinding.RecipeActivityMainBinding;
 import algonquin.cst2335.lian0122.databinding.SearchViewBinding;
 import algonquin.cst2335.lian0122.music.MusicActivity;

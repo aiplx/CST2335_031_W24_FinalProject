@@ -6,7 +6,7 @@
  * Creation Date: 2024-03-31
  */
 
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Sun;
 
 import android.content.Intent;
 import android.widget.Toast;
@@ -17,6 +17,7 @@ import android.view.MenuItem;
 
 import algonquin.cst2335.li000543.Recipe.RecipeMain;
 import algonquin.cst2335.lian0122.Dictionary.DictionaryRoom;
+import algonquin.cst2335.lian0122.R;
 import algonquin.cst2335.lian0122.music.MusicActivity;
 
 /**

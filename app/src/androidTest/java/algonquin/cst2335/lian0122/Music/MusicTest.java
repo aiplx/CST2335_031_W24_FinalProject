@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Music;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

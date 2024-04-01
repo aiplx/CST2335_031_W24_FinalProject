@@ -28,11 +28,11 @@
             android:name=".music.MusicActivity"
             android:exported="false" />
         <activity
-            android:name=".Sun_MainActivity"
+            android:name=".Sun.Sun_MainActivity"
             android:exported="false" />
 
         <activity
-            android:name=".Sun_FavoritesActivity"
+            android:name=".Sun.Sun_FavoritesActivity"
             android:exported="false" />
 
         <activity

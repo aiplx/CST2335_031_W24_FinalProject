@@ -1,4 +1,4 @@
-package algonquin.cst2335.lian0122;
+package algonquin.cst2335.lian0122.Music;
 
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
